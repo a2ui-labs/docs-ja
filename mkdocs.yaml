@@ -32,7 +32,7 @@ extra:
 
 # Navigation
 nav:
-  - ホーム: index.md
+  - ホム: index.md
   - はじめに & FAQ:
       - A2UIとは何ですか？: introduction/what-is-a2ui.md
       - どのような人向けですか？: introduction/who-is-it-for.md
