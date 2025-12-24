@@ -1,0 +1,52 @@
+/* 日本語ドキュメント用カスタムスタイル */
+
+/* 強調表示用のスタイル */
+.md-typeset .admonition.info, 
+.md-typeset details.info {
+  border-left-color: var(--md-typeset-a-color);
+}
+
+/* ビデオコンテナのレスポンシブ対応 */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ギャラリーカードの調整 */
+.grid.cards > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid.cards > li > a {
+  flex-grow: 1;
+}
+
+/* ロゴの余白調整 */
+.light-mode-only, .dark-mode-only {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 日本語フォントの読みやすさ向上 */
+body {
+  word-break: break-all;
+}
