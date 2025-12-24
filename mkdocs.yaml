@@ -13,7 +13,7 @@
 # limitations under the License.
 
 site_name: A2UI
-site_url: https://a2ui-labs.github.io/docs-ko/
+site_url: https://a2ui-labs.github.io/docs-ja/
 site_description: A2UI, a streaming protocol for Agent-Driven User Interfaces
 site_author: Google
 site_dir: site
@@ -32,44 +32,44 @@ extra:
 
 # Navigation
 nav:
-  - 홈: index.md
-  - 소개 및 FAQ:
-      - A2UI란 무엇인가요?: introduction/what-is-a2ui.md
-      - 누구를 위한 것인가요?: introduction/who-is-it-for.md
-      - 어떻게 사용할 수 있나요?: introduction/how-to-use.md
-      - 어디에서 사용되나요?: introduction/where-is-it-used.md
-      - 에이전트 UI 생태계: introduction/agent-ui-ecosystem.md
-  - 퀵스타트: quickstart.md
+  - ホーム: index.md
+  - はじめに & FAQ:
+      - A2UIとは何ですか？: introduction/what-is-a2ui.md
+      - どのような人向けですか？: introduction/who-is-it-for.md
+      - どのように使えますか？: introduction/how-to-use.md
+      - どこで使われていますか？: introduction/where-is-it-used.md
+      - エージェントUIエコシステム: introduction/agent-ui-ecosystem.md
+  - クイックスタート: quickstart.md
   - A2UI Composer ⭐: composer.md
-  - 개발자 가이드:
-      - 클라이언트 설정: guides/client-setup.md
-      - 에이전트 개발: guides/agent-development.md
-      - 커스텀 컴포넌트: guides/custom-components.md
-      - 테마 및 스타일링: guides/theming.md
-  - 핵심 개념:
-      - 개요: concepts/overview.md
-      - 데이터 흐름: concepts/data-flow.md
-      - 컴포넌트 및 구조: concepts/components.md
-      - 데이터 바인딩: concepts/data-binding.md
-  - 사양(Specifications):
-      - v0.8 (안정판):
-          - A2UI 사양: specification/v0.8-a2ui.md
-          - A2A 확장: specification/v0.8-a2a-extension.md
-      - v0.9 (초안):
-          - A2UI 사양: specification/v0.9-a2ui.md
-          - 발전 가이드: specification/v0.9-evolution-guide.md
-  - 렌더러 (클라이언트): renderers.md
-  - 전송 방식 (메시지 전달): transports.md
-  - 에이전트 (서버 측): agents.md
-  - 커뮤니티: community.md
-  - 로드맵: roadmap.md
-  - 레퍼런스:
-      - 컴포넌트 레퍼런스: reference/components.md
-      - 메시지 레퍼런스: reference/messages.md
+  - 開発者ガイド:
+      - クライアントのセットアップ: guides/client-setup.md
+      - エージェントの開発: guides/agent-development.md
+      - カスタムコンポーネント: guides/custom-components.md
+      - テーマとスタイリング: guides/theming.md
+  - コアコンセプト:
+      - 概要: concepts/overview.md
+      - データフロー: concepts/data-flow.md
+      - コンポーネントと構造: concepts/components.md
+      - データバインディング: concepts/data-binding.md
+  - 仕様:
+      - v0.8 (安定版):
+          - A2UI仕様: specification/v0.8-a2ui.md
+          - A2A拡張: specification/v0.8-a2a-extension.md
+      - v0.9 (草案):
+          - A2UI仕様: specification/v0.9-a2ui.md
+          - 進化ガイド: specification/v0.9-evolution-guide.md
+  - レンダラー (クライアント): renderers.md
+  - トランスポート (メッセージ伝送): transports.md
+  - エージェント (サーバー側): agents.md
+  - コミュニティー: community.md
+  - ロードマップ: roadmap.md
+  - リファレンス:
+      - コンポーネントリファレンス: reference/components.md
+      - メッセージリファレンス: reference/messages.md
 
 # Repository
-repo_name: a2ui-labs/docs-ko
-repo_url: https://github.com/a2ui-labs/docs-ko
+repo_name: a2ui-labs/docs-ja
+repo_url: https://github.com/a2ui-labs/docs-ja
 edit_uri: edit/main/docs/
 
 # Copyright
