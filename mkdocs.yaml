@@ -68,9 +68,9 @@ nav:
       - メッセージリファレンス: reference/messages.md
 
 # Repository
-repo_name: a2ui-labs/docs-ja
-repo_url: https://github.com/a2ui-labs/docs-ja
-edit_uri: edit/main/docs/
+repo_name: google/A2UI
+repo_url: https://github.com/google/A2UI
+edit_uri: raw/main/docs/
 
 # Copyright
 copyright: Copyright Google 2025&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.google.com/terms">Terms</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.google.com/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#__consent">Manage cookies</a>
