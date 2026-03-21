@@ -37,20 +37,24 @@ nav:
       - A2UIとは何ですか？: introduction/what-is-a2ui.md
       - どのような人向けですか？: introduction/who-is-it-for.md
       - どのように使えますか？: introduction/how-to-use.md
-      - どこで使われていますか？: introduction/where-is-it-used.md
       - エージェントUIエコシステム: introduction/agent-ui-ecosystem.md
   - クイックスタート: quickstart.md
   - A2UI Composer ⭐: composer.md
-  - 開発者ガイド:
-      - クライアントのセットアップ: guides/client-setup.md
-      - エージェントの開発: guides/agent-development.md
-      - カスタムコンポーネント: guides/custom-components.md
-      - テーマとスタイリング: guides/theming.md
-  - コアコンセプト:
+  - 概念:
       - 概要: concepts/overview.md
       - データフロー: concepts/data-flow.md
       - コンポーネントと構造: concepts/components.md
       - データバインディング: concepts/data-binding.md
+      - カタログ: concepts/catalogs.md
+      - トランスポート: concepts/transports.md
+      - クライアントからサーバーへのアクション: concepts/client_to_server_actions.md
+  - ガイド:
+      - クライアントのセットアップ: guides/client-setup.md
+      - エージェントの開発: guides/agent-development.md
+      - レンダラーの開発: guides/renderer-development.md
+      - カスタムコンポーネント: guides/custom-components.md
+      - テーマとスタイリング: guides/theming.md
+      - MCP 上の A2UI: guides/a2ui_over_mcp.md
   - 仕様:
       - v0.8 (安定版):
           - A2UI仕様: specification/v0.8-a2ui.md
@@ -58,14 +62,16 @@ nav:
       - v0.9 (草案):
           - A2UI仕様: specification/v0.9-a2ui.md
           - 進化ガイド: specification/v0.9-evolution-guide.md
-  - レンダラー (クライアント): renderers.md
-  - トランスポート (メッセージ伝送): transports.md
-  - エージェント (サーバー側): agents.md
-  - コミュニティー: community.md
-  - ロードマップ: roadmap.md
   - リファレンス:
-      - コンポーネントリファレンス: reference/components.md
+      - コンポーネントギャラリー: reference/components.md
       - メッセージリファレンス: reference/messages.md
+      - レンダラー (クライアント): reference/renderers.md
+      - エージェント (サーバー側): reference/agents.md
+  - エコシステム:
+      - A2UI の活用事例: ecosystem/a2ui-in-the-world.md
+      - コミュニティーレンダラー: ecosystem/renderers.md
+      - コミュニティー: ecosystem/community.md
+  - ロードマップ: roadmap.md
 
 # Repository
 repo_name: google/A2UI
@@ -174,7 +180,14 @@ plugins:
   - search
   - macros
   # - include-markdown
-  # - mermaid2
+  - mermaid2
+  - redirects:
+      redirect_maps:
+        'agents.md': 'reference/agents.md'
+        'community.md': 'ecosystem/community.md'
+        'introduction/where-is-it-used.md': 'ecosystem/a2ui-in-the-world.md'
+        'renderers.md': 'reference/renderers.md'
+        'transports.md': 'concepts/transports.md'
   # - llmstxt:
   #     full_output: llms-full.txt
   #     sections:

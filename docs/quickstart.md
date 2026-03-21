@@ -1,270 +1,268 @@
-# クイックスタート：5分でA2UIを実行する
+# A2UI クイックスタート: 5 分で実行する
 
-レストラン検索デモを通じてA2UIを直接体験してください。このガイドに従えば、5分以内にエージェントが生成したUIを体験できます。
+レストラン検索デモを動かして、A2UI を実際に触ってみましょう。このガイドを終える頃には、エージェントが生成する UI を 5 分以内で体験できます。
 
-## 構築するもの
+## 作成するもの
 
-このクイックスタートを完了する頃には、以下のものが手に入ります：
+このクイックスタートを終えると、次のものが手元にできます。
 
-- ✅ A2UI Litレンダーラーが動作するWebアプリ
-- ✅ 動的なUIを生成するGeminiベースのエージェント
-- ✅ フォーム生成、時間選択、予約確認フローを含むインタラクティブなレストラン検索機能
-- ✅ エージェントからUIへA2UIメッセージが配信される仕組みの理解
+- A2UI Lit レンダラーが動く Web アプリ
+- 動的 UI を生成する Gemini ベースのエージェント
+- フォーム生成、時間選択、確認フローを備えたインタラクティブなレストラン検索画面
+- エージェントから UI まで A2UI メッセージが流れる仕組みの理解
 
 ## 前提条件
 
-開始する前に、以下の準備ができていることを確認してください：
+開始前に、次を用意してください。
 
-- **Node.js** (v18以降) - [ここからダウンロード](https://nodejs.org/)
-- **Gemini APIキー** - [Google AI Studioで無料で取得](https://aistudio.google.com/apikey)
+- **Node.js**（v18 以降） - [ダウンロード](https://nodejs.org/)
+- **uv**（Python パッケージマネージャー） - [インストール手順](https://docs.astral.sh/uv/getting-started/installation/)
+  Python エージェントバックエンドの起動に使用します。
+- **Gemini API キー** - [Google AI Studio で取得](https://aistudio.google.com/apikey)
 
-!!! warning "セキュリティに関する通知"
-    このデモは、Geminiを使用してA2UI応答を生成するA2Aエージェントを実行します。エージェントはあなたのAPIキーにアクセスし、GoogleのGemini APIにリクエストを送信します。本番環境で実行する前に、必ずエージェントのコードを確認してください。
+> ⚠️ **セキュリティ注意**
+>
+> このデモは Gemini を使って A2UI 応答を生成する A2A エージェントを実行します。エージェントは API キーにアクセスし、Google の Gemini API にリクエストを送信します。本番環境で使う前に、必ずエージェントコードを確認してください。
 
-## ステップ1：リポジトリのクローン
+## ステップ 1: リポジトリをクローンする
 
 ```bash
 git clone https://github.com/google/a2ui.git
 cd a2ui
 ```
 
-## ステップ2：APIキーの設定
+## ステップ 2: API キーを設定する
 
-Gemini APIキーを環境変数としてエクスポートします：
+Gemini API キーを環境変数として設定します。
 
 ```bash
 export GEMINI_API_KEY="your_gemini_api_key_here"
 ```
 
-## ステップ3：Litクライアントに移動
+## ステップ 3: Lit クライアントへ移動する
 
 ```bash
 cd samples/client/lit
 ```
 
-## ステップ4：インストールと実行
+## ステップ 4: インストールして実行する
 
-デモランチャーを単一のコマンドで実行します：
+デモランチャーを 1 つのコマンドで実行します。
 
 ```bash
 npm install
 npm run demo:all
 ```
 
-このコマンドは以下のことを行います：
+このコマンドは次のことを行います。
 
-1.  すべての依存関係のインストール
-2.  A2UIレンダーラーのビルド
-3.  A2Aレストラン検索エージェントの起動 (Pythonバックエンド)
-4.  開発サーバーの起動
-5.  ブラウザで `http://localhost:5173` を開く
+1. すべての依存関係をインストールする
+2. A2UI レンダラーをビルドする
+3. A2A レストラン検索エージェント（Python バックエンド）を起動する
+4. 開発サーバーを起動する
+5. ブラウザで `http://localhost:5173` を開く
 
-!!! success "デモ実行中"
-    すべてが正常に動作していれば、ブラウザにWebアプリが表示されているはずです。エージェントがUIを生成する準備ができました！
+> ✅ **デモ起動完了**
+>
+> うまくいっていれば、ブラウザに Web アプリが表示されます。これでエージェントは UI を生成できる状態です。
 
-## ステップ5：試してみる
+## ステップ 5: 試してみる
 
-Webアプリで以下のプロンプトを試してください：
+Web アプリで次のプロンプトを試してください。
 
-1.  **「2名で予約して」** - エージェントが予約フォームを生成するのを確認してください。
-2.  **「近くのイタリアンレストランを探して」** - 動的な検索結果を確認してください。
-3.  **「営業時間は？」** - 意図に応じて変化するUIレイアウトを体験してください。
+1. **"Book a table for 2"** - 予約フォームが生成される様子を見る
+2. **"Find Italian restaurants near me"** - 動的な検索結果を見る
+3. **"What are your hours?"** - 意図ごとに異なる UI レイアウトを体験する
 
-### 内部の仕組み
+### 裏側で起きていること
 
 ```
 ┌─────────────┐         ┌──────────────┐         ┌────────────────┐
-│  メッセージ │────────>│  A2Aエージェント│────────>│   Gemini API   │
-│    入力     │         │   (Python)   │         │     (LLM)      │
+│   You Type  │────────>│ A2A Agent    │────────>│  Gemini API    │
+│  a Message  │         │  (Python)    │         │  (LLM)         │
 └─────────────┘         └──────────────┘         └────────────────┘
-                                │                         │
-                                │ A2UI JSON 生成          │
-                                │<────────────────────────┘
-                                │
-                                │ JSONLメッセージのストリーミング
-                                v
-                         ┌──────────────┐
-                         │   Webアプリ  │
-                         │ (A2UI Lit    │
-                         │ レンダラー)  │
-                         └──────────────┘
-                                │
-                                │ ネイティブコンポーネントのレンダリング
-                                v
-                         ┌──────────────┐
-                         │   ユーザーUI │
-                         └──────────────┘
+                               │                         │
+                               │ Generates A2UI JSON     │
+                               │<────────────────────────┘
+                               │
+                               │ Streams JSONL messages
+                               v
+                        ┌──────────────┐
+                        │   Web App    │
+                        │ (A2UI Lit    │
+                        │  Renderer)   │
+                        └──────────────┘
+                               │
+                               │ Renders native components
+                               v
+                        ┌──────────────┐
+                        │   Your UI    │
+                        └──────────────┘
 ```
 
-1.  **ユーザー**がWeb UIを介してメッセージを送信します。
-2.  **A2Aエージェント**がこれを受信し、会話の内容をGeminiに送信します。
-3.  **Gemini**がUIを記述するA2UI JSONメッセージを生成します。
-4.  **A2Aエージェント**がこれらのメッセージをWebアプリにストリーミングします。
-5.  **A2UIレンダーラー**がこれらをネイティブWebコンポーネントに変換します。
-6.  **ユーザー**がブラウザでレンダリングされたUIを確認します。
+1. **あなた**が Web UI からメッセージを送る
+2. **A2A エージェント**がそれを受け取り、会話を Gemini に渡す
+3. **Gemini** が UI を記述する A2UI JSON メッセージを生成する
+4. **A2A エージェント**がそれらを Web アプリへストリーミングする
+5. **A2UI レンダラー**がネイティブ Web コンポーネントへ変換する
+6. **あなた**がブラウザでレンダリング済み UI を確認する
 
-## A2UIメッセージ構造の分析
+## A2UI メッセージの構造
 
-エージェントが何を送信しているか見てみましょう。以下は簡略化されたJSONメッセージの例です：
+エージェントが何を送っているのか見てみましょう。以下は、JSON メッセージを簡略化した例です。
 
-### UI定義
+=== "v0.8 (Stable)"
 
-```json
-{
-  "surfaceUpdate": {
-    "surfaceId": "main",
-    "components": [
-      {
-        "id": "header",
-        "component": {
-          "Text": {
-            "text": {"literalString": "テーブルを予約する"},
-            "usageHint": "h1"
-          }
-        }
-      },
-      {
-        "id": "date-picker",
-        "component": {
-          "DateTimeInput": {
-            "label": {"literalString": "日付を選択"},
-            "value": {"path": "/reservation/date"},
-            "enableDate": true
-          }
-        }
-      },
-      {
-        "id": "submit-btn",
-        "component": {
-          "Button": {
-            "child": "submit-text",
-            "action": {"name": "confirm_booking"}
-          }
-        }
-      },
-      {
-        "id": "submit-text",
-        "component": {
-          "Text": {"text": {"literalString": "予約確定"}}
-        }
-      }
-    ]
-  }
-}
-```
+    **UI の定義:**
 
-このメッセージは、サーフェス（surface）上のUIコンポーネント（テキストヘッダー、日付選択、ボタン）を定義します。
+    ```json
+    {"surfaceUpdate": {"surfaceId": "main", "components": [
+      {"id": "header", "component": {"Text": {"text": {"literalString": "Book Your Table"}, "usageHint": "h1"}}},
+      {"id": "date-picker", "component": {"DateTimeInput": {"label": {"literalString": "Select Date"}, "value": {"path": "/reservation/date"}, "enableDate": true}}},
+      {"id": "submit-text", "component": {"Text": {"text": {"literalString": "Confirm Reservation"}}}},
+      {"id": "submit-btn", "component": {"Button": {"child": "submit-text", "action": {"name": "confirm_booking"}}}}
+    ]}}
+    ```
 
-### データ入力
+    **データの投入:**
 
-```json
-{
-  "dataModelUpdate": {
-    "surfaceId": "main",
-    "contents": [
-      {
-        "key": "reservation",
-        "valueMap": [
-          {"key": "date", "valueString": "2025-12-15"},
-          {"key": "time", "valueString": "19:00"},
-          {"key": "guests", "valueInt": 2}
-        ]
-      }
-    ]
-  }
-}
-```
+    ```json
+    {"dataModelUpdate": {"surfaceId": "main", "contents": [
+      {"key": "reservation", "valueMap": [
+        {"key": "date", "valueString": "2025-12-15"},
+        {"key": "time", "valueString": "19:00"},
+        {"key": "guests", "valueInt": 2}
+      ]}
+    ]}}
+    ```
 
-このメッセージは、コンポーネントがバインディングできるデータモデルを埋めます。
+    **レンダリング開始の通知:**
 
-### レンダリング開始シグナル
+    ```json
+    {"beginRendering": {"surfaceId": "main", "root": "header"}}
+    ```
 
-```json
-{"beginRendering": {"surfaceId": "main", "root": "header"}}
-```
+=== "v0.9 (Draft)"
 
-このメッセージは、UIをレンダリングするのに十分な情報が揃ったことをクライアントに知らせます。
+    **サーフェスの作成:**
 
-!!! tip "シンプルなJSON構造"
-    この構造がいかに読みやすく、整然としているかお分かりいただけますか？LLMはこれを容易に生成でき、コードを実行することなく安全に送信・レンダリングできます。
+    ```json
+    {"version": "v0.9", "createSurface": {"surfaceId": "main", "catalogId": "https://a2ui.org/specification/v0_9/basic_catalog.json"}}
+    ```
 
-## 他のデモを探索する
+    **UI の定義:**
 
-リポジトリにはいくつかの他のデモが含まれています：
+    ```json
+    {"version": "v0.9", "updateComponents": {"surfaceId": "main", "components": [
+      {"id": "header", "component": "Text", "text": "# Book Your Table", "variant": "h1"},
+      {"id": "date-picker", "component": "DateTimeInput", "label": "Select Date", "value": {"path": "/reservation/date"}, "enableDate": true},
+      {"id": "submit-text", "component": "Text", "text": "Confirm Reservation"},
+      {"id": "submit-btn", "component": "Button", "child": "submit-text", "variant": "primary", "action": {"event": {"name": "confirm_booking"}}}
+    ]}}
+    ```
+
+    **データの投入:**
+
+    ```json
+    {"version": "v0.9", "updateDataModel": {"surfaceId": "main", "path": "/reservation", "value": {"date": "2025-12-15", "time": "19:00", "guests": 2}}}
+    ```
+
+    v0.9 では `createSurface` が `beginRendering` に代わり、コンポーネントはよりフラットな形式を使い、データモデルは型付きの隣接リストではなく通常の JSON 値を使います。
+
+> 💡 **ただの JSON です**
+>
+> 読みやすく構造化されていることが分かるはずです。LLM はこれを簡単に生成でき、コード実行なしで安全に送信・レンダリングできます。
+
+## 他のデモを見る
+
+このリポジトリには、ほかにもいくつかのデモがあります。
 
 ### コンポーネントギャラリー（エージェント不要）
 
-利用可能なすべてのA2UIコンポーネントを確認してください：
+利用可能な A2UI コンポーネントをすべて確認できます。
 
 ```bash
 npm start -- gallery
 ```
 
-このクライアント専用デモは、すべての標準コンポーネント（Card、Button、TextField、Timelineなど）をライブ例とコードサンプルとともに紹介します。
+これは、標準コンポーネント（Card、Button、TextField、Timeline など）をすべて紹介するクライアント専用デモです。ライブ例とコードサンプルも含まれます。
 
-### 連絡先検索（Contact Lookup）デモ
+### Contact Lookup デモ
 
-別のエージェントのユースケースを試してください：
+別のユースケースも試せます。
 
 ```bash
 npm run demo:contact
 ```
 
-このデモは、検索フォームと結果リストを生成する連絡先検索エージェントを紹介します。
+検索フォームと結果リストを生成する Contact Lookup エージェントのデモです。
 
 ## 次のステップ
 
-A2UIが動作する様子を確認できたので、次は以下のことに挑戦しましょう：
+A2UI の動きを確認できたら、次に進みましょう。
 
-- **[コアコンセプトを学ぶ](concepts/overview.md)**：サーフェス、コンポーネント、データバインディングの理解
-- **[独自のクライアントを設定する](guides/client-setup.md)**：自分のアプリへのA2UIの統合
-- **[エージェントを構築する](guides/agent-development.md)**：A2UI応答を生成するエージェントの作成
-- **[プロトコルを探索する](reference/messages.md)**：技術仕様を詳しく知る
+- **[コアコンセプトを学ぶ](concepts/overview.md)**: サーフェス、コンポーネント、データバインディングを理解する
+- **[クライアントを設定する](guides/client-setup.md)**: 自分のアプリに A2UI を統合する
+- **[エージェントを構築する](guides/agent-development.md)**: A2UI 応答を生成するエージェントを作る
+- **[プロトコルを読む](reference/messages.md)**: 技術仕様を掘り下げる
 
 ## トラブルシューティング
 
-### ポートがすでに使用されている場合
+### ポートがすでに使用されている
 
-ポート 5173 がすでに使用されている場合、開発サーバーは自動的に次の利用可能なポートを試行します。ターミナル出力の実際のURLを確認してください。
+ポート 5173 がすでに使われている場合、開発サーバーは次の空いているポートを自動的に試します。ターミナル出力で実際の URL を確認してください。
 
-### APIキーの問題
+### API キーの問題
 
-APIキーが見つからないというエラーが表示される場合：
+API キーが見つからないというエラーが出る場合は、次を確認してください。
 
-1.  キーが正しくエクスポートされているか確認： `echo $GEMINI_API_KEY`
-2.  [Google AI Studio](https://aistudio.google.com/apikey)で取得した有効なGemini APIキーであることを確認
-3.  再エクスポートを試行： `export GEMINI_API_KEY="your_key"`
+1. キーがエクスポートされているか確認する: `echo $GEMINI_API_KEY`
+2. [Google AI Studio](https://aistudio.google.com/apikey) で取得した有効な Gemini API キーであることを確認する
+3. 再度エクスポートする: `export GEMINI_API_KEY="your_key"`
 
-### Pythonの依存関係
+### 起動時の接続エラー
 
-デモではA2AエージェントにPythonを使用します。Pythonエラーが発生する場合：
+ブラウザを開いたときに `ERR_CONNECTION_REFUSED` が出ても心配いりません。これは既知の競合です ([#587](https://github.com/google/A2UI/issues/587))。Web アプリが Python エージェントより先に起動するためです。数秒待ってからページを再読み込みしてください。
+
+### Python / uv の問題
+
+デモエージェントの実行には [uv](https://docs.astral.sh/uv/) が必要です。`uv: command not found` が出る場合は、次を試してください。
 
 ```bash
-# Python 3.10以降がインストールされていることを確認
-python3 --version
+# uv をインストール
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# デモはnpmスクリプトを介して依存関係を自動的にインストールするはずです。
-# そうならない場合は、手動でインストールしてください：
-cd ../../agent/adk/restaurant_finder
-pip install -r requirements.txt
+# 確認
+uv --version
 ```
 
-### それでも解決しない場合は？
+その他の Python エラーが出る場合は、次を確認してください。
 
-- [GitHub Issues](https://github.com/google/a2ui/issues)を確認してください。
-- [samples/client/lit/README.md](https://github.com/google/a2ui/tree/main/samples/client/lit)を確認してください。
-- コミュニティディスカッションに参加してください。
+```bash
+# Python 3.10 以降が利用可能か確認
+python3 --version
+
+# エージェントを手動で実行してみる
+cd samples/agent/adk/restaurant_finder
+uv run .
+```
+
+### まだ問題が解決しない場合
+
+- [GitHub Issues](https://github.com/google/A2UI/issues) を確認する
+- [samples/client/lit/README.md](https://github.com/google/A2UI/tree/main/samples/client/lit) を読む
+- コミュニティの議論に参加する
 
 ## デモコードの理解
 
-仕組みが気になりますか？以下の項目を確認してください：
+仕組みを見たい場合は、次を確認してください。
 
-- **エージェントコード**: `samples/agent/adk/restaurant_finder/` - Python A2Aエージェント
-- **クライアントコード**: `samples/client/lit/` - A2UIレン더ラーを含むLit Webクライアント
-- **A2UIレンダラー**: `web-lib/` - Webレンダラー実装
+- **エージェントコード**: `samples/agent/adk/restaurant_finder/` - Python の A2A エージェント
+- **クライアントコード**: `samples/client/lit/` - A2UI レンダラーを含む Lit Web クライアント
+- **A2UI レンダラー**: `renderers/lit/`（Lit）と `renderers/web_core/`（フレームワーク非依存のコア）
 
-各ディレクトリには、詳細なドキュメントを含むREADMEがあります。
+各ディレクトリには、詳しいドキュメントを含む README があります。
 
 ---
 
-**おめでとうございます！** 初めてのA2UIアプリケーションを正常に実行できました。AIエージェントが、安全で宣言的なJSONメッセージを通じて、WebアプリケーションでネイティブにレンダリングされるリッチでインタラクティブなUIを生成する方法を確認しました。
+**おめでとうございます。** これで最初の A2UI アプリケーションを実行できました。安全な宣言的 JSON メッセージだけで、AI エージェントが Web アプリケーション内にリッチでインタラクティブな UI をネイティブにレンダリングできることを確認できました。

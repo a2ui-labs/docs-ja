@@ -15,110 +15,108 @@ hide:
 # エージェント主導インターフェースのためのプロトコル
 
 <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 1rem auto; opacity: 0.9; line-height: 1.6;">
-A2UIは、AIエージェントが任意のコードを実行することなく、Web、モバイル、デスクトップでネイティブにレンダリングされるリッチでインタラクティブなユーザーインターフェースを生成することを可能にします。
+A2UIは、AIエージェントが任意のコードを実行することなく、Web、モバイル、デスクトップでネイティブにレンダリングされるリッチでインタラクティブなユーザーインターフェースを生成できるようにします。
 </p>
 
 </div>
 
-!!! warning "ステータス: 早期パブリックプレビュー"
-    A2UIは現在 **v0.8 (Public Preview)** 段階です。仕様と実装は動作可能ですが、現在も進化を続けています。コラボレーションを促進し、フィードバックを収集し、貢献（例：クライアントレンダラー）を募るためにプロジェクトを公開しています。変更される可能性があることにご注意ください。
+## 仕様バージョン
 
-## 概要
+| バージョン | ステータス | 説明 |
+|---------|--------|-------------|
+| **[v0.8](specification/v0.8-a2ui.md)** | **安定版** | 現在の本番向けリリースです。サーフェス、コンポーネント、データバインディング、隣接リストモデルを含みます。 |
+| **[v0.9](specification/v0.9-a2ui.md)** | **草案** | `createSurface`、クライアント側関数、カスタムカタログ、および拡張仕様を追加します。 [進化ガイド →](specification/v0.9-evolution-guide.md) |
 
-A2UIは現在 [v0.8](specification/v0.8-a2ui.md) バージョンであり、
-Apache 2.0ライセンスの下で公開されています。
-CopilotKitおよびオープンソースコミュニティからの貢献とともに、Googleによって提供されており、
-[GitHub](https://github.com/google/A2UI)で活発に開発されています。
+CopilotKit とオープンソースコミュニティの貢献を受けながら、A2UI は Google によって提供されており、[GitHub](https://github.com/google/A2UI) で活発に開発されています。
 
-A2UIが解決しようとしている課題は：**AIエージェントが信頼の境界を越えて、どのように安全にリッチなUIを送信できるか？** です。
+A2UI が解決する問題は、**AI エージェントが信頼境界をまたいで、どのように安全にリッチな UI を送信できるか** です。
 
-テキストのみの応答や危険なコードの実行の代わりに、A2UIはエージェントが、クライアント側で独自のネイティブウィジェットを使用してレンダリングできる**宣言的なコンポーネント記述**を送信することを可能にします。これは、エージェントが共通のUI言語を話しているようなものです。
+テキストだけの応答や危険なコード実行の代わりに、A2UI はエージェントが **宣言的なコンポーネント記述** を送信できるようにします。クライアントはそれを自前のネイティブウィジェットでレンダリングします。つまり、エージェントが共通の UI 言語を話しているようなものです。
 
-このリポジトリには以下が含まれています：
-- [A2UI仕様](specification/v0.8-a2ui.md)
-- クライアント側の[レンダラー](renderers.md)（例：Angular、Flutterなど）の実装
-- エージェントとクライアント間でA2UIメッセージを運ぶ[トランスポート層](transports.md)（例：A2Aなど）
+このリポジトリには以下が含まれます。
 
-<div class="grid cards" markdown>
-
-- :material-shield-check: **設計段階からのセキュリティ**
-
-    ---
-
-    実行可能なコードではなく、宣言的なデータ形式です。エージェントはカタログ内の事前承認されたコンポーネントのみを要求できるため、UIインジェクション攻撃から安全です。
-
-- :material-rocket-launch: **LLMフレンドリー**
-
-    ---
-
-    生成を容易にするように設計された、フラットでストリーミング可能なJSON構造です。LLMは、一度に完璧なJSONを作成しなくても、UIを段階的に構築できます。
-
-- :material-devices: **フレームワークに依存しない**
-
-    ---
-
-    1つのエージェント応答があらゆる場所で機能します。同じUIをAngular、Flutter、React、またはネイティブモバイルで、独自のブランドスタイルのコンポーネントとしてレンダリングします。
-
-- :material-chart-timeline: **プログレッシブレンダリング**
-
-    ---
-
-    UIの更新を生成されると同時にストリーミングします。ユーザーは応答全体が完了するのを待つ必要がなく、インターフェースがリアルタイムで構築されるのを見ることができます。
-
-</div>
-
-## 5分で始めよう
+- [A2UI 仕様](specification/v0.8-a2ui.md)（v0.8 安定版、v0.9 草案）
+- クライアント側の [レンダラー](reference/renderers.md) 実装（Angular、Flutter、Lit など）
+- エージェントとクライアントの間で A2UI メッセージを運ぶ [トランスポート](concepts/transports.md)（A2A など）
 
 <div class="grid cards" markdown>
 
-- :material-clock-fast:{ .lg .middle } **[リファレンス](quickstart.md)**
+- :material-shield-check: **設計段階から安全**
 
     ---
 
-    レストラン検索デモを実行し、Gemini搭載エージェントと連携するA2UIを確認してください。
+    実行可能コードではなく宣言的データ形式です。エージェントは、カタログに登録された事前承認済みコンポーネントだけを要求できます。
 
-    [:octicons-arrow-right-24: 開始する](quickstart.md)
+- :material-rocket-launch: **LLM に優しい**
+
+    ---
+
+    フラットでストリーミングしやすい JSON 構造です。LLM は、完璧な JSON を一度に出力しなくても、UI を段階的に組み立てられます。
+
+- :material-devices: **フレームワーク非依存**
+
+    ---
+
+    1 つのエージェント応答をどこでも使えます。同じ UI を Angular、Flutter、React、ネイティブモバイルで、それぞれの見た目に合わせたコンポーネントとしてレンダリングできます。
+
+- :material-chart-timeline: **段階的レンダリング**
+
+    ---
+
+    生成された UI 更新をそのままストリーミングできます。ユーザーは応答の完了を待たずに、インターフェースがリアルタイムに組み上がる様子を確認できます。
+
+## 5 分で始める
+
+<div class="grid cards" markdown>
+
+- :material-clock-fast:{ .lg .middle } **[クイックスタート](quickstart.md)**
+
+    ---
+
+    レストラン検索デモを実行して、Gemini ベースのエージェントと動作する A2UI を確認します。
+
+    [:octicons-arrow-right-24: 始める](quickstart.md)
 
 - :material-book-open-variant:{ .lg .middle } **[コアコンセプト](concepts/overview.md)**
 
     ---
 
-    サーフェス、コンポーネント、データバインディング、および隣接リスト（Adjacency List）モデルを学びます。
+    サーフェス、コンポーネント、データバインディング、隣接リストモデルを理解します。
 
     [:octicons-arrow-right-24: コンセプトを学ぶ](concepts/overview.md)
 
-- :material-code-braces:{ .lg .middle } **[開発者ガイド](guides/client-setup.md)**
+- :material-code-braces:{ .lg .middle } **[開発ガイド](guides/client-setup.md)**
 
     ---
 
-    A2UIレンダラーをアプリに統合するか、UIを生成するエージェントを構築します。
+    A2UI レンダラーをアプリに統合するか、UI を生成するエージェントを構築します。
 
-    [:octicons-arrow-right-24: 開発を開始する](guides/client-setup.md)
+    [:octicons-arrow-right-24: 開発を始める](guides/client-setup.md)
 
-- :material-file-document:{ .lg .middle } **[プロトコルリファレンス](specification/v0.8-a2ui.md)**
+- :material-file-document:{ .lg .middle } **プロトコル仕様**
 
     ---
 
-    完全な技術仕様とメッセージタイプについて詳しく学びます。
+    完全な技術仕様を確認できます。[v0.8（安定版）](specification/v0.8-a2ui.md) と [v0.9（草案）](specification/v0.9-a2ui.md) を掲載しています。
 
-    [:octicons-arrow-right-24: 仕様を読む](specification/v0.8-a2ui.md)
+    [:octicons-arrow-right-24: v0.8 仕様を読む](specification/v0.8-a2ui.md)
 
 </div>
 
 ## 仕組み
 
-1. **ユーザー**がAIエージェントにメッセージを送信します。
-2. **エージェントがUIを記述するA2UIメッセージ**（構造 + データ）を生成します。
-3. **メッセージが**クライアントアプリケーションにストリーミングされます。
-4. **クライアントが**ネイティブコンポーネント（Angular、Flutter、Reactなど）を使用してレンダリングします。
-5. **ユーザーが**UIと対話し、アクションをエージェントに送り返します。
-6. **エージェントが**更新されたA2UIメッセージで応答します。
+1. **ユーザー** が AI エージェントにメッセージを送ります。
+2. **エージェント** が UI を記述する A2UI メッセージ（構造 + データ）を生成します。
+3. **メッセージ** がクライアントアプリケーションへストリーミングされます。
+4. **クライアント** が Angular、Flutter、React などのネイティブコンポーネントでレンダリングします。
+5. **ユーザー** が UI と対話し、アクションをエージェントへ返します。
+6. **エージェント** が更新済みの A2UI メッセージで応答します。
 
 ![エンドツーエンドのデータフロー](assets/end-to-end-data-flow.png)
 
-## A2UIの実際の例
+## 実例
 
-### ランドスケープアーキテクト（Landscape Architect）デモ
+### ランドスケープアーキテクトのデモ
 
 <div style="margin: 2rem 0;">
   <div style="border-radius: .8rem; overflow: hidden; box-shadow: var(--md-shadow-z2);">
@@ -128,7 +126,7 @@ A2UIが解決しようとしている課題は：**AIエージェントが信頼
     </video>
   </div>
   <p style="text-align: center; margin-top: 1rem; opacity: 0.8;">
-    エージェントがランドスケープアーキテクチャ・アプリケーションのインターフェース全体を生成する様子をご覧ください。ユーザーが写真をアップロードすると、エージェントはGeminiを使用してその内容を理解し、ランドスケープの要件に合わせてカスタマイズされたフォームを生成します。
+    エージェントがランドスケープアーキテクト向けアプリケーションのインターフェース全体を生成する様子をご覧ください。ユーザーが写真をアップロードすると、エージェントは Gemini を使って内容を理解し、ランドスケープ要件に合わせたフォームを生成します。
   </p>
 </div>
 
@@ -137,17 +135,17 @@ A2UIが解決しようとしている課題は：**AIエージェントが信頼
 <div style="margin: 2rem 0;">
   <div style="border-radius: .8rem; overflow: hidden; box-shadow: var(--md-shadow-z2);">
     <video width="100%" height="auto" controls playsinline style="display: block; aspect-ratio: 16/9; object-fit: cover;">
-      <source src="assets/a2ui-custom-compnent.mp4" type="video/mp4">
+      <source src="assets/a2ui-custom-component.mp4" type="video/mp4">
       ブラウザがビデオタグをサポートしていません。
     </video>
   </div>
   <p style="text-align: center; margin-top: 1rem; opacity: 0.8;">
-    エージェントが数値の要約に関する質問に答えるためにチャートコンポーネントを選択し、応答する様子をご覧ください。次に、エージェントは場所に関する質問に答えるためにGoogleマップコンポーネントを選択します。これらは両方とも、クライアントによって提供されるカスタムコンポーネントです。
+    エージェントが数値の要約に答えるためにチャートコンポーネントを選び、その後で場所に関する質問に答えるために Google マップコンポーネントを選ぶ様子をご覧ください。どちらもクライアントが提供するカスタムコンポーネントです。
   </p>
 </div>
 
 ### A2UI Composer
 
-CopilotKitによる公開されている[A2UIウィジェットビルダー](https://go.copilotkit.ai/A2UI-widget-builder)もお試しいただけます。
+CopilotKit が公開している [A2UI Widget Builder](https://go.copilotkit.ai/A2UI-widget-builder) もお試しください。
 
 [![A2UI Composer](assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
