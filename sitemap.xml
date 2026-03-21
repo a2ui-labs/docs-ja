@@ -2,114 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/</loc>
-         <lastmod>2025-12-25</lastmod>
-    </url>
-    <url>
-         <loc>https://a2ui-labs.github.io/docs-ja/agents/</loc>
-         <lastmod>2025-12-25</lastmod>
-    </url>
-    <url>
-         <loc>https://a2ui-labs.github.io/docs-ja/community/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/composer/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/quickstart/</loc>
-         <lastmod>2025-12-25</lastmod>
-    </url>
-    <url>
-         <loc>https://a2ui-labs.github.io/docs-ja/renderers/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/roadmap/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
-         <loc>https://a2ui-labs.github.io/docs-ja/transports/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <loc>https://a2ui-labs.github.io/docs-ja/concepts/catalogs/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/concepts/client_to_server_actions/</loc>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/concepts/components/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/concepts/data-binding/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/concepts/data-flow/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/concepts/overview/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/concepts/transports/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/ecosystem/a2ui-in-the-world/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/ecosystem/community/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/ecosystem/renderers/</loc>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/guides/a2ui_over_mcp/</loc>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/guides/agent-development/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/guides/client-setup/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/guides/custom-components/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/guides/renderer-development/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/guides/theming/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/introduction/agent-ui-ecosystem/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/introduction/how-to-use/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/introduction/what-is-a2ui/</loc>
-         <lastmod>2025-12-25</lastmod>
-    </url>
-    <url>
-         <loc>https://a2ui-labs.github.io/docs-ja/introduction/where-is-it-used/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/introduction/who-is-it-for/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/reference/agents/</loc>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/reference/components/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/reference/messages/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
+    </url>
+    <url>
+         <loc>https://a2ui-labs.github.io/docs-ja/reference/renderers/</loc>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/specification/v0.8-a2a-extension/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/specification/v0.8-a2ui/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/specification/v0.9-a2ui/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
     <url>
          <loc>https://a2ui-labs.github.io/docs-ja/specification/v0.9-evolution-guide/</loc>
-         <lastmod>2025-12-25</lastmod>
+         <lastmod>2026-03-21</lastmod>
     </url>
 </urlset>
