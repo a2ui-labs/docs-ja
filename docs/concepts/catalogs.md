@@ -6,9 +6,9 @@
 
 ## カタログ定義
 
-カタログは、エージェントがサーバー主導 UI で A2UI サーフェスを定義するために使えるコンポーネント、関数、テーマをまとめた [JSON Schema ファイル](../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) です。エージェントから送られる A2UI JSON は、選択されたカタログに対して検証されます。
+カタログは、エージェントがサーバー主導 UI で A2UI サーフェスを定義するために使えるコンポーネント、関数、テーマをまとめた [JSON Schema ファイル](../../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) です。エージェントから送られる A2UI JSON は、選択されたカタログに対して検証されます。
 
-以下は [Catalog JSON Schema](../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) の一部です。
+以下は [Catalog JSON Schema](../../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) の一部です。
 
 ```json
 {
@@ -59,7 +59,7 @@
 
 ### Basic Catalog
 
-素早く始められるように、A2UI チームは [Basic Catalog](../specification/v0_9/json/basic_catalog.json) を維持しています。
+素早く始められるように、A2UI チームは [Basic Catalog](../../specification/v0_9/catalogs/basic/catalog.json) を維持しています。
 
 これは、汎用コンポーネント（Button、Input、Card など）と関数の標準セットを含む、事前定義済みのカタログです。特別な「カタログ種別」ではなく、すでに実装済みでオープンソースのレンダラーが存在するカタログの 1 つの版にすぎません。
 
@@ -67,7 +67,7 @@ Basic Catalog は、独自のスキーマを最初から書かなくてもアプ
 
 A2UI は LLM が設計時または実行時に UI を生成する前提で作られているため、複数クライアント間で標準化されたカタログが必須だとは考えていません。LLM はクライアントごとのカタログを読み取れます。
 
-[A2UI v0.9 Basic Catalog を見る](../specification/v0_9/json/basic_catalog.json)
+[A2UI v0.9 Basic Catalog を見る](../../specification/v0_9/catalogs/basic/catalog.json)
 
 ### 独自カタログの定義
 
@@ -77,7 +77,7 @@ Basic Catalog は開始点として便利ですが、本番アプリの多くは
 
 単純さを優先するなら、アダプター経由で Basic Catalog をマッピングするよりも、クライアントのデザインシステムを直接反映するカタログを作ることを推奨します。A2UI は GenUI を前提にしているため、LLM はクライアントごとに異なるカタログを解釈できると想定しています。
 
-[Rizzcharts のカタログ例を見る](../samples/agent/adk/rizzcharts/rizzcharts_catalog_definition.json)
+[Rizzcharts のカタログ例を見る](../../samples/agent/adk/rizzcharts/catalog_schemas/0.9/rizzcharts_catalog_definition.json)
 
 ### 推奨
 
@@ -88,7 +88,7 @@ Basic Catalog は開始点として便利ですが、本番アプリの多くは
 
 ## カタログの作成
 
-カタログは、サーフェスを構築する際にエージェントが利用できるコンポーネント、テーマ、関数を定義する [Catalog スキーマ](../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) に準拠した JSON Schema ファイルです。
+カタログは、サーフェスを構築する際にエージェントが利用できるコンポーネント、テーマ、関数を定義する [Catalog スキーマ](../../specification/v0_9/json/client_capabilities.json#L62C5-L95C6) に準拠した JSON Schema ファイルです。
 
 ### 例: 最小カタログ
 

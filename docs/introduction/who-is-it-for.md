@@ -16,7 +16,7 @@
 - クロスプラットフォーム：Web、モバイル、デスクトップをサポートします
 - 相互運用性：オープンソースであり、同じ仕様で複数のレンダラーをサポートします
 
-**はじめに：** [クライアント設定](../guides/client-setup.md) | [テーマ設定](../guides/theming.md) | [カスタムコンポーネント](../guides/custom-components.md)
+**はじめに：** [クライアント設定](../guides/client-setup.md) | [テーマ設定](../guides/theming.md) | [カスタムコンポーネント](../guides/authoring-components.md)
 
 ### 2. エージェント開発者 (バックエンド/AI)
 
@@ -46,7 +46,7 @@
 - 拡張性：カスタムコンポーネントカタログをサポートします
 - オープンソース (Apache 2.0)
 
-**はじめに：** [コミュニティ](../community.md) | [ロードマップ](../roadmap.md)
+**はじめに：** [コミュニティ](../ecosystem/community.md) | [ロードマップ](../roadmap.md)
 
 ---
 

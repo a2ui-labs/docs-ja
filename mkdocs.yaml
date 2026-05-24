@@ -23,12 +23,12 @@ extra:
     provider: google
     property: G-YX9TPV8DCC
   consent:
-      title: Cookie consent
-      description: >-
-        We use cookies to recognize repeated visits and preferences,
-        as well as to measure the effectiveness of our documentation and
-        whether users find the information they need. With your consent,
-        you're helping us to make our documentation better.
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize repeated visits and preferences,
+      as well as to measure the effectiveness of our documentation and
+      whether users find the information they need. With your consent,
+      you're helping us to make our documentation better.
 
 # Navigation
 nav:
@@ -47,31 +47,38 @@ nav:
       - データバインディング: concepts/data-binding.md
       - カタログ: concepts/catalogs.md
       - トランスポート: concepts/transports.md
-      - クライアントからサーバーへのアクション: concepts/client_to_server_actions.md
+      - アクション: concepts/actions.md
   - ガイド:
       - クライアントのセットアップ: guides/client-setup.md
       - エージェントの開発: guides/agent-development.md
+      - 任意のエージェントフレームワークで A2UI を使う (AG-UI): guides/a2ui-with-any-agent-framework.md
       - レンダラーの開発: guides/renderer-development.md
-      - カスタムコンポーネント: guides/custom-components.md
+      - 独自カタログの定義: guides/defining-your-own-catalog.md
+      - カスタムコンポーネントの作成: guides/authoring-components.md
       - テーマとスタイリング: guides/theming.md
       - MCP 上の A2UI: guides/a2ui_over_mcp.md
-  - 仕様:
-      - v0.8 (安定版):
-          - A2UI仕様: specification/v0.8-a2ui.md
-          - A2A拡張: specification/v0.8-a2a-extension.md
-      - v0.9 (草案):
-          - A2UI仕様: specification/v0.9-a2ui.md
-          - 進化ガイド: specification/v0.9-evolution-guide.md
+      - A2UI 内の MCP Apps: guides/mcp-apps-in-a2ui.md
+      - MCP Apps 内の A2UI: guides/a2ui-in-mcp-apps.md
   - リファレンス:
       - コンポーネントギャラリー: reference/components.md
       - メッセージリファレンス: reference/messages.md
       - レンダラー (クライアント): reference/renderers.md
       - エージェント (サーバー側): reference/agents.md
+  - 仕様:
+      - v0.8 (安定版):
+          - A2UIプロトコル: specification/v0.8-a2ui.md
+          - A2A拡張: specification/v0.8-a2a-extension.md
+      - v0.9 (現在):
+          - A2UIプロトコル: specification/v0.9-a2ui.md
+          - 進化ガイド: specification/v0.9-evolution-guide.md
   - エコシステム:
       - A2UI の活用事例: ecosystem/a2ui-in-the-world.md
       - コミュニティーレンダラー: ecosystem/renderers.md
       - コミュニティー: ecosystem/community.md
   - ロードマップ: roadmap.md
+
+exclude_docs: |
+  scripts/**
 
 # Repository
 repo_name: google/A2UI
@@ -84,7 +91,6 @@ copyright: Copyright Google 2025&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.goo
 # Custom CSS
 extra_css:
   - stylesheets/custom.css
-
 
 # Configuration
 theme:
@@ -164,7 +170,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
@@ -175,6 +181,9 @@ markdown_extensions:
   - toc:
       permalink: true
 
+hooks:
+  - hooks.py
+
 # Plugins
 plugins:
   - search
@@ -183,16 +192,21 @@ plugins:
   - mermaid2
   - redirects:
       redirect_maps:
-        'agents.md': 'reference/agents.md'
-        'community.md': 'ecosystem/community.md'
-        'introduction/where-is-it-used.md': 'ecosystem/a2ui-in-the-world.md'
-        'renderers.md': 'reference/renderers.md'
-        'transports.md': 'concepts/transports.md'
+        # Files moved in docs-file-org reorganization
+        "catalogs.md": "concepts/catalogs.md"
+        "transports.md": "concepts/transports.md"
+        "actions.md": "concepts/actions.md"
+        "renderers.md": "reference/renderers.md"
+        "agents.md": "reference/agents.md"
+        "community.md": "ecosystem/community.md"
+        "introduction/where-is-it-used.md": "ecosystem/a2ui-in-the-world.md"
+        "guides/guide_a2ui_dynamic_mcp.md": "guides/a2ui-in-mcp-apps.md"
+        "guides/mcp-apps-in-a2ui-surface.md": "guides/mcp-apps-in-a2ui.md"
+        "concepts/client_to_server_actions.md": "concepts/actions.md"
+        "client_to_server_actions.md": "concepts/actions.md"
+        "guides/custom-components.md": "guides/authoring-components.md"
   # - llmstxt:
   #     full_output: llms-full.txt
   #     sections:
   #       "Specification":
   #         - a2ui_protocol.md
-  # - redirects:
-  #     redirect_maps:
-  #       "index.md": "a2ui_protocol.md"
