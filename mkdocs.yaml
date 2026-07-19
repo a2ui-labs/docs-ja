@@ -17,6 +17,7 @@ site_url: https://a2ui-labs.github.io/docs-ja/
 site_description: A2UI, a streaming protocol for Agent-Driven User Interfaces
 site_author: Google
 site_dir: site
+docs_dir: docs/public
 
 extra:
   analytics:
@@ -42,6 +43,7 @@ nav:
   - A2UI Composer ⭐: composer.md
   - 概念:
       - 概要: concepts/overview.md
+      - 用語集: concepts/glossary.md
       - データフロー: concepts/data-flow.md
       - コンポーネントと構造: concepts/components.md
       - データバインディング: concepts/data-binding.md
@@ -51,26 +53,37 @@ nav:
   - ガイド:
       - クライアントのセットアップ: guides/client-setup.md
       - エージェントの開発: guides/agent-development.md
-      - 任意のエージェントフレームワークで A2UI を使う (AG-UI): guides/a2ui-with-any-agent-framework.md
+      - 任意のエージェントフレームワークとハーネスで A2UI を使う: guides/a2ui-with-any-agent-framework.md
       - レンダラーの開発: guides/renderer-development.md
       - 独自カタログの定義: guides/defining-your-own-catalog.md
       - カスタムコンポーネントの作成: guides/authoring-components.md
       - テーマとスタイリング: guides/theming.md
-      - MCP 上の A2UI: guides/a2ui_over_mcp.md
-      - A2UI 内の MCP Apps: guides/mcp-apps-in-a2ui.md
-      - MCP Apps 内の A2UI: guides/a2ui-in-mcp-apps.md
+      - A2UI + MCP:
+          - MCP 上の A2UI: guides/a2ui_over_mcp.md
+          - A2UI 内の MCP Apps: guides/mcp-apps-in-a2ui.md
+          - MCP Apps 内の A2UI: guides/a2ui-in-mcp-apps.md
   - リファレンス:
       - コンポーネントギャラリー: reference/components.md
       - メッセージリファレンス: reference/messages.md
       - レンダラー (クライアント): reference/renderers.md
       - エージェント (サーバー側): reference/agents.md
   - 仕様:
-      - v0.8 (安定版):
-          - A2UIプロトコル: specification/v0.8-a2ui.md
-          - A2A拡張: specification/v0.8-a2a-extension.md
-      - v0.9 (現在):
+      - v1.0 (候補版):
+          - A2UIプロトコル: specification/v1.0-a2ui.md
+          - A2A拡張: specification/v1.0-a2ui-extension-specification.md
+          - 進化ガイド: specification/v1.0-evolution-guide.md
+          - ベーシックカタログガイド: specification/v1.0-basic-catalog-implementation-guide.md
+      - v0.9.1 (現行版):
+          - A2UIプロトコル: specification/v0.9.1-a2ui.md
+          - A2A拡張: specification/v0.9.1-a2ui-extension-specification.md
+          - 進化ガイド: specification/v0.9.1-evolution-guide.md
+          - ベーシックカタログガイド: specification/v0.9.1-basic-catalog-implementation-guide.md
+      - v0.9 (旧安定版):
           - A2UIプロトコル: specification/v0.9-a2ui.md
           - 進化ガイド: specification/v0.9-evolution-guide.md
+      - v0.8 (レガシー):
+          - A2UIプロトコル: specification/v0.8-a2ui.md
+          - A2A拡張: specification/v0.8-a2a-extension.md
   - エコシステム:
       - A2UI の活用事例: ecosystem/a2ui-in-the-world.md
       - コミュニティーレンダラー: ecosystem/renderers.md
@@ -79,11 +92,12 @@ nav:
 
 exclude_docs: |
   scripts/**
+  specification/v*/**/*.md
 
 # Repository
-repo_name: google/A2UI
-repo_url: https://github.com/google/A2UI
-edit_uri: raw/main/docs/
+repo_name: a2ui-project/a2ui
+repo_url: https://github.com/a2ui-project/a2ui
+edit_uri: raw/main/docs/public/
 
 # Copyright
 copyright: Copyright Google 2025&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.google.com/terms">Terms</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="//policies.google.com/privacy">Privacy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#__consent">Manage cookies</a>
@@ -99,7 +113,7 @@ theme:
     text: Google Sans
     code: Roboto Mono
   logo: assets/A2UI_light.svg
-  favicon: assets/A2UI_dark.svg
+  favicon: assets/favicon.svg
   icon:
     repo: fontawesome/brands/github
     # view: material/pencil-box-multiple
@@ -205,8 +219,3 @@ plugins:
         "concepts/client_to_server_actions.md": "concepts/actions.md"
         "client_to_server_actions.md": "concepts/actions.md"
         "guides/custom-components.md": "guides/authoring-components.md"
-  # - llmstxt:
-  #     full_output: llms-full.txt
-  #     sections:
-  #       "Specification":
-  #         - a2ui_protocol.md
