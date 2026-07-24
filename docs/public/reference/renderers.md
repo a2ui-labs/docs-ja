@@ -27,6 +27,7 @@
 - **[A2UI-Android](https://github.com/lmee/A2UI-Android)** — Jetpack Compose のコミュニティレンダラー。20+ コンポーネント、約 15 ⭐、v0.8
 - **[a2ui-react-native](https://github.com/sivamrudram-eng/a2ui-react-native)** — iOS/Android 向け React Native レンダラー。約 9 ⭐、v0.8
 - **[Lynx A2UI](https://lynxjs.org/next/react/genui/a2ui.html)** — A2UI 向け ReactLynx レンダラー（v0.9）
+- **[AGenUI](https://github.com/AGenUI/AGenUI)** — iOS、Android、HarmonyOS をサポートするクロスプラットフォームネイティブレンダラー（v0.9）
 
 **[エコシステムのレンダラー一覧](../ecosystem/renderers.md)** で、さらに多くのコミュニティプロジェクトや投稿方法を確認できます。
 

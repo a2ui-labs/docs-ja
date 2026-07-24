@@ -3,6 +3,7 @@
 コミュニティやサードパーティによる A2UI レンダラー実装の一覧です。
 
 !!! note
+    <ctrl42>call:default_api:replace_file_content
     これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
     互換性、対応バージョン、メンテナンス状況は各プロジェクトで確認してください。
 
@@ -23,6 +24,7 @@
 | **a2ui-vue** | Vue（Web） | ✅ | ✅ | ![Stars](https://img.shields.io/github/stars/shawnwang15/a2ui-vue?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/shawnwang15/a2ui-vue?style=flat-square&label=updated) | [GitHub](https://github.com/shawnwang15/a2ui-vue) · [npm](https://www.npmjs.com/package/a2ui-vue) · [Docs](https://shawnwang15.github.io/a2ui-vue/en/) |
 | **AGenUI/AGenUI** | iOS、Android、HarmonyOS | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/AGenUI/AGenUI?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/AGenUI/AGenUI?style=flat-square&label=updated) | [GitHub](https://github.com/AGenUI/AGenUI) · [公式サイト](https://genui.amap.com/) |
 | **lynx-family/lynx-stack** (`@lynx-js/genui/a2ui`) | Lynx（モバイル、Web、デスクトップ） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/lynx-family/lynx-stack?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/lynx-family/lynx-stack?path=packages%2Fgenui%2Fa2ui&style=flat-square&label=updated) | [GitHub](https://github.com/lynx-family/lynx-stack/tree/main/packages/genui/a2ui) · [npm](https://www.npmjs.com/package/@lynx-js/genui) · [Docs](https://lynxjs.org/next/react/genui/a2ui.html) |
+| **BoteAI/a2ui** (`@boteai/a2ui-render`) | React（Web） | ✅ | ✅ | ![Stars](https://img.shields.io/github/stars/BoteAI/a2ui?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/BoteAI/a2ui?style=flat-square&label=updated) | [GitHub](https://github.com/BoteAI/a2ui) · [npm](https://www.npmjs.com/package/@boteai/a2ui-render) |
 | **kokoro-ele/a2ui-ink** (`@evanyu/a2ui-ink`) | ターミナル / CLI（Ink） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/kokoro-ele/a2ui-ink?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/kokoro-ele/a2ui-ink?style=flat-square&label=updated) | [GitHub](https://github.com/kokoro-ele/a2ui-ink) · [npm](https://www.npmjs.com/package/@evanyu/a2ui-ink) |
 
 ### 注目のプロジェクト
@@ -53,7 +55,7 @@
 
 **sivamrudram-eng/a2ui-react-native** は唯一の React Native レンダラーで、単一コードベースで iOS と Android の両方に A2UI を提供します。
 
-**BBC6BAE9/a2ui-swift**（旧称 **a2ui-swiftui**）は、iOS、macOS、visionOS、watchOS、tvOS をサポートするネイティブ SwiftUI レンダラーです。18 種類すべての基本 A2UI コンポーネントをカバーし、v0.8 と v0.9 の両プロトコルに対応、JSONL ストリーミングを含み、リアクティビティには Observation フレームワークを使用しています。
+**BBC6BAE9/a2ui-swift**は、A2UI 向けの Swift ベースの仕様準拠ネイティブ Apple レンダラーです。共有 `A2UISwiftCore` レイヤーを介して SwiftUI、UIKit、AppKit をサポートし、iOS、iPadOS、macOS、tvOS、visionOS、watchOS で動作します。公式 A2UI 仕様および Apple ネイティブプラットフォームの動作との緊密な整合性に重点を置き、A2UI v0.8、v0.9、v0.9.1 をサポートします。異なるプラットフォーム間でのピクセル単位の同一性よりも、仕様レベルの相互運用性とネイティブプラットフォームでの表現を優先しています。デフォルトのレンダリングには Human Interface Guidelines に合わせたネイティブ Apple コントロールとプラットフォームに適切なインタラクションパターンが使用され、アプリは A2UI カタログ、テーマ、カスタムコンポーネントを通じてスタイルや動作をカスタマイズできます。
 
 **TanXudong-Vivo/A2UI-Android-Renderer** は、Jetpack Compose と Material 3 で構築されたモジュール式の Android レンダラーで、A2UI v0.9 プロトコルに対応した最初の Android 実装です。13 種類のコンポーネントを完全実装（Coil による画像読み込みを含む）しており、LLM のトークンストリームからのストリーミングレンダリング、`path` 式や `formatDate` によるデータバインディング、追加のコンポーネントタイプを登録できるプラグイン可能なカスタムカタログをカバーしています。デモアプリには、公式の `restaurant_finder` ADK エージェントへのライブ接続も含まれています。
 
