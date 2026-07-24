@@ -2654,7 +2654,8 @@
 <p>コミュニティやサードパーティによる A2UI レンダラー実装の一覧です。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
+<p><ctrl42>call:default_api:replace_file_content
+これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
 互換性、対応バージョン、メンテナンス状況は各プロジェクトで確認してください。</p>
 </div>
 <div class="admonition tip">
@@ -2755,6 +2756,14 @@
 <td><a href="https://github.com/lynx-family/lynx-stack/tree/main/packages/genui/a2ui">GitHub</a> · <a href="https://www.npmjs.com/package/@lynx-js/genui">npm</a> · <a href="https://lynxjs.org/next/react/genui/a2ui.html">Docs</a></td>
 </tr>
 <tr>
+<td><strong>BoteAI/a2ui</strong> (<code>@boteai/a2ui-render</code>)</td>
+<td>React（Web）</td>
+<td>✅</td>
+<td>✅</td>
+<td><img alt="Stars" src="https://img.shields.io/github/stars/BoteAI/a2ui?style=flat-square&amp;label=⭐" /> <img alt="Last commit" src="https://img.shields.io/github/last-commit/BoteAI/a2ui?style=flat-square&amp;label=updated" /></td>
+<td><a href="https://github.com/BoteAI/a2ui">GitHub</a> · <a href="https://www.npmjs.com/package/@boteai/a2ui-render">npm</a></td>
+</tr>
+<tr>
 <td><strong>kokoro-ele/a2ui-ink</strong> (<code>@evanyu/a2ui-ink</code>)</td>
 <td>ターミナル / CLI（Ink）</td>
 <td>❌</td>
@@ -2799,7 +2808,7 @@
 <p><strong>easyops-cn/a2ui-sdk</strong> (<code>@a2ui-sdk/react</code>) は、現時点で最も機能が充実したコミュニティ製 React レンダラーです。11 版の公開、Radix UI プリミティブ、Tailwind CSS スタイリング、専用ドキュメントサイトを備えています。<a href="https://github.com/a2ui-project/a2ui/discussions/489">A2UI の Discussions で告知</a> されました。公式の A2UI React レンダラーについては <a href="https://www.npmjs.com/package/@a2ui/react"><code>@a2ui/react</code></a> を参照してください。</p>
 <p><strong>lmee/A2UI-Android</strong> は重要なギャップを埋める実装です。現時点で唯一の Jetpack Compose レンダラーで、Android 5.0 以降を対象に、20 以上のコンポーネント、データバインディング、アクセシビリティサポートを備えています。</p>
 <p><strong>sivamrudram-eng/a2ui-react-native</strong> は唯一の React Native レンダラーで、単一コードベースで iOS と Android の両方に A2UI を提供します。</p>
-<p><strong>BBC6BAE9/a2ui-swift</strong>（旧称 <strong>a2ui-swiftui</strong>）は、iOS、macOS、visionOS、watchOS、tvOS をサポートするネイティブ SwiftUI レンダラーです。18 種類すべての基本 A2UI コンポーネントをカバーし、v0.8 と v0.9 の両プロトコルに対応、JSONL ストリーミングを含み、リアクティビティには Observation フレームワークを使用しています。</p>
+<p><strong>BBC6BAE9/a2ui-swift</strong>は、A2UI 向けの Swift ベースの仕様準拠ネイティブ Apple レンダラーです。共有 <code>A2UISwiftCore</code> レイヤーを介して SwiftUI、UIKit、AppKit をサポートし、iOS、iPadOS、macOS、tvOS、visionOS、watchOS で動作します。公式 A2UI 仕様および Apple ネイティブプラットフォームの動作との緊密な整合性に重点を置き、A2UI v0.8、v0.9、v0.9.1 をサポートします。異なるプラットフォーム間でのピクセル単位の同一性よりも、仕様レベルの相互運用性とネイティブプラットフォームでの表現を優先しています。デフォルトのレンダリングには Human Interface Guidelines に合わせたネイティブ Apple コントロールとプラットフォームに適切なインタラクションパターンが使用され、アプリは A2UI カタログ、テーマ、カスタムコンポーネントを通じてスタイルや動作をカスタマイズできます。</p>
 <p><strong>TanXudong-Vivo/A2UI-Android-Renderer</strong> は、Jetpack Compose と Material 3 で構築されたモジュール式の Android レンダラーで、A2UI v0.9 プロトコルに対応した最初の Android 実装です。13 種類のコンポーネントを完全実装（Coil による画像読み込みを含む）しており、LLM のトークンストリームからのストリーミングレンダリング、<code>path</code> 式や <code>formatDate</code> によるデータバインディング、追加のコンポーネントタイプを登録できるプラグイン可能なカスタムカタログをカバーしています。デモアプリには、公式の <code>restaurant_finder</code> ADK エージェントへのライブ接続も含まれています。</p>
 <p><strong>AGenUI/AGenUI</strong> は、共通の C++ コアを介して iOS、Android、HarmonyOS をサポートする、A2UI v0.9 向けのクロスプラットフォームネイティブレンダラーです。高いパフォーマンス、拡張性、プラットフォーム間の一貫性を重視して設計されています。AGenUI は A2UI v0.9 を完全に実装しており、UI コンポーネントや関数呼び出しを拡張するためのランタイム API を提供します。また、Basic Catalog を拡張して Table、Carousel、Web、RichText、そしてより豊かな外観・レイアウト制御のための Styles プロパティを追加する <a href="https://github.com/AGenUI/AGenUI/blob/main/agenui_catalog.json">カスタムカタログ</a> を導入していますが、A2UI の拡張可能なカタログモデルとの整合性は保たれています。<a href="https://genui.amap.com/components">コンポーネントデモ</a>、対応するオープンソースの <a href="https://github.com/AGenUI/AGenUI/tree/main/skills/a2ui-generation">A2UI Generation Skill</a>、そして詳細は <a href="https://github.com/AGenUI/AGenUI">GitHub</a> を参照してください。</p>
 <p><strong>lynx-family/lynx-stack</strong> (<code>@lynx-js/genui/a2ui</code>) は、A2UI v0.9 向けの ReactLynx レンダラーを提供します。検証済みのサーバーからクライアントへの A2UI メッセージを <code>MessageStore</code> 経由で受け取り、呼び出し側が提供するカタログから承認済みの ReactLynx コンポーネントをレンダリングし、生成された UI アクションを <code>onAction</code> 経由で転送します。公開されている <code>@lynx-js/genui</code> パッケージは <code>a2ui</code> サブパス経由で A2UI レンダラーを公開しており、GenUI CLI はビルド時のカタログアーティファクト生成と A2UI システムプロンプト生成をサポートしています。</p>
