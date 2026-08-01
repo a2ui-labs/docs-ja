@@ -40,24 +40,129 @@ A2UIは、以下の機能を持つUI記述用のJSONメッセージです：
 
 ### 例
 
-```json
-{"surfaceUpdate": {"surfaceId": "booking", "components": [
-  {"id": "title", "component": {"Text": {"text": {"literalString": "テーブルを予約する"}, "usageHint": "h1"}}},
-  {"id": "datetime", "component": {"DateTimeInput": {"value": {"path": "/booking/date"}, "enableDate": true}}},
-  {"id": "submit-text", "component": {"Text": {"text": {"literalString": "確定"}}}},
-  {"id": "submit-btn", "component": {"Button": {"child": "submit-text", "action": {"name": "confirm_booking"}}}}
-]}}
-```
+=== "v0.8 (レガシー)"
 
-```json
-{"dataModelUpdate": {"surfaceId": "booking", "contents": [
-  {"key": "booking", "valueMap": [{"key": "date", "valueString": "2025-12-16T19:00:00Z"}]}
-]}}
-```
+    ```jsonl
+    {
+      "surfaceUpdate": {
+        "surfaceId": "booking",
+        "components": [
+          {
+            "id": "title",
+            "component": {
+              "Text": {
+                "text": { "literalString": "テーブルを予約する" },
+                "usageHint": "h1"
+              }
+            }
+          },
+          {
+            "id": "datetime",
+            "component": {
+              "DateTimeInput": {
+                "value": { "path": "/booking/date" },
+                "enableDate": true
+              }
+            }
+          },
+          {
+            "id": "submit-text",
+            "component": {
+              "Text": {
+                "text": { "literalString": "確定" }
+              }
+            }
+          },
+          {
+            "id": "submit-btn",
+            "component": {
+              "Button": {
+                "child": "submit-text",
+                "action": { "name": "confirm_booking" }
+              }
+            }
+          }
+        ]
+      }
+    }
+    {
+      "dataModelUpdate": {
+        "surfaceId": "booking",
+        "contents": [
+          {
+            "key": "booking",
+            "valueMap": [
+              { "key": "date", "valueString": "2025-12-16T19:00:00Z" }
+            ]
+          }
+        ]
+      }
+    }
+    {
+      "beginRendering": {
+        "surfaceId": "booking",
+        "root": "title"
+      }
+    }
+    ```
 
-```json
-{"beginRendering": {"surfaceId": "booking", "root": "title"}}
-```
+=== "v0.9 (安定版)"
+
+    ```jsonl
+    {
+      "version": "v0.9.1",
+      "createSurface": {
+        "surfaceId": "booking",
+        "catalogId": "https://a2ui.org/specification/v0_9_1/catalogs/basic/catalog.json"
+      }
+    }
+    {
+      "version": "v0.9.1",
+      "updateComponents": {
+        "surfaceId": "booking",
+        "components": [
+          {
+            "id": "title",
+            "component": "Text",
+            "text": "テーブルを予約する",
+            "variant": "h1"
+          },
+          {
+            "id": "datetime",
+            "component": "DateTimeInput",
+            "value": { "path": "/booking/date" },
+            "enableDate": true
+          },
+          {
+            "id": "submit-text",
+            "component": "Text",
+            "text": "確定"
+          },
+          {
+            "id": "submit-btn",
+            "component": "Button",
+            "child": "submit-text",
+            "variant": "primary",
+            "action": {
+              "event": { "name": "confirm_booking" }
+            }
+          }
+        ]
+      }
+    }
+    {
+      "version": "v0.9.1",
+      "updateDataModel": {
+        "surfaceId": "booking",
+        "path": "/booking",
+        "value": {
+          "date": "2025-12-16T19:00:00Z"
+        }
+      }
+    }
+    ```
+
+    A2UI メッセージは `createSurface` でサーフェスを初期化し、フラットなコンポーネント構造を使い、`version` フィールドを含みます。
 
 クライアントは、これらのメッセージをネイティブコンポーネント (Angular, Flutter, Reactなど) でレンダリングします。
 

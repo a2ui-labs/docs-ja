@@ -222,4 +222,68 @@ A2UI のカタログは、LLM の推論と依存管理を簡単にするため�
 
 クライアントレンダラーは、スキーマ定義を実際のコードへマッピングすることでカタログを実装します。
 
-`Hello World` カタログ向けの TypeScript レンダラーの例です。
+まず、カタログスキーマに合わせてコンポーネント API を TypeScript で定義します。
+
+```typescript
+// api.ts
+import {ComponentApi} from '@a2ui/web_core/v0_9';
+import {z} from 'zod';
+
+export const HelloWorldBannerApi = {
+  name: 'HelloWorldBanner',
+  schema: z.object({
+    message: z.string(),
+    backgroundColor: z.string().default('#f0f0f0'),
+  }).strict(),
+} satisfies ComponentApi;
+```
+
+次に、`CatalogComponent` を拡張してコンポーネントを実装します。
+
+```typescript
+// hello_world_banner.ts
+import {CatalogComponent} from '@a2ui/angular/v0_9';
+import {Component, computed} from '@angular/core';
+import {HelloWorldBannerApi} from './api';
+
+@Component({
+  selector: 'hello-world-banner',
+  template: `
+    <div [style.background-color]="backgroundColor()">
+      <h2>Hello World Banner</h2>
+      <p>{{ message() }}</p>
+    </div>
+  `,
+})
+export class HelloWorldBanner extends CatalogComponent<typeof HelloWorldBannerApi> {
+  protected readonly message = computed(() => this.props()['message']?.value() || '');
+  protected readonly backgroundColor = computed(() => this.props()['backgroundColor']?.value() || '#f0f0f0');
+}
+```
+
+最後に、カスタムコンポーネントを `AngularCatalog` に登録します。
+
+```typescript
+// catalog.ts
+import {AngularCatalog, BASIC_COMPONENTS, BASIC_FUNCTIONS} from '@a2ui/angular/v0_9';
+import {HelloWorldBanner} from './hello_world_banner';
+import {HelloWorldBannerApi} from './api';
+
+const customBannerComponent = {
+  ...HelloWorldBannerApi,
+  component: HelloWorldBanner
+};
+
+export const MY_CATALOG = new AngularCatalog(
+  'https://github.com/.../hello_world/v1/catalog.json',
+  [...BASIC_COMPONENTS, customBannerComponent],
+  BASIC_FUNCTIONS
+);
+```
+
+クライアントレンダラーの動作例は [Orchestrator デモ](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts) で確認できます。
+
+> [!NOTE]
+> Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts) を参照してください。
+>
+> また、クライアント側関数については、クライアントはアクティブなカタログ定義から設定を実行時に読み取ることで、その関数の実行境界(`clientOnly` ステータスなど)を判定します。

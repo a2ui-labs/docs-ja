@@ -204,7 +204,7 @@ Web アプリで次のプロンプトを試してください。
     {"version": "v0.9.1", "updateDataModel": {"surfaceId": "main", "path": "/reservation", "value": {"date": "2025-12-15", "time": "19:00", "guests": 2}}}
     ```
 
-    v0.9 では `createSurface` が `beginRendering` に代わり、コンポーネントはよりフラットな形式を使い、データモデルは型付きの隣接リストではなく通常の JSON 値を使います。
+    コンポーネントはフラットな形式を使い、データモデルは通常の JSON 値を使います。
 
 > 💡 **ただの JSON です**
 >
@@ -218,8 +218,17 @@ Web アプリで次のプロンプトを試してください。
 
 利用可能な A2UI コンポーネントをすべて確認できます。
 
+新規チェックアウトからギャラリーを実行する場合は、まずギャラリーとそのワークスペース依存関係をビルドしてください。
+
 ```bash
-yarn start gallery
+cd renderers/lit/a2ui_explorer
+yarn build
+```
+
+ギャラリーを起動します。
+
+```bash
+yarn dev
 ```
 
 これは、標準コンポーネント（Card、Button、TextField、Timeline など）をすべて紹介するクライアント専用デモです。ライブ例とコードサンプルも含まれます。

@@ -60,24 +60,42 @@ npm install @a2ui/angular @a2ui/web_core
 
 ### 設定例 (v0.9)
 
-A2UI は、プロトコル固有の実装に対してバージョン管理されたインポートを使用します。v0.9 の場合、アプリケーションのプロバイダーを次のように設定します。
+A2UI は、プロトコル固有の実装に対してバージョン管理されたインポートを使用します。v0.9 の場合、`provideA2Ui` を使ってアプリケーションのプロバイダーを次のように設定します。
 
 ```typescript
 import {ApplicationConfig} from '@angular/core';
-import {A2UI_RENDERER_CONFIG, A2uiRendererService, BasicCatalog} from '@a2ui/angular/v0_9';
+import {provideA2Ui, BasicCatalog} from '@a2ui/angular/v0_9';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    {
-      provide: A2UI_RENDERER_CONFIG,
-      useValue: {
-        catalogs: [new BasicCatalog()],
-        actionHandler: action => {
-          console.log('Action dispatched:', action);
-        },
+    provideA2Ui({
+      catalogs: [new BasicCatalog()],
+      actionHandler: action => {
+        console.log('Action dispatched:', action);
       },
-    },
-    A2uiRendererService,
+    }),
+  ],
+};
+```
+
+#### アクションハンドラーでの依存性注入
+
+`actionHandler` に依存性の注入が必要な場合(たとえば、アクションがディスパッチされたときにサービスを呼び出す場合)、`provideA2Ui` にファクトリー関数を渡すことができます。このファクトリー関数の中では、Angular の `inject()` 関数を使用できます。
+
+```typescript
+import {ApplicationConfig, inject} from '@angular/core';
+import {provideA2Ui, BasicCatalog} from '@a2ui/angular/v0_9';
+import {MyActionDispatcherService} from './my-action-dispatcher.service';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideA2Ui(() => {
+      const dispatcher = inject(MyActionDispatcherService);
+      return {
+        catalogs: [new BasicCatalog()],
+        actionHandler: action => dispatcher.dispatch(action),
+      };
+    }),
   ],
 };
 ```

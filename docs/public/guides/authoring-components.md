@@ -106,45 +106,77 @@
 
 ## 2. コンポーネントを実装する(クライアント)
 
-クライアント側フレームワークを使ってコンポーネントを実装します。Angular の場合、コンポーネントは `@a2ui/angular` が提供する `DynamicComponent` を拡張する必要があります。
+クライアント側フレームワークを使ってコンポーネントを実装します。Angular の場合、コンポーネントは `@a2ui/angular/v0_9` が提供する `CatalogComponent` を拡張する必要があります。
 
-[`orchestrator`](../../../samples/community/client/angular/projects/orchestrator/README.md) の例では、`Chart` コンポーネントは [`chart.ts`](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/chart.ts) に定義されています。
+`rizzcharts` の例では、`Chart` コンポーネントは `chart.ts` に定義されています。
 
-{% raw %}
+まず、コンポーネントの API を TypeScript で定義します。これは手順 1 で定義した JSON Schema と一致させる必要があります。
 
 ```typescript
-import {DynamicComponent} from '@a2ui/angular';
-import * as Primitives from '@a2ui/web_core/types/primitives';
-import * as Types from '@a2ui/web_core/types/types';
-import {Component, computed, input, Signal, signal} from '@angular/core';
+// api.ts
+import {ComponentApi} from '@a2ui/web_core/v0_9';
+import {z} from 'zod';
+
+export const ChartApi = {
+  name: 'Chart',
+  schema: z.object({
+    type: z.enum(['doughnut', 'pie']),
+    title: z.string().optional(),
+    chartData: z.array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+        drillDown: z.array(
+          z.object({
+            label: z.string(),
+            value: z.number(),
+          })
+        ).optional(),
+      })
+    ),
+  }).strict(),
+} satisfies ComponentApi;
+```
+
+次に、Angular コンポーネントを実装します。
+
+```typescript
+import {CatalogComponent} from '@a2ui/angular/v0_9';
+import {Component, computed} from '@angular/core';
+import {BaseChartDirective} from 'ng2-charts';
+import {ChartApi} from './api';
 
 @Component({
   selector: 'a2ui-chart',
+  imports: [BaseChartDirective],
   template: `
     <div>
-      <h2>{{ resolvedTitle() }}</h2>
-      <canvas baseChart [data]="currentData()" [type]="chartType()"></canvas>
+      <h2>{{ title() }}</h2>
+      <canvas baseChart [data]="chartData()" [type]="chartType()"></canvas>
     </div>
   `,
 })
-export class Chart extends DynamicComponent<Types.CustomNode> {
-  readonly type = input.required<string>();
-  protected readonly chartType = computed(() => this.type() as ChartType);
-
-  readonly title = input<Primitives.StringValue | null>();
-  protected readonly resolvedTitle = computed(() => super.resolvePrimitive(this.title() ?? null));
-
-  readonly chartData = input.required<Primitives.StringValue | null>();
-  // ... data resolution logic using super.resolvePrimitive for data paths
+export class Chart extends CatalogComponent<typeof ChartApi> {
+  protected readonly chartType = computed(() => this.props()['type']?.value() || 'pie');
+  protected readonly title = computed(() => this.props()['title']?.value() || '');
+  protected readonly chartData = computed(() => {
+    const rawData = this.props()['chartData']?.value() || [];
+    return {
+      labels: rawData.map(item => item.label),
+      datasets: [
+        {
+          data: rawData.map(item => item.value),
+        },
+      ],
+    };
+  });
 }
 ```
 
-{% endraw %}
-
 コンポーネントを実装するときは、次の重要点を意識してください。
 
-- **`DynamicComponent` を拡張する**: データバインディング解決のための `resolvePrimitive` にアクセスできます。
-- **Angular Inputs を使う**: スキーマのプロパティを Angular input にマッピングします。
+- **`CatalogComponent` を拡張する**: 型安全な `props` シグナル入力にアクセスできます。
+- **`props()` シグナルを使う**: `this.props()['propertyName']?.value()` を通じて解決済みプロパティへリアクティブにアクセスします。データバインディングや式の解決はフレームワークが自動的に処理します。
 
 ---
 
@@ -152,32 +184,28 @@ export class Chart extends DynamicComponent<Types.CustomNode> {
 
 コンポーネントを実装したら、クライアントカタログに登録します。これにより、エージェントが使用するコンポーネント名が実装クラスにマッピングされます。
 
-[`orchestrator`](../../../samples/community/client/angular/projects/orchestrator/README.md) の例では、これは [`catalog.ts`](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts) で行われます。
+カタログの定義には `AngularCatalog` クラスを使用します。
 
 ```typescript
-import {Catalog, DEFAULT_CATALOG} from '@a2ui/angular';
-import {inputBinding} from '@angular/core';
+import {AngularCatalog, BASIC_COMPONENTS, BASIC_FUNCTIONS} from '@a2ui/angular/v0_9';
+import {Chart} from './chart';
+import {ChartApi} from './api';
 
-export const RIZZ_CHARTS_CATALOG = {
-  ...DEFAULT_CATALOG,
-  Chart: {
-    type: () => import('./chart').then(r => r.Chart),
-    bindings: ({properties}) => [
-      inputBinding('type', () => ('type' in properties && properties['type']) || undefined),
-      inputBinding('title', () => ('title' in properties && properties['title']) || undefined),
-      inputBinding(
-        'chartData',
-        () => ('chartData' in properties && properties['chartData']) || undefined,
-      ),
-    ],
-  },
-} as Catalog;
+const customChartComponent = {
+  ...ChartApi,
+  component: Chart
+};
+
+export const RIZZ_CHARTS_CATALOG = new AngularCatalog(
+  'https://github.com/.../rizzcharts_catalog_definition.json',
+  [...BASIC_COMPONENTS, customChartComponent],
+  BASIC_FUNCTIONS
+);
 ```
 
 登録時の重要点は次のとおりです。
 
-- **Lazy Loading**: `import()` を使ってコンポーネントコードを lazy-load します。
-- **Input Bindings**: `inputBinding` を使って、スキーマのプロパティを Angular input にマッピングします。
+- **Eager Registration**: コンポーネントクラスはカタログ定義に直接登録されます。
 
 ---
 

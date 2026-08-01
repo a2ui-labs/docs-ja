@@ -3,7 +3,6 @@
 コミュニティやサードパーティによる A2UI レンダラー実装の一覧です。
 
 !!! note
-    <ctrl42>call:default_api:replace_file_content
     これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
     互換性、対応バージョン、メンテナンス状況は各プロジェクトで確認してください。
 
@@ -26,6 +25,7 @@
 | **lynx-family/lynx-stack** (`@lynx-js/genui/a2ui`) | Lynx（モバイル、Web、デスクトップ） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/lynx-family/lynx-stack?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/lynx-family/lynx-stack?path=packages%2Fgenui%2Fa2ui&style=flat-square&label=updated) | [GitHub](https://github.com/lynx-family/lynx-stack/tree/main/packages/genui/a2ui) · [npm](https://www.npmjs.com/package/@lynx-js/genui) · [Docs](https://lynxjs.org/next/react/genui/a2ui.html) |
 | **BoteAI/a2ui** (`@boteai/a2ui-render`) | React（Web） | ✅ | ✅ | ![Stars](https://img.shields.io/github/stars/BoteAI/a2ui?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/BoteAI/a2ui?style=flat-square&label=updated) | [GitHub](https://github.com/BoteAI/a2ui) · [npm](https://www.npmjs.com/package/@boteai/a2ui-render) |
 | **kokoro-ele/a2ui-ink** (`@evanyu/a2ui-ink`) | ターミナル / CLI（Ink） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/kokoro-ele/a2ui-ink?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/kokoro-ele/a2ui-ink?style=flat-square&label=updated) | [GitHub](https://github.com/kokoro-ele/a2ui-ink) · [npm](https://www.npmjs.com/package/@evanyu/a2ui-ink) |
+| **yessGlory17/generative-mui** (`@yessglory/generative-mui-react`) | React + Material UI（Web） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/yessGlory17/generative-mui?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/yessGlory17/generative-mui?style=flat-square&label=updated) | [GitHub](https://github.com/yessGlory17/generative-mui) · [npm](https://www.npmjs.com/package/@yessglory/generative-mui-react) |
 
 ### 注目のプロジェクト
 
@@ -62,6 +62,8 @@
 **AGenUI/AGenUI** は、共通の C++ コアを介して iOS、Android、HarmonyOS をサポートする、A2UI v0.9 向けのクロスプラットフォームネイティブレンダラーです。高いパフォーマンス、拡張性、プラットフォーム間の一貫性を重視して設計されています。AGenUI は A2UI v0.9 を完全に実装しており、UI コンポーネントや関数呼び出しを拡張するためのランタイム API を提供します。また、Basic Catalog を拡張して Table、Carousel、Web、RichText、そしてより豊かな外観・レイアウト制御のための Styles プロパティを追加する [カスタムカタログ](https://github.com/AGenUI/AGenUI/blob/main/agenui_catalog.json) を導入していますが、A2UI の拡張可能なカタログモデルとの整合性は保たれています。[コンポーネントデモ](https://genui.amap.com/components)、対応するオープンソースの [A2UI Generation Skill](https://github.com/AGenUI/AGenUI/tree/main/skills/a2ui-generation)、そして詳細は [GitHub](https://github.com/AGenUI/AGenUI) を参照してください。
 
 **lynx-family/lynx-stack** (`@lynx-js/genui/a2ui`) は、A2UI v0.9 向けの ReactLynx レンダラーを提供します。検証済みのサーバーからクライアントへの A2UI メッセージを `MessageStore` 経由で受け取り、呼び出し側が提供するカタログから承認済みの ReactLynx コンポーネントをレンダリングし、生成された UI アクションを `onAction` 経由で転送します。公開されている `@lynx-js/genui` パッケージは `a2ui` サブパス経由で A2UI レンダラーを公開しており、GenUI CLI はビルド時のカタログアーティファクト生成と A2UI システムプロンプト生成をサポートしています。
+
+**yessGlory17/generative-mui** (`@yessglory/generative-mui-react`) は、A2UI（v0.9.1）向けの **Material UI** レンダラーです。Basic Catalog の 18 コンポーネントすべてを MUI へ 1 対 1 でマッピングし、**ホストアプリの既存の `<ThemeProvider>` の内側で**レンダリングします — サーフェス自体は独自のテーマを持たず、ホスト側のパレットやタイポグラフィを継承するため、テーマが変わると全体のスキンも先頭から末尾まで切り替わります。フレームワークに依存しないコア (`@yessglory/generative-mui-core` — Zod スキーマ、JSONL パーサー、JSON Pointer、決定的で購読可能な `SurfaceStore`、プロバイダー非依存のエージェントツールスキーマを含む) と React/MUI アダプターに分割されており、`react → core` の一方向依存は lint 時に強制されます。Basic Catalog に加えて、オプトインの Extended Catalog（`@mui/x-charts` によるチャート、Table など）、双方向データバインディング、`checks` によるバリデーション、ストリーミング耐性（段階的なスケルトン表示、末尾追記のみの文字列差分、循環・深さ制限およびノードごとのエラーバウンダリ）、そしてセキュリティガード（未登録の型は実行されない、エージェント由来の `sx` / `style` / `className` は除去される、ローカル `regex` には ReDoS 対策の長さ上限を設定）を備えています。
 
 ## レンダラーの投稿
 
