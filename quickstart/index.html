@@ -3074,7 +3074,7 @@
 <p><strong>データの投入:</strong></p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v0.9.1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;updateDataModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;surfaceId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/reservation&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;19:00&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;guests&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">}}}</span>
 </span></code></pre></div>
-<p>v0.9 では <code>createSurface</code> が <code>beginRendering</code> に代わり、コンポーネントはよりフラットな形式を使い、データモデルは型付きの隣接リストではなく通常の JSON 値を使います。</p>
+<p>コンポーネントはフラットな形式を使い、データモデルは通常の JSON 値を使います。</p>
 </div>
 </div>
 </div>
@@ -3086,7 +3086,12 @@
 <p>このリポジトリには、ほかにもいくつかのデモがあります。</p>
 <h3 id="_6">コンポーネントギャラリー（エージェント不要）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>利用可能な A2UI コンポーネントをすべて確認できます。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>yarn<span class="w"> </span>start<span class="w"> </span>gallery
+<p>新規チェックアウトからギャラリーを実行する場合は、まずギャラリーとそのワークスペース依存関係をビルドしてください。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>renderers/lit/a2ui_explorer
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>yarn<span class="w"> </span>build
+</span></code></pre></div>
+<p>ギャラリーを起動します。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>yarn<span class="w"> </span>dev
 </span></code></pre></div>
 <p>これは、標準コンポーネント（Card、Button、TextField、Timeline など）をすべて紹介するクライアント専用デモです。ライブ例とコードサンプルも含まれます。</p>
 <h3 id="_7">他の言語・フレームワーク<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -3119,19 +3124,19 @@
 <p>ブラウザを開いたときに <code>ERR_CONNECTION_REFUSED</code> が出ても心配いりません。これは既知の競合です (<a href="https://github.com/a2ui-project/a2ui/issues/587">#587</a>)。Web アプリが Python エージェントより先に起動するためです。数秒待ってからページを再読み込みしてください。</p>
 <h3 id="python-uv">Python / uv の問題<a class="headerlink" href="#python-uv" title="Permanent link">&para;</a></h3>
 <p>デモエージェントの実行には <a href="https://docs.astral.sh/uv/">uv</a> が必要です。<code>uv: command not found</code> が出る場合は、次を試してください。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># uv をインストール</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># 確認</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>uv<span class="w"> </span>--version
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># uv をインストール</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># 確認</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>uv<span class="w"> </span>--version
 </span></code></pre></div>
 <p>その他の Python エラーが出る場合は、次を確認してください。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Python 3.10 以降が利用可能か確認</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>python3<span class="w"> </span>--version
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># エージェントを手動で実行してみる</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">cd</span><span class="w"> </span>samples/agent/adk/restaurant_finder
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>uv<span class="w"> </span>run<span class="w"> </span>.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Python 3.10 以降が利用可能か確認</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>python3<span class="w"> </span>--version
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># エージェントを手動で実行してみる</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nb">cd</span><span class="w"> </span>samples/agent/adk/restaurant_finder
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>uv<span class="w"> </span>run<span class="w"> </span>.
 </span></code></pre></div>
 <h3 id="_12">まだ問題が解決しない場合<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ul>

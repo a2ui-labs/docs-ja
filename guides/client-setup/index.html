@@ -1081,10 +1081,27 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="設定例 (v0.9)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        アクションハンドラーでの依存性注入
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         ストリーミング
@@ -1122,7 +1139,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         エージェントへの接続
@@ -1133,7 +1150,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         ユーザーアクションの処理
@@ -1144,7 +1161,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         エラー処理
@@ -1155,7 +1172,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         次のステップ
@@ -2588,10 +2605,27 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="設定例 (v0.9)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        アクションハンドラーでの依存性注入
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         ストリーミング
@@ -2629,7 +2663,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         エージェントへの接続
@@ -2640,7 +2674,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         ユーザーアクションの処理
@@ -2651,7 +2685,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         エラー処理
@@ -2662,7 +2696,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         次のステップ
@@ -2831,37 +2865,51 @@
 <li><strong><code>A2UI_RENDERER_CONFIG</code> トークン</strong>: カタログとアクションハンドラーでレンダラーを設定するために使用します。</li>
 </ul>
 <h3 id="v09">設定例 (v0.9)<a class="headerlink" href="#v09" title="Permanent link">&para;</a></h3>
-<p>A2UI は、プロトコル固有の実装に対してバージョン管理されたインポートを使用します。v0.9 の場合、アプリケーションのプロバイダーを次のように設定します。</p>
+<p>A2UI は、プロトコル固有の実装に対してバージョン管理されたインポートを使用します。v0.9 の場合、<code>provideA2Ui</code> を使ってアプリケーションのプロバイダーを次のように設定します。</p>
 <div class="language-typescript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">ApplicationConfig</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">A2UI_RENDERER_CONFIG</span><span class="p">,</span><span class="w"> </span><span class="nx">A2uiRendererService</span><span class="p">,</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/angular/v0_9&#39;</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">provideA2Ui</span><span class="p">,</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/angular/v0_9&#39;</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">appConfig</span><span class="o">:</span><span class="w"> </span><span class="kt">ApplicationConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nx">providers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nx">provide</span><span class="o">:</span><span class="w"> </span><span class="kt">A2UI_RENDERER_CONFIG</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nx">useValue</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nx">catalogs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">()],</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nx">actionHandler</span><span class="o">:</span><span class="w"> </span><span class="kt">action</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Action dispatched:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="p">},</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="p">},</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="nx">A2uiRendererService</span><span class="p">,</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">};</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">provideA2Ui</span><span class="p">({</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nx">catalogs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">()],</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nx">actionHandler</span><span class="o">:</span><span class="w"> </span><span class="kt">action</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Action dispatched:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="p">},</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="p">}),</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">};</span>
+</span></code></pre></div>
+<h4 id="_4">アクションハンドラーでの依存性注入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><code>actionHandler</code> に依存性の注入が必要な場合(たとえば、アクションがディスパッチされたときにサービスを呼び出す場合)、<code>provideA2Ui</code> にファクトリー関数を渡すことができます。このファクトリー関数の中では、Angular の <code>inject()</code> 関数を使用できます。</p>
+<div class="language-typescript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">ApplicationConfig</span><span class="p">,</span><span class="w"> </span><span class="nx">inject</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">provideA2Ui</span><span class="p">,</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@a2ui/angular/v0_9&#39;</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">MyActionDispatcherService</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./my-action-dispatcher.service&#39;</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">appConfig</span><span class="o">:</span><span class="w"> </span><span class="kt">ApplicationConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nx">providers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nx">provideA2Ui</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">dispatcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">inject</span><span class="p">(</span><span class="nx">MyActionDispatcherService</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="nx">catalogs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">BasicCatalog</span><span class="p">()],</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nx">actionHandler</span><span class="o">:</span><span class="w"> </span><span class="kt">action</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatcher</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">action</span><span class="p">),</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="p">};</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}),</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p">],</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">};</span>
 </span></code></pre></div>
 <p><strong>動作するサンプルを見る:</strong> <a href="https://github.com/a2ui-project/a2ui/tree/main/samples/client/angular">Angular サンプル</a></p>
-<h3 id="_4">ストリーミング<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">ストリーミング<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Angular クライアントはデフォルトでストリーミング API を使用します。ストリーミングを無効にするには、アプリを起動する前に <code>ENABLE_STREAMING</code> 環境変数を <code>false</code> に設定します。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_STREAMING</span><span class="o">=</span><span class="nb">false</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>yarn<span class="w"> </span>start<span class="w"> </span>restaurant
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ENABLE_STREAMING</span><span class="o">=</span><span class="nb">false</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>yarn<span class="w"> </span>start<span class="w"> </span>restaurant
 </span></code></pre></div>
 <blockquote>
 <p>[!NOTE]
 <strong>パッケージマネージャーの使用について:</strong> 上記の <code>yarn start</code> コマンドは、A2UI monorepo リポジトリ内でサンプルアプリケーションを実行する場合に特有のものです。このリポジトリ外でのご自身の通常の利用やスタンドアロンプロジェクトでは、お好みのパッケージマネージャー(npm、pnpm など)を使用してください。</p>
 </blockquote>
 <h2 id="react">React<a class="headerlink" href="#react" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@a2ui/react<span class="w"> </span>@a2ui/web_core
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@a2ui/react<span class="w"> </span>@a2ui/web_core
 </span></code></pre></div>
 <p>React レンダラーは次を提供します。</p>
 <ul>
@@ -2871,11 +2919,11 @@
 </ul>
 <p><strong>動作するサンプルを見る:</strong> <a href="https://github.com/a2ui-project/a2ui/tree/main/samples/client/react/shell">React shell</a></p>
 <h2 id="flutter-genui-sdk">Flutter (GenUI SDK)<a class="headerlink" href="#flutter-genui-sdk" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter<span class="w"> </span>pub<span class="w"> </span>add<span class="w"> </span>flutter_genui
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter<span class="w"> </span>pub<span class="w"> </span>add<span class="w"> </span>flutter_genui
 </span></code></pre></div>
 <p>Flutter は、ネイティブな A2UI レンダリングを提供する GenUI SDK を使用します。</p>
 <p><strong>ドキュメント:</strong> <a href="https://docs.flutter.dev/ai/genui">GenUI SDK</a> | <a href="https://github.com/flutter/genui">GitHub</a> | <a href="https://github.com/flutter/genui/blob/main/packages/genui/README.md#getting-started-with-genui">GenUI Flutter パッケージの README</a></p>
-<h2 id="_5">エージェントへの接続<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">エージェントへの接続<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>クライアントアプリケーションは次を行う必要があります。</p>
 <ol>
 <li>エージェントから(トランスポート経由で)<strong>A2UI メッセージを受信する</strong></li>
@@ -2890,7 +2938,7 @@
 </ul>
 <p>A2A プロトコルクライアントの使用例については、<a href="https://github.com/a2ui-project/a2ui/tree/main/samples/client/lit/shell/client.ts">samples/client/lit/shell/client.ts</a> を参照してください。</p>
 <p><strong>参照:</strong> <a href="../../concepts/transports/">トランスポート層</a></p>
-<h2 id="_6">ユーザーアクションの処理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">ユーザーアクションの処理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>ユーザーが A2UI コンポーネントを操作すると(ボタンのクリック、フォームの送信など)、クライアントは次を行います。</p>
 <ol>
 <li>コンポーネントからアクションイベントをキャプチャする</li>
@@ -2899,7 +2947,7 @@
 <li>エージェントの応答メッセージを処理する</li>
 </ol>
 <p>ボタンのクリックとフォーム送信の処理例については、<a href="https://github.com/a2ui-project/a2ui/tree/main/samples/client/lit/shell/app.ts">samples/client/lit/shell/app.ts</a> の <code>#maybeRenderData</code> 内にある <code>@a2uiaction</code> イベントハンドラーを参照してください。</p>
-<h2 id="_7">エラー処理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">エラー処理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>処理すべき一般的なエラー:</p>
 <ul>
 <li><strong>Invalid Surface ID</strong>: <code>beginRendering</code>(v0.8)または <code>createSurface</code>(v0.9)を受信する前に surface が参照された。</li>
@@ -2908,7 +2956,7 @@
 <li><strong>Schema Validation Failed</strong>: メッセージ形式が A2UI 仕様と一致しているか確認してください。</li>
 </ul>
 <p>通信エラーの処理例については、<a href="https://github.com/a2ui-project/a2ui/tree/main/samples/client/lit/shell/app.ts">samples/client/lit/shell/app.ts</a> の <code>#sendMessage</code> 内にある <code>try...catch</code> ブロックを参照してください。</p>
-<h2 id="_8">次のステップ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">次のステップ<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong><a href="../../quickstart/">クイックスタート</a></strong>: デモアプリケーションを試す</li>
 <li><strong><a href="../theming/">テーマとスタイリング</a></strong>: 見た目をカスタマイズする</li>

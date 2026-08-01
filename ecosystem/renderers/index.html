@@ -2654,8 +2654,7 @@
 <p>コミュニティやサードパーティによる A2UI レンダラー実装の一覧です。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><ctrl42>call:default_api:replace_file_content
-これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
+<p>これらのレンダラーは A2UI チームではなく、それぞれの作者が保守しています。
 互換性、対応バージョン、メンテナンス状況は各プロジェクトで確認してください。</p>
 </div>
 <div class="admonition tip">
@@ -2771,6 +2770,14 @@
 <td><img alt="Stars" src="https://img.shields.io/github/stars/kokoro-ele/a2ui-ink?style=flat-square&amp;label=⭐" /> <img alt="Last commit" src="https://img.shields.io/github/last-commit/kokoro-ele/a2ui-ink?style=flat-square&amp;label=updated" /></td>
 <td><a href="https://github.com/kokoro-ele/a2ui-ink">GitHub</a> · <a href="https://www.npmjs.com/package/@evanyu/a2ui-ink">npm</a></td>
 </tr>
+<tr>
+<td><strong>yessGlory17/generative-mui</strong> (<code>@yessglory/generative-mui-react</code>)</td>
+<td>React + Material UI（Web）</td>
+<td>❌</td>
+<td>✅</td>
+<td><img alt="Stars" src="https://img.shields.io/github/stars/yessGlory17/generative-mui?style=flat-square&amp;label=⭐" /> <img alt="Last commit" src="https://img.shields.io/github/last-commit/yessGlory17/generative-mui?style=flat-square&amp;label=updated" /></td>
+<td><a href="https://github.com/yessGlory17/generative-mui">GitHub</a> · <a href="https://www.npmjs.com/package/@yessglory/generative-mui-react">npm</a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="_3">注目のプロジェクト<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -2812,6 +2819,7 @@
 <p><strong>TanXudong-Vivo/A2UI-Android-Renderer</strong> は、Jetpack Compose と Material 3 で構築されたモジュール式の Android レンダラーで、A2UI v0.9 プロトコルに対応した最初の Android 実装です。13 種類のコンポーネントを完全実装（Coil による画像読み込みを含む）しており、LLM のトークンストリームからのストリーミングレンダリング、<code>path</code> 式や <code>formatDate</code> によるデータバインディング、追加のコンポーネントタイプを登録できるプラグイン可能なカスタムカタログをカバーしています。デモアプリには、公式の <code>restaurant_finder</code> ADK エージェントへのライブ接続も含まれています。</p>
 <p><strong>AGenUI/AGenUI</strong> は、共通の C++ コアを介して iOS、Android、HarmonyOS をサポートする、A2UI v0.9 向けのクロスプラットフォームネイティブレンダラーです。高いパフォーマンス、拡張性、プラットフォーム間の一貫性を重視して設計されています。AGenUI は A2UI v0.9 を完全に実装しており、UI コンポーネントや関数呼び出しを拡張するためのランタイム API を提供します。また、Basic Catalog を拡張して Table、Carousel、Web、RichText、そしてより豊かな外観・レイアウト制御のための Styles プロパティを追加する <a href="https://github.com/AGenUI/AGenUI/blob/main/agenui_catalog.json">カスタムカタログ</a> を導入していますが、A2UI の拡張可能なカタログモデルとの整合性は保たれています。<a href="https://genui.amap.com/components">コンポーネントデモ</a>、対応するオープンソースの <a href="https://github.com/AGenUI/AGenUI/tree/main/skills/a2ui-generation">A2UI Generation Skill</a>、そして詳細は <a href="https://github.com/AGenUI/AGenUI">GitHub</a> を参照してください。</p>
 <p><strong>lynx-family/lynx-stack</strong> (<code>@lynx-js/genui/a2ui</code>) は、A2UI v0.9 向けの ReactLynx レンダラーを提供します。検証済みのサーバーからクライアントへの A2UI メッセージを <code>MessageStore</code> 経由で受け取り、呼び出し側が提供するカタログから承認済みの ReactLynx コンポーネントをレンダリングし、生成された UI アクションを <code>onAction</code> 経由で転送します。公開されている <code>@lynx-js/genui</code> パッケージは <code>a2ui</code> サブパス経由で A2UI レンダラーを公開しており、GenUI CLI はビルド時のカタログアーティファクト生成と A2UI システムプロンプト生成をサポートしています。</p>
+<p><strong>yessGlory17/generative-mui</strong> (<code>@yessglory/generative-mui-react</code>) は、A2UI（v0.9.1）向けの <strong>Material UI</strong> レンダラーです。Basic Catalog の 18 コンポーネントすべてを MUI へ 1 対 1 でマッピングし、<strong>ホストアプリの既存の <code>&lt;ThemeProvider&gt;</code> の内側で</strong>レンダリングします — サーフェス自体は独自のテーマを持たず、ホスト側のパレットやタイポグラフィを継承するため、テーマが変わると全体のスキンも先頭から末尾まで切り替わります。フレームワークに依存しないコア (<code>@yessglory/generative-mui-core</code> — Zod スキーマ、JSONL パーサー、JSON Pointer、決定的で購読可能な <code>SurfaceStore</code>、プロバイダー非依存のエージェントツールスキーマを含む) と React/MUI アダプターに分割されており、<code>react → core</code> の一方向依存は lint 時に強制されます。Basic Catalog に加えて、オプトインの Extended Catalog（<code>@mui/x-charts</code> によるチャート、Table など）、双方向データバインディング、<code>checks</code> によるバリデーション、ストリーミング耐性（段階的なスケルトン表示、末尾追記のみの文字列差分、循環・深さ制限およびノードごとのエラーバウンダリ）、そしてセキュリティガード（未登録の型は実行されない、エージェント由来の <code>sx</code> / <code>style</code> / <code>className</code> は除去される、ローカル <code>regex</code> には ReDoS 対策の長さ上限を設定）を備えています。</p>
 <h2 id="_7">レンダラーの投稿<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>A2UI レンダラーを作成したなら、ぜひここに掲載しましょう。</p>
 <h3 id="_8">投稿方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
