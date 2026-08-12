@@ -40,7 +40,9 @@ nav:
       - どのように使えますか？: introduction/how-to-use.md
       - エージェントUIエコシステム: introduction/agent-ui-ecosystem.md
   - クイックスタート: quickstart.md
-  - A2UI Composer ⭐: composer.md
+  - A2UI Composer ⭐:
+      - composer/index.md
+      - Composer 連携: composer/composer_renderer_integration.md
   - 概念:
       - 概要: concepts/overview.md
       - 用語集: concepts/glossary.md

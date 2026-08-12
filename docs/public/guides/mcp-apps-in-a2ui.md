@@ -26,8 +26,9 @@ Model Context Protocol(MCP) は、MCP サーバーがリッチでインタラク
     - 権限: host template では **sandbox しないでください**。例: [`mcp-app.ts`](https://github.com/a2ui-project/a2ui/blob/main/samples/community/client/lit/mcp-apps-in-a2ui-sample/mcp-app.ts) または [`mcp-apps-component.ts`](https://github.com/a2ui-project/a2ui/blob/main/samples/community/client/lit/mcp-apps-in-a2ui-sample/ui/custom-components/mcp-apps-component.ts)。
     - Host origin 検証: メッセージが期待される host origin から来ていることを検証します。
 2.  **Embedded App(Inner Iframe)**: 最も内側の `iframe` です。制限された権限で `srcdoc` により動的に注入されます。
-    - 権限: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`(`allow-same-origin` は**絶対に**含めないでください)。
+    - 権限: `sandbox="allow-scripts allow-forms allow-popups allow-modals"`(`allow-same-origin`、`allow-top-navigation`、`allow-top-navigation-by-user-activation` は**絶対に**含めないでください)。
     - 分離: unique origin により、`localStorage`、`sessionStorage`、`IndexedDB`、cookies へのアクセスがなくなります。
+    - 最上位ウィンドウのハイジャック対策: `allow-top-navigation` と `allow-top-navigation-by-user-activation` を除外することで、埋め込まれたスクリプトが frame busting 攻撃 (`window.top.location = "..."` など) によって host ウィンドウを別の場所へリダイレクトすることを防げます。
 
 ### 物理的な Iframe のネスト
 

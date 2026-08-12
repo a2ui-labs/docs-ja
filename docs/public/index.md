@@ -174,6 +174,6 @@ A2UI が解決する問題は、**AI エージェントが信頼境界をまた�
 
 ### A2UI Composer
 
-CopilotKit が公開している [A2UI Widget Builder](https://go.copilotkit.ai/A2UI-widget-builder) もお試しください。
+公開版の [A2UI Composer](https://a2ui-project.github.io/composer/) を提供しています。
 
-[![A2UI Composer](assets/A2UI-widget-builder.png)](https://go.copilotkit.ai/A2UI-widget-builder)
+[A2UI Composer のドキュメント](./composer/index.md)
