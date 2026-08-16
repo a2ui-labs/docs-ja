@@ -1,3 +1,7 @@
+---
+render_macros: false
+---
+
 # A2UI カタログ
 
 ## 概要
@@ -97,6 +101,7 @@ Basic Catalog は開始点として便利ですが、本番アプリの多くは
 ```json
 {
   "$id": "https://github.com/.../hello_world/v1/catalog.json",
+  "catalogId": "https://github.com/.../hello_world/v1/catalog.json",
   "components": {
     "HelloWorldBanner": {
       "type": "object",
@@ -168,6 +173,7 @@ A2UI のカタログは、LLM の推論と依存管理を簡単にするため�
 ```json
 {
   "$id": "https://github.com/.../hello_world_with_all_basic/v1/catalog.json",
+  "catalogId": "https://github.com/.../hello_world_with_all_basic/v1/catalog.json",
   "components": {
     "allOf": [
       { "$ref": "basic_catalog_definition.json#/components" },
@@ -198,6 +204,7 @@ A2UI のカタログは、LLM の推論と依存管理を簡単にするため�
 ```json
 {
   "$id": "https://github.com/.../hello_world_with_some_basic/v1/catalog.json",
+  "catalogId": "https://github.com/.../hello_world_with_some_basic/v1/catalog.json",
   "components": {
     "allOf": [
       { "$ref": "basic_catalog.json#/components/Text" },
@@ -287,3 +294,16 @@ export const MY_CATALOG = new AngularCatalog(
 > Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts) を参照してください。
 >
 > また、クライアント側関数については、クライアントはアクティブなカタログ定義から設定を実行時に読み取ることで、その関数の実行境界(`clientOnly` ステータスなど)を判定します。
+
+## カタログの命名とバージョニング
+
+A2UI のコンポーネントカタログにはバージョニングが必要です。カタログ定義はコンパイル時に組み込まれることが多く、エージェントが生成する内容とクライアントが描画できる内容が食い違うと UI に影響が及ぶためです。
+
+### CatalogId の命名規則
+
+`catalogId` は、クライアントとエージェントの間のネゴシエーションに使われる一意のテキスト識別子です。
+
+- **形式:** `catalogId` は技術的には文字列ですが、A2UI の慣例では **URI** を使います(例: `https://example.com/catalogs/mysurface/v1/catalog.json`)。
+- **目的:** URI を使うことで ID がグローバルに一意になり、開発者がブラウザーでそのまま確認しやすくなります。
+- **実行時のフェッチは行わない:** この URI は、エージェントやクライアントが実行時にカタログをダウンロードすることを意味しません。**カタログ定義は、エージェントとクライアントが事前に(コンパイル / デプロイ時に)把握している必要があります。** URI は安定した識別子としてのみ機能します。
+- **JSON Schema との互換性(`$id` と `catalogId`):** A2UI のカタログは現在 JSON Schema ドキュメントとして表現されるため、カタログ定義には `$id`(JSON Schema ツール向け)と `catalogId`(A2UI SDK およびカタログネゴシエーション向け)の両方を含め、どちらのフィールドにも同じ URI を設定してください。

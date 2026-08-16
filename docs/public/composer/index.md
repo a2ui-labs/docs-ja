@@ -1,3 +1,7 @@
+---
+render_macros: false
+---
+
 # A2UI Composer
 
 **A2UI Composer** を使って、A2UI ウィジェットをインタラクティブに作ってみましょう。

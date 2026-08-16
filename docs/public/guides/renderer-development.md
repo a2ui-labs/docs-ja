@@ -126,11 +126,10 @@ import * as Styles from '@a2ui/web_core/styles/index';
     v0.9.1 のすべての要件に加えて、以下の拡張が必要です。
     - **サーフェスプロパティ**:
         - `surfaceProperties`(`theme` から改名)を伴う `createSurface` を処理します。カスタムのプライマリブランドカラーは、サーフェススキーマ内ではサポートされなくなりました。
-    - **アクションレスポンス(RPC)**:
-        - `actionId` と、戻り値の `value` または `error` を含む、サーバーからの `actionResponse` メッセージを処理します。
+    - **方向別の関数呼び出し(RPC)**:
+        - エージェントからの `callRendererFunction` メッセージを処理し、`rendererFunctionResponse`(または `error`)を返します。
     - **クライアントからサーバーへ**:
-        - `action` ペイロード内に `actionId` を生成して含めます。
-        - クライアントがレスポンスを期待する場合、アクションで `wantResponse: true` をサポートします。
+        - リモートでの関数実行のために、エージェントへ `callAgentFunction` メッセージを送出することをサポートします。
         - A2A を使用している場合、サーバーへ送信するすべての A2A `Message` は、その `metadata` フィールドに `a2uiClientCapabilities` オブジェクトを含めなければなりません。
     - **Capabilities**:
         - Capabilities 交換の際に、`theme` の代わりに `surfaceProperties` を公開します。
