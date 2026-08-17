@@ -29,7 +29,7 @@
     
     
       
-        <title>Macro Syntax Error - A2UI</title>
+        <title>A2UI Composer - A2UI</title>
       
     
     
@@ -157,7 +157,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-syntax-error" class="md-skip">
+        <a href="#a2ui-composer" class="md-skip">
           Skip to content
         </a>
       
@@ -192,7 +192,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Macro Syntax Error
+              A2UI Composer
             
           </span>
         </div>
@@ -2393,6 +2393,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#composer-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composer UI の使い方
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コンポーネントギャラリー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        設定
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        レンダラーアプリケーション
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gemini-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini API キー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        進行中の作業
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw Messages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2467,17 +2558,134 @@
   
 
 
-<h1 id="macro-syntax-error"><em>Macro Syntax Error</em><a class="headerlink" href="#macro-syntax-error" title="Permanent link">&para;</a></h1>
-<p><em>File</em>: <code>composer/index.md</code></p>
-<p><em>Line 76 in Markdown file:</em> <strong>Missing end of comment tag</strong>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">### Gemini API キー {#gemini-api}</span>
-</span></code></pre></div></p>
+<h1 id="a2ui-composer">A2UI Composer<a class="headerlink" href="#a2ui-composer" title="Permanent link">&para;</a></h1>
+<p><strong>A2UI Composer</strong> を使って、A2UI ウィジェットをインタラクティブに作ってみましょう。
+<img alt="A2UI Composer のワークスペース" src="../assets/composer_workspace.png" /></p>
+<ol>
+<li>
+<p><a href="https://a2ui-project.github.io/composer/">A2UI Composer</a> を開きます。</p>
+</li>
+<li>
+<p>デフォルトでは、Angular ベースのレンダラーが提供する Basic カタログが使われます。</p>
+</li>
+<li>
+<p>Gemini チャットを使って A2UI インターフェースを作り始めましょう！
+   (<strong>注</strong>: Gemini API キーが必要です。<a href="#gemini-api">下記</a>を参照してください。)</p>
+</li>
+</ol>
+<h2 id="composer-ui">Composer UI の使い方<a class="headerlink" href="#composer-ui" title="Permanent link">&para;</a></h2>
+<p>Composer のワークスペースは、A2UI サーフェスの開発とデバッグを支援するために、
+複数のインタラクティブなパネルに分かれています。</p>
+<ul>
+<li><strong>Gemini アシスタント:</strong> Gemini を利用したチャットインターフェースです。
+  自然言語のプロンプトで、新しいレイアウトの生成、既存 JSON の調整、
+  ビジュアル属性の変更などを Gemini に依頼できます。</li>
+<li>クリップアイコン
+  <img alt="クリップアイコン" src="../assets/composer_paperclip.png" style="width:30px;height:30px;display:inline;vertical-align:middle;" />
+  をクリックすると、<strong>添付ファイル</strong>（モックなど）をアップロードできます。</li>
+<li>
+<p>カメラアイコン
+  <img alt="カメラアイコン" src="../assets/composer_camera.png" style="width:30px;height:30px;display:inline;vertical-align:middle;" />
+  をクリックすると、現在の A2UI インターフェースの<strong>スクリーンショットを添付</strong>できます。</p>
+</li>
+<li>
+<p><strong>レンダリングされた A2UI プレビュー:</strong> 現在のコンポーネントのビジュアルプレビューを
+  リアルタイムに表示します。</p>
+</li>
+<li>
+<p><strong>A2UI JSON エディター:</strong> UI の構造とコンポーネント階層を定義する生の JSON
+  ペイロードを表示します。ここを直接編集すると、プレビューが即座に更新されます。</p>
+</li>
+<li>エディターには<strong><a href="../assets/composer_editor_tooltip.png">ホバー時のツールチップ</a></strong>があり、
+  該当する A2UI 要素の説明が表示されます。</li>
+<li>
+<p>他のソースから取得した A2UI JSON がある場合は、このパネルに貼り付けられます。
+  右クリックして JSON をフォーマットすることもできます。</p>
+</li>
+<li>
+<p><strong>デバッグ・検査タブ（下部）:</strong></p>
+<ul>
+<li><strong>Data Model:</strong> UI コンポーネントにバインドされたランタイムの状態・データ値を
+  検査・変更します。ここでの変更はプレビューに反映され、プレビュー上での
+  ユーザー入力はこのモデルに反映されます。</li>
+<li><strong>Events:</strong> レンダリングされたコンポーネントが発行したユーザー操作イベント
+  （クリック、入力、選択など）を記録します。</li>
+<li><strong>Errors:</strong> レンダリング、JSON のパース、API の失敗によるエラーを表示します。</li>
+<li><strong>Raw Messages:</strong> Composer とレンダラー間の通信に加え、Gemini とのやり取りも
+  表示します。（詳細は<a href="#raw-messages">下記</a>を参照してください。）</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">コンポーネントギャラリー<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><img alt="コンポーネントの A2UI 使用例とプロパティを示すスクリーンショット" src="../assets/composer_components_gallery.png" /></p>
+<p>コンポーネントギャラリーでは、現在の A2UI カタログが提供するすべてのコンポーネントを
+閲覧できます。各コンポーネントには、レンダリング例と、そのレンダリングを生成する
+A2UI JSON が用意されています。Usage パネル上部のコピーアイコン
+<img alt="コピーアイコン" src="../assets/composer_copy.png" style="width:30px;height:30px;display:inline;vertical-align:middle;" />
+を使うと、そのコンポーネントの A2UI JSON 全体をコピーできます。</p>
+<p>ページ下部には、コンポーネントのすべてのプロパティを説明・型・必須かどうかとともに
+一覧表示した表があります。</p>
+<h2 id="_2">設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">レンダラーアプリケーション<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>設定ページでは、使用するレンダラーアプリケーションを変更できます。現時点では、
+3 つのレンダラーアプリケーションがプリロードされています。</p>
+<ul>
+<li>Angular Basic Catalog</li>
+<li>Lit Basic Catalog</li>
+<li>React Basic Catalog</li>
+</ul>
+<p>別のレンダラーアプリを開発している場合は、ドロップダウンから "Custom" を選択し、
+テキストボックスに URL を入力してください。（レンダラーアプリの作り方は
+<a href="composer_renderer_integration/">A2UI Composer 連携</a>を参照してください。）</p>
+<h3 id="gemini-api">Gemini API キー<a class="headerlink" href="#gemini-api" title="Permanent link">&para;</a></h3>
+<p>このページでは Gemini API キーを入力でき、Gemini チャット機能を利用できるようになります。</p>
+<p>API キーを取得するには、次の手順に従います。</p>
+<ol>
+<li><a href="https://aistudio.google.com/api-keys">Google AI Studio</a> にアクセスし、Google
+   アカウントでログインします。</li>
+<li>Create API key をクリックします。</li>
+<li>プロンプトに従って Google Cloud プロジェクトを選択または作成し、Create key を
+   クリックします。</li>
+<li>取得したキーは安全な場所に保管してください！</li>
+</ol>
+<p>なお、A2UI Composer はこのキーを暗号化し、
+<a href="https://developer.mozilla.org/ja/docs/Web/API/Web_Crypto_API">Web Crypto API</a>
+を使ってブラウザのセキュアなデータベースにローカル保存します。Google を含め、
+誰もこのキーにアクセスすることはできません。</p>
+<h2 id="_4">進行中の作業<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>A2UI チームは、次の改善に積極的に取り組んでいます。</p>
+<ul>
+<li><strong>レイテンシの削減:</strong> Gemini を用いたワークフローのレイテンシを改善します。</li>
+<li><strong>視覚的な理解:</strong> すでにレンダリングされたサーフェスに対する視覚的な理解を
+  高めるよう、Gemini を用いたワークフローを改善します。</li>
+</ul>
+<h2 id="raw-messages">Raw Messages<a class="headerlink" href="#raw-messages" title="Permanent link">&para;</a></h2>
+<p>Composer とレンダラーの間でやり取りされるメッセージは、トラブルシューティングや、
+内部で何が起きているのかを理解するのに役立ちます。これらのメッセージには次のものが
+含まれます。</p>
+<ul>
+<li><strong>RENDERER_READY</strong>: レンダラーのブートストラップが完全に完了した時点で送信されます。</li>
+<li><strong>A2UI_CATALOG</strong>: （Composer からの要求に応じて）レンダラーが送信します。
+  レンダラーがサポートする A2UI カタログ全体が含まれます。</li>
+<li><strong>COMPONENT_USAGES</strong>: （Composer からの要求に応じて）レンダラーが送信し、
+  コンポーネントギャラリーページを構成するためのデータが含まれます。</li>
+</ul>
+<p>A2UI コンポーネントのデータモデルに変更があるたびに <strong>DATA_MODEL_CHANGE</strong> メッセージが
+記録され、エージェントに返送される <code>updateDataModel</code> メッセージが表示されます。</p>
+<p>さらに、Gemini チャット機能を使用している場合は次のメッセージも確認できます。</p>
+<ul>
+<li><strong>LLM_REQUEST</strong>: LLM に送信されたリクエスト全体（システムプロンプトを含む）を表示します。</li>
+<li><strong>LLM_RESPONSE</strong>: LLM から受信したレスポンス全体を表示します。</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
