@@ -290,10 +290,10 @@ export const MY_CATALOG = new AngularCatalog(
 
 クライアントレンダラーの動作例は [Orchestrator デモ](../../../samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts) で確認できます。
 
-> [!NOTE]
-> Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts) を参照してください。
->
-> また、クライアント側関数については、クライアントはアクティブなカタログ定義から設定を実行時に読み取ることで、その関数の実行境界(`clientOnly` ステータスなど)を判定します。
+!!! note ""
+    Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の [DemoCatalog](../../../renderers/angular/a2ui_explorer/src/app/demo-catalog.ts) を参照してください。
+
+    また、クライアント側関数については、クライアントはアクティブなカタログ定義から設定を実行時に読み取ることで、その関数の実行境界(`clientOnly` ステータスなど)を判定します。
 
 ## カタログの命名とバージョニング
 

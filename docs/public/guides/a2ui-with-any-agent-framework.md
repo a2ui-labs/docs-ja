@@ -270,8 +270,6 @@ A2UI の手順はどのフレームワークでも同じです。エージェン
 
 望ましい開発者体験から始めます。エージェントが参照できるカタログ定義を定義し、各定義をレンダラーにマッピングし、カタログを作成して、そのカタログを CopilotKit に渡します。フロントエンドのカタログ設定こそが、A2UI を有効化するための対象サーフェスです。
 
-{% raw %}
-
 ```tsx
 import {CopilotKit, CopilotChat} from '@copilotkit/react-core/v2';
 import {
@@ -309,8 +307,6 @@ const catalog = createCatalog(catalogDefinitions, catalogRenderers, {
   <CopilotChat />
 </CopilotKit>;
 ```
-
-{% endraw %}
 
 プロバイダーにカタログを渡すと A2UI が自動的に有効化され、`generate_a2ui` ツールが注入されるため、エージェントは追加のランタイム設定なしにサーフェスを生成できます(CopilotKit ≥ 1.61.2)。オプトアウトしたい場合や、カタログなしで手動でオプトインしたい場合は、ランタイムを直接設定します。
 
@@ -365,8 +361,6 @@ export type MyDefinitions = typeof myDefinitions;
 
 各定義を React コンポーネントにマッピングします。`createCatalog` は定義の型に対して generic であるため、レンダラーが受け取る props は Zod スキーマに対して型チェックされます。そのため、`props.text` のタイプミスはコンパイルエラーになります。
 
-{% raw %}
-
 ```tsx title="lib/a2ui/renderers.tsx"
 'use client';
 
@@ -412,13 +406,9 @@ export const myCatalog = createCatalog(myDefinitions, myRenderers, {
 });
 ```
 
-{% endraw %}
-
 `catalogId` は、エージェントがこのカタログを対象にする際に使う安定したハンドルです。`includeBasicCatalog: true` にすると、独自コンポーネントと並んで組み込みコンポーネントも利用できます(省略すると _独自コンポーネントだけ_ をレンダリングします)。
 
 #### 3. CopilotKit にカタログを渡す
-
-{% raw %}
 
 ```tsx title="app/layout.tsx"
 'use client';
@@ -435,8 +425,6 @@ export default function Layout({children}: {children: React.ReactNode}) {
   );
 }
 ```
-
-{% endraw %}
 
 これで、エージェントは組み込みコンポーネントと並んであなたのカスタムコンポーネントを認識し、自身が出力する任意の A2UI サーフェスでそれらを使用できるようになります。
 

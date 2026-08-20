@@ -20,9 +20,8 @@
   Python エージェントバックエンドの起動に使用します。
 - **Gemini API キー** - [Google AI Studio で取得](https://aistudio.google.com/apikey)
 
-> ⚠️ **セキュリティ注意**
->
-> このデモは Gemini を使って A2UI 応答を生成する A2A エージェントを実行します。エージェントは API キーにアクセスし、Google の Gemini API にリクエストを送信します。本番環境で使う前に、必ずエージェントコードを確認してください。
+!!! warning "セキュリティ注意"
+    このデモは Gemini を使って A2UI 応答を生成する A2A エージェントを実行します。エージェントは API キーにアクセスし、Google の Gemini API にリクエストを送信します。本番環境で使う前に、必ずエージェントコードを確認してください。
 
 ## ステップ 1: リポジトリをクローンする
 
@@ -59,14 +58,14 @@ yarn install
 yarn demo:restaurant
 ```
 
-> [!TIP]
-> **macOS Homebrew ユーザーへ:** スタンドアロン版のパッケージマネージャーをすでにインストールしている場合は、Corepack がプロジェクトごとにバージョンを管理できるよう、インストール前に競合を解消（unlink）してください。
->
-> ```bash
-> brew unlink yarn pnpm
-> brew install corepack
-> corepack enable
-> ```
+!!! tip ""
+    **macOS Homebrew ユーザーへ:** スタンドアロン版のパッケージマネージャーをすでにインストールしている場合は、Corepack がプロジェクトごとにバージョンを管理できるよう、インストール前に競合を解消（unlink）してください。
+
+    ```bash
+    brew unlink yarn pnpm
+    brew install corepack
+    corepack enable
+    ```
 
 このコマンドは次のことを行います。
 
@@ -78,8 +77,8 @@ yarn demo:restaurant
 
 レストラン検索エージェントのソースコードは [`samples/agent/adk/restaurant_finder`](../../samples/agent/adk/restaurant_finder) にあります。
 
-> [!NOTE]
-> **パッケージマネージャーについて:** A2UI リポジトリ内でこのクイックスタートのデモアプリケーションを実行するには、Corepack のワークスペース設定に従って Yarn が必要です。このリポジトリの外にある、ご自身の通常のプロジェクトでは、npm や pnpm など好みのパッケージマネージャーを自由に使用できます。
+!!! note ""
+    **パッケージマネージャーについて:** A2UI リポジトリ内でこのクイックスタートのデモアプリケーションを実行するには、Corepack のワークスペース設定に従って Yarn が必要です。このリポジトリの外にある、ご自身の通常のプロジェクトでは、npm や pnpm など好みのパッケージマネージャーを自由に使用できます。
 
 ### 手動で実行する（代替方法）
 
@@ -99,9 +98,8 @@ cd samples/client/lit/shell
 yarn dev
 ```
 
-> ✅ **デモ起動完了**
->
-> うまくいっていれば、ブラウザに Web アプリが表示されます。これでエージェントは UI を生成できる状態です。
+!!! success "デモ起動完了"
+    うまくいっていれば、ブラウザに Web アプリが表示されます。これでエージェントは UI を生成できる状態です。
 
 ## ステップ 5: 試してみる
 
@@ -206,9 +204,8 @@ Web アプリで次のプロンプトを試してください。
 
     コンポーネントはフラットな形式を使い、データモデルは通常の JSON 値を使います。
 
-> 💡 **ただの JSON です**
->
-> 読みやすく構造化されていることが分かるはずです。LLM はこれを簡単に生成でき、コード実行なしで安全に送信・レンダリングできます。
+!!! tip "ただの JSON です"
+    読みやすく構造化されていることが分かるはずです。LLM はこれを簡単に生成でき、コード実行なしで安全に送信・レンダリングできます。
 
 ## 他のデモを見る
 
@@ -238,6 +235,7 @@ yarn dev
 このガイドでは Lit クライアントを例に使っていますが、A2UI は他の人気フレームワーク向けのサンプルも `samples/client` ディレクトリに用意しています。
 
 - **Angular**: `samples/client/angular`
+- **Flutter**: `samples/client/flutter`
 - **React**: `samples/client/react`
 
 利用可能なクライアント実装の一覧は [samples/client](../../samples/client) ディレクトリを参照してください。
