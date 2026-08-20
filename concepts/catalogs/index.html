@@ -3143,11 +3143,10 @@
 </span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">);</span>
 </span></code></pre></div>
 <p>クライアントレンダラーの動作例は <a href="https://github.com/a2ui-project/a2ui/blob/main/samples/community/client/angular/projects/orchestrator/src/a2ui-catalog/catalog.ts">Orchestrator デモ</a> で確認できます。</p>
-<blockquote>
-<p>[!NOTE]
-Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の <a href="https://github.com/a2ui-project/a2ui/blob/main/renderers/angular/a2ui_explorer/src/app/demo-catalog.ts">DemoCatalog</a> を参照してください。</p>
+<div class="admonition note">
+<p>Orchestrator デモは現時点で v0.8 API を使用しています。カタログ登録の v0.9 の例については、Angular Explorer の <a href="https://github.com/a2ui-project/a2ui/blob/main/renderers/angular/a2ui_explorer/src/app/demo-catalog.ts">DemoCatalog</a> を参照してください。</p>
 <p>また、クライアント側関数については、クライアントはアクティブなカタログ定義から設定を実行時に読み取ることで、その関数の実行境界(<code>clientOnly</code> ステータスなど)を判定します。</p>
-</blockquote>
+</div>
 <h2 id="_12">カタログの命名とバージョニング<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>A2UI のコンポーネントカタログにはバージョニングが必要です。カタログ定義はコンパイル時に組み込まれることが多く、エージェントが生成する内容とクライアントが描画できる内容が食い違うと UI に影響が及ぶためです。</p>
 <h3 id="catalogid">CatalogId の命名規則<a class="headerlink" href="#catalogid" title="Permanent link">&para;</a></h3>

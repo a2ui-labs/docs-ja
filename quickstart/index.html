@@ -3008,10 +3008,10 @@
   Python エージェントバックエンドの起動に使用します。</li>
 <li><strong>Gemini API キー</strong> - <a href="https://aistudio.google.com/apikey">Google AI Studio で取得</a></li>
 </ul>
-<blockquote>
-<p>⚠️ <strong>セキュリティ注意</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">セキュリティ注意</p>
 <p>このデモは Gemini を使って A2UI 応答を生成する A2A エージェントを実行します。エージェントは API キーにアクセスし、Google の Gemini API にリクエストを送信します。本番環境で使う前に、必ずエージェントコードを確認してください。</p>
-</blockquote>
+</div>
 <h2 id="1">ステップ 1: リポジトリをクローンする<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/a2ui-project/a2ui.git
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>a2ui
@@ -3032,14 +3032,13 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>yarn<span class="w"> </span>install
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>yarn<span class="w"> </span>demo:restaurant
 </span></code></pre></div>
-<blockquote>
-<p>[!TIP]
-<strong>macOS Homebrew ユーザーへ:</strong> スタンドアロン版のパッケージマネージャーをすでにインストールしている場合は、Corepack がプロジェクトごとにバージョンを管理できるよう、インストール前に競合を解消（unlink）してください。</p>
+<div class="admonition tip">
+<p><strong>macOS Homebrew ユーザーへ:</strong> スタンドアロン版のパッケージマネージャーをすでにインストールしている場合は、Corepack がプロジェクトごとにバージョンを管理できるよう、インストール前に競合を解消（unlink）してください。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>brew<span class="w"> </span>unlink<span class="w"> </span>yarn<span class="w"> </span>pnpm
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>brew<span class="w"> </span>install<span class="w"> </span>corepack
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>corepack<span class="w"> </span><span class="nb">enable</span>
 </span></code></pre></div>
-</blockquote>
+</div>
 <p>このコマンドは次のことを行います。</p>
 <ol>
 <li>すべての依存関係をインストールする</li>
@@ -3049,10 +3048,9 @@
 <li>ブラウザで <code>http://localhost:5173</code> を開く</li>
 </ol>
 <p>レストラン検索エージェントのソースコードは <a href="https://github.com/a2ui-project/a2ui/blob/main/samples/agent/adk/restaurant_finder"><code>samples/agent/adk/restaurant_finder</code></a> にあります。</p>
-<blockquote>
-<p>[!NOTE]
-<strong>パッケージマネージャーについて:</strong> A2UI リポジトリ内でこのクイックスタートのデモアプリケーションを実行するには、Corepack のワークスペース設定に従って Yarn が必要です。このリポジトリの外にある、ご自身の通常のプロジェクトでは、npm や pnpm など好みのパッケージマネージャーを自由に使用できます。</p>
-</blockquote>
+<div class="admonition note">
+<p><strong>パッケージマネージャーについて:</strong> A2UI リポジトリ内でこのクイックスタートのデモアプリケーションを実行するには、Corepack のワークスペース設定に従って Yarn が必要です。このリポジトリの外にある、ご自身の通常のプロジェクトでは、npm や pnpm など好みのパッケージマネージャーを自由に使用できます。</p>
+</div>
 <h3 id="_3">手動で実行する（代替方法）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>エージェントとクライアントを別々のターミナルで実行したい場合や、トラブルシューティングが必要な場合は、こちらの方法を使います。</p>
 <p><strong>1. エージェントを実行する:</strong></p>
@@ -3063,10 +3061,10 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>samples/client/lit/shell
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>yarn<span class="w"> </span>dev
 </span></code></pre></div>
-<blockquote>
-<p>✅ <strong>デモ起動完了</strong></p>
+<div class="admonition success">
+<p class="admonition-title">デモ起動完了</p>
 <p>うまくいっていれば、ブラウザに Web アプリが表示されます。これでエージェントは UI を生成できる状態です。</p>
-</blockquote>
+</div>
 <h2 id="5">ステップ 5: 試してみる<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>Web アプリで次のプロンプトを試してください。</p>
 <ol>
@@ -3150,10 +3148,10 @@
 </div>
 </div>
 </div>
-<blockquote>
-<p>💡 <strong>ただの JSON です</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">ただの JSON です</p>
 <p>読みやすく構造化されていることが分かるはずです。LLM はこれを簡単に生成でき、コード実行なしで安全に送信・レンダリングできます。</p>
-</blockquote>
+</div>
 <h2 id="_5">他のデモを見る<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>このリポジトリには、ほかにもいくつかのデモがあります。</p>
 <h3 id="_6">コンポーネントギャラリー（エージェント不要）<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -3170,6 +3168,7 @@
 <p>このガイドでは Lit クライアントを例に使っていますが、A2UI は他の人気フレームワーク向けのサンプルも <code>samples/client</code> ディレクトリに用意しています。</p>
 <ul>
 <li><strong>Angular</strong>: <code>samples/client/angular</code></li>
+<li><strong>Flutter</strong>: <code>samples/client/flutter</code></li>
 <li><strong>React</strong>: <code>samples/client/react</code></li>
 </ul>
 <p>利用可能なクライアント実装の一覧は <a href="https://github.com/a2ui-project/a2ui/blob/main/samples/client">samples/client</a> ディレクトリを参照してください。</p>

@@ -1453,9 +1453,8 @@ flowchart TD
 <li>サンプルの <a href="https://github.com/a2ui-project/a2ui/blob/main/samples/community/mcp/a2ui-in-mcpapps/server/apps/src/inline.js"><code>inline.js</code></a> のような post-build script を使い、<code>index.html</code> を読み取って、外部の <code>&lt;script src="..."&gt;</code> と <code>&lt;link rel="stylesheet" href="..."&gt;</code> タグを、実際のファイル内容を含む inline <code>&lt;script&gt;</code> と <code>&lt;style&gt;</code> タグへ置き換えます。</li>
 <li>制限付き iframe で <code>srcdoc</code> により安全に読み込める self-contained HTML ファイルが生成されます。</li>
 </ol>
-<blockquote>
-<p>[!TIP]
-<strong>Vite で inline 化する</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Vite で inline 化する</p>
 <p>プロジェクトが Vite を使っている場合(React、Vue、Lit で一般的)、<code>vite-plugin-singlefile</code> のようなプラグインを使って同じ single-file 出力を自動化できます。これにより、ビルド中に inline 化が処理されるため、custom post-build script は不要になります。</p>
 <p><strong>使い方:</strong></p>
 <ol>
@@ -1474,7 +1473,7 @@ flowchart TD
 <p>これにより、ビルド時にすべての JS と CSS assets が <code>index.html</code> ファイルへ inline 化され、MCP server から単一 resource として提供できる状態になります。</p>
 </li>
 </ol>
-</blockquote>
+</div>
 <h3 id="step-2-a2ui-over-mcp">Step 2: A2UI-over-MCP を活用する<a class="headerlink" href="#step-2-a2ui-over-mcp" title="Permanent link">¶</a></h3>
 <p>インライン化された app は sandbox 内で実行されています。A2UI を活用するには、次を行います。</p>
 <ol>

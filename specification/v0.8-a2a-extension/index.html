@@ -2518,6 +2518,67 @@
 <li><a href="https://a2a-protocol.org">A2A プロトコル ドキュメント</a>。</li>
 </ul>
 <hr />
+<h1 id="a2ui-agent-to-agent-ui-extension-spec">A2UI (Agent-to-Agent UI) Extension spec<a class="headerlink" href="#a2ui-agent-to-agent-ui-extension-spec" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This extension implements the A2UI (Agent-to-Agent UI) spec, a format for agents to send streaming, interactive user interfaces to clients.</p>
+<h2 id="extension-uri">Extension URI<a class="headerlink" href="#extension-uri" title="Permanent link">&para;</a></h2>
+<p>The URI of this extension is https://a2ui.org/a2a-extension/a2ui/v0.8</p>
+<p>This is the only URI accepted for this extension.</p>
+<h2 id="core-concepts">Core concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
+<p>The A2UI extension is built on the following main concepts:</p>
+<p>Surfaces: A "Surface" is a distinct, controllable region of the client's UI. The spec uses a surfaceId to direct updates to specific surfaces (e.g., a main content area, a side panel, or a new chat bubble). This allows a single agent stream to manage multiple UI areas independently.</p>
+<p>Catalog Definition Document: The a2ui extension is component-agnostic. All UI components (e.g., Text, Row, Button) and their stylings are defined in a separate Catalog Definition Schema. This allows clients and servers to negotiate which catalog to use.</p>
+<p>Schemas: The a2ui extension is defined by three primary JSON schemas:</p>
+<p>Catalog Definition Schema: A standard format for defining a library of components and styles.</p>
+<p>Server-to-Client Message Schema: The core wire format for messages sent from the agent to the client (e.g., surfaceUpdate, dataModelUpdate).</p>
+<p>Client-to-Server Event Schema: The core wire format for messages sent from the client to the agent (e.g., userAction).</p>
+<p>Client Capabilities: The client sends its capabilities to the server in an <code>a2uiClientCapabilities</code> object. This object is included in the <code>metadata</code> field of every A2A <code>Message</code> sent from the client to the server. This object allows the client to declare which catalogs it supports.</p>
+<h2 id="agent-card-details">Agent Card details<a class="headerlink" href="#agent-card-details" title="Permanent link">&para;</a></h2>
+<p>Agents advertise their A2UI capabilities in their AgentCard within the <code>AgentCapabilities.extensions</code> list. The <code>params</code> object defines the agent's specific UI support.</p>
+<p>Example AgentExtension block:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://a2ui.org/a2a-extension/a2ui/v0.8"</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ability to render A2UI"</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">"supportedCatalogIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="s2">"https://a2ui.org/specification/v0_8/standard_catalog_definition.json"</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="s2">"https://my-company.com/a2ui/v0.8/my_custom_catalog.json"</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">"acceptsInlineCatalogs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="parameter-definitions">Parameter definitions<a class="headerlink" href="#parameter-definitions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>params.supportedCatalogIds</code>: (OPTIONAL) An array of strings, where each string is a URI pointing to a component Catalog Definition Schema that the agent can generate.</li>
+<li><code>params.acceptsInlineCatalogs</code>: (OPTIONAL) A boolean indicating if the agent can accept an <code>inlineCatalogs</code> array in the client's <code>a2uiClientCapabilities</code>. If omitted, this defaults to <code>false</code>.</li>
+</ul>
+<h2 id="extension-activation">Extension activation<a class="headerlink" href="#extension-activation" title="Permanent link">&para;</a></h2>
+<p>Clients indicate their desire to use the A2UI extension by specifying it via the transport-defined A2A extension activation mechanism.</p>
+<p>For JSON-RPC and HTTP transports, this is indicated via the X-A2A-Extensions HTTP header.</p>
+<p>For gRPC, this is indicated via the X-A2A-Extensions metadata value.</p>
+<p>Activating this extension implies that the server can send A2UI-specific messages (like surfaceUpdate) and the client is expected to send A2UI-specific events (like userAction).</p>
+<h2 id="data-encoding">Data encoding<a class="headerlink" href="#data-encoding" title="Permanent link">&para;</a></h2>
+<p>A2UI messages are encoded as an A2A <code>DataPart</code>.</p>
+<p>To identify a <code>DataPart</code> as containing A2UI data, it must have the following metadata:</p>
+<ul>
+<li><code>mimeType</code>: <code>application/json+a2ui</code></li>
+</ul>
+<p>The <code>data</code> field of the <code>DataPart</code> contains the A2UI JSON message (e.g., <code>surfaceUpdate</code>, <code>userAction</code>).</p>
+<p>Example A2UI DataPart:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">"beginRendering"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">"surfaceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlier_stores_map_surface"</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data"</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json+a2ui"</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
 
