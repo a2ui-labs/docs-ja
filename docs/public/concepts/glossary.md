@@ -59,7 +59,7 @@ sequenceDiagram
 
 A2UI をすばやく使い始めるために A2UI チームが管理しているカタログです。
 
-[basic catalog](../specification/v1_0/catalogs/basic/catalog.json) を参照してください。
+[basic catalog](../../../specification/v0_9_1/catalogs/basic/catalog.json) を参照してください。
 
 ### Catalog Transformer
 
@@ -141,7 +141,7 @@ A2UI レンダラーの機能は、別々に開発して再利用できるレイ
 
     JSON 形式のカタログ定義です。
 
-    例として [basic catalog schema](../specification/v1_0/catalogs/basic/catalog.json) を参照してください。
+    例として [basic catalog schema](../../../specification/v0_9_1/catalogs/basic/catalog.json) を参照してください。
 
 - **Framework adapter**:<a id="fw-adapter"></a>
 
@@ -192,7 +192,7 @@ fadapter-->core;
 
 コンポーネント定義内でのデータ要素への参照です。データモデル内の path または値として解決できます。
 
-[basic catalog の例](../specification/v1_0/catalogs/basic/catalog.json#L18) を参照してください。
+[basic catalog の例](../../../specification/v0_9/catalogs/basic/catalog.json#L23) を参照してください。
 
 ### クライアント関数
 
@@ -208,7 +208,7 @@ LLM tool と混同しないでください。
 | Definition   | クライアント側関数レジストリに登録され、カタログで通知されます。      | ToolDefinition に定義されます(LLM に渡されます)。                                     |
 | State Access | DataContext と Input 値にアクセスします。                             | AI へのリクエストをトリガーできません。外部 API、データベース、サービスへアクセスします。 |
 
-[common types の例](../specification/v0_9/json/common_types.json#L200) を参照してください。
+[common types の例](../../../specification/v0_9_1/json/common_types.json#L200) を参照してください。
 
 ### Action
 

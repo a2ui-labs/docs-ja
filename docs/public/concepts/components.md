@@ -171,7 +171,7 @@ A2UI は、コンポーネントの階層構造に**隣接リスト(adjacency li
 
 ## Basic Catalog
 
-開発者がすばやく始められるように、A2UI チームは [Basic Catalog](../specification/v0_9_1/catalogs/basic/catalog.json) を維持しています。
+開発者がすばやく始められるように、A2UI チームは [Basic Catalog](../../../specification/v0_9_1/catalogs/basic/catalog.json) を維持しています。
 
 これは、汎用的なコンポーネント(Button、Input、Card など)の基本セットを含む、あらかじめ定義されたカタログファイルです。特別な「種類」のカタログというわけではなく、オープンソースのレンダラーが用意されている、単なる 1 つのバージョンのカタログにすぎません。
 
