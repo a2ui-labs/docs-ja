@@ -1345,66 +1345,10 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        カタログのネゴシエーション
+        前提条件
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="カタログのネゴシエーション">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        オプション A: MCP 初期化時のカタログハンドシェイク
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        オプション B: 各 MCP メッセージでカタログを伝える（ステートレスサーバー向け）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a2ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        埋め込みリソースとして A2UI コンテンツを返す
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="埋め込みリソースとして A2UI コンテンツを返す">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python 実装例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1412,19 +1356,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ユーザーアクションの扱い
+        クイックスタート: サンプルの実行
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ユーザーアクションの扱い">
+    <nav class="md-nav" aria-label="クイックスタート: サンプルの実行">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-a2ui-json" class="md-nav__link">
+  <a href="#a-mcp-inspector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. アクション付きの A2UI JSON
+        オプション A: MCP Inspector を使った対話
       
     </span>
   </a>
@@ -1432,21 +1376,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-a2ui-mcp" class="md-nav__link">
+  <a href="#b-web" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. A2UI アクションの MCP ペイロード
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. MCP サーバー側のアクションハンドラー
+        オプション B: レシピクライアント Web アプリの実行
       
     </span>
   </a>
@@ -1462,19 +1395,19 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        エラー処理
+        仕組み
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="エラー処理">
+    <nav class="md-nav" aria-label="仕組み">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-a2ui-mcp" class="md-nav__link">
+  <a href="#1-resourcesread" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. A2UI エラーの MCP ペイロード
+        1. リソースベースの配信フロー (resources/read)
       
     </span>
   </a>
@@ -1482,10 +1415,49 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mcp" class="md-nav__link">
+  <a href="#2-toolscall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. エラーハンドラーの MCP サーバーツール
+        2. ツールベースの配信フロー (tools/call)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources と Tools: 用途の分離
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources と Tools: 用途の分離">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mcp-resources-ui-resourcesread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. MCP Resources による静的 UI (resources/read)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mcp-tools-ui-toolscall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MCP Tools による動的 UI (tools/call)
       
     </span>
   </a>
@@ -1501,7 +1473,129 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        音声化と可視性の制御
+        カタログのネゴシエーション
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="カタログのネゴシエーション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オプション A: MCP 初期化時 (推奨)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オプション B: メッセージごとのメタデータ (ステートレスサーバー向け)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ユーザーアクションの処理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ユーザーアクションの処理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. アクションを含む Button の定義
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. クライアントがアクションをツール呼び出しとして送信
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. サーバーでアクションを処理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エラーハンドリング
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        発話と可視性の制御
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2ui-agent-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2UI Agent SDK の使用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ
       
     </span>
   </a>
@@ -2619,66 +2713,10 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        カタログのネゴシエーション
+        前提条件
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="カタログのネゴシエーション">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        オプション A: MCP 初期化時のカタログハンドシェイク
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        オプション B: 各 MCP メッセージでカタログを伝える（ステートレスサーバー向け）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a2ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        埋め込みリソースとして A2UI コンテンツを返す
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="埋め込みリソースとして A2UI コンテンツを返す">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#python" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python 実装例
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2686,19 +2724,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ユーザーアクションの扱い
+        クイックスタート: サンプルの実行
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ユーザーアクションの扱い">
+    <nav class="md-nav" aria-label="クイックスタート: サンプルの実行">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-a2ui-json" class="md-nav__link">
+  <a href="#a-mcp-inspector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. アクション付きの A2UI JSON
+        オプション A: MCP Inspector を使った対話
       
     </span>
   </a>
@@ -2706,21 +2744,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-a2ui-mcp" class="md-nav__link">
+  <a href="#b-web" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. A2UI アクションの MCP ペイロード
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-mcp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. MCP サーバー側のアクションハンドラー
+        オプション B: レシピクライアント Web アプリの実行
       
     </span>
   </a>
@@ -2736,19 +2763,19 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        エラー処理
+        仕組み
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="エラー処理">
+    <nav class="md-nav" aria-label="仕組み">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-a2ui-mcp" class="md-nav__link">
+  <a href="#1-resourcesread" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. A2UI エラーの MCP ペイロード
+        1. リソースベースの配信フロー (resources/read)
       
     </span>
   </a>
@@ -2756,10 +2783,49 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mcp" class="md-nav__link">
+  <a href="#2-toolscall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. エラーハンドラーの MCP サーバーツール
+        2. ツールベースの配信フロー (tools/call)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources と Tools: 用途の分離
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources と Tools: 用途の分離">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mcp-resources-ui-resourcesread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. MCP Resources による静的 UI (resources/read)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mcp-tools-ui-toolscall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MCP Tools による動的 UI (tools/call)
       
     </span>
   </a>
@@ -2775,7 +2841,129 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        音声化と可視性の制御
+        カタログのネゴシエーション
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="カタログのネゴシエーション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オプション A: MCP 初期化時 (推奨)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        オプション B: メッセージごとのメタデータ (ステートレスサーバー向け)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ユーザーアクションの処理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ユーザーアクションの処理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. アクションを含む Button の定義
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. クライアントがアクションをツール呼び出しとして送信
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. サーバーでアクションを処理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        エラーハンドリング
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        発話と可視性の制御
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2ui-agent-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2UI Agent SDK の使用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        次のステップ
       
     </span>
   </a>
@@ -2877,200 +3065,381 @@
 
 
 <h1 id="model-context-protocol-mcp-a2ui">Model Context Protocol (MCP) 上での A2UI<a class="headerlink" href="#model-context-protocol-mcp-a2ui" title="Permanent link">&para;</a></h1>
-<p>このガイドでは、<strong>Model Context Protocol (MCP)</strong> の Tools と Resources を使って、A2UI の宣言的構文でリッチな対話 UI を構築する方法を説明します。</p>
-<p>サンプルは <a href="https://github.com/a2ui-project/a2ui/blob/main/samples/agent/mcp">MCP Samples</a> を参照してください。</p>
-<h2 id="_1">カタログのネゴシエーション<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>サーバーがクライアントへ A2UI を送るには、まずプロトコルの相互サポートを確認し、どのカタログが利用できるかを決める必要があります。システム構成によって、この能力のネゴシエーションは 2 通りの方法で行えます。接続ハンドシェイク時に 1 回だけ行うか、メッセージごとに行うかです。</p>
-<h3 id="a-mcp">オプション A: MCP 初期化時のカタログハンドシェイク<a class="headerlink" href="#a-mcp" title="Permanent link">&para;</a></h3>
-<p>MCP は状態を持つセッションプロトコルなので、最も効率がよいのは接続確立時に機能を 1 回だけ宣言する方法です。クライアントは、標準 <code>initialize</code> リクエストの capabilities オブジェクト（多くは experimental か custom のキー）に A2UI サポートを宣言します。サーバーはその状態をセッション中保持します。</p>
-<p><strong>Initialize リクエストの例:</strong></p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initialize"</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"init-123"</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">"protocolVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-11-25"</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">"clientInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui-enabled-client"</span><span class="p">,</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">},</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">"a2ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">"clientCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">          </span><span class="nt">"v0.10"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nt">"supportedCatalogIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">              </span><span class="s2">"https://a2ui.org/specification/v0_10/basic_catalog.json"</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">]</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">          </span><span class="p">}</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
-</span></code></pre></div>
-<h3 id="b-mcp">オプション B: 各 MCP メッセージでカタログを伝える（ステートレスサーバー向け）<a class="headerlink" href="#b-mcp" title="Permanent link">&para;</a></h3>
-<p>MCP サーバーを完全にステートレスにしたい場合、クライアントは各 tool call リクエストの <code>_meta</code> フィールドで A2UI バージョンとカタログサポートを送れます。サーバーはそのメタデータを見て、応答 UI に使うカタログを即座に判断します。</p>
-<p><strong>Call リクエストのメタデータ例:</strong></p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-123"</span><span class="p">,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generate_report"</span><span class="p">,</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-01"</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">"a2ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">"clientCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">          </span><span class="nt">"v0.10"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="nt">"supportedCatalogIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">              </span><span class="s2">"https://a2ui.org/specification/v0_10/basic_catalog.json"</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="p">],</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">            </span><span class="nt">"inlineCatalogs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">          </span><span class="p">}</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="p">}</span>
-</span></code></pre></div>
-<h2 id="a2ui">埋め込みリソースとして A2UI コンテンツを返す<a class="headerlink" href="#a2ui" title="Permanent link">&para;</a></h2>
-<p>Embedded Resource を使うと、Tool はサーバー側に保存や追跡を必要とせず、その応答に直接紐づく UI レイアウトを返せます。</p>
+<p>このガイドでは、<strong>Tools</strong> と <strong>Embedded Resources</strong> を使って <strong>MCP サーバー</strong> から <strong>リッチで対話的な A2UI インターフェース</strong> を配信する方法を説明します。最後まで進めると、あらゆる MCP 互換クライアントに A2UI コンポーネントを返す、実際に動作する MCP サーバーを構築できます。</p>
+<video width="100%" height="auto" controls playsinline style="display: block; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px; margin-bottom: 24px;">
+  <source src="https://raw.githubusercontent.com/a2ui-project/a2ui/main/docs/public/assets/guides-a2ui-over-mcp-tour.mp4" type="video/mp4">
+  お使いのブラウザは video タグをサポートしていません。
+</video>
+
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>開始する前に、以下がインストールされていることを確認してください。</p>
 <ul>
-<li><strong>URI</strong>: <code>a2ui://</code> プレフィックスと、分かりやすい識別子を使う必要があります（例: <code>a2ui://training-plan-page</code>）</li>
-<li><strong>MIME Type</strong>: <code>application/a2ui+json</code> を使います。これにより MCP クライアントは生 JSON ではなく A2UI レンダラーへペイロードを渡します</li>
+<li><strong>Python</strong> (バージョン 3.10 以降)</li>
+<li>高速な Python パッケージ管理用の <strong><a href="https://docs.astral.sh/uv/">uv</a></strong></li>
+<li>MCP Inspector 用の <strong>Node.js</strong> (バージョン 18 以降)</li>
 </ul>
-<h4 id="python">Python 実装例<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">mcp.types</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">types</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nd">@self</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_hello_world_ui</span><span class="p">():</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">a2ui_payload</span> <span class="o">=</span> <span class="p">[</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="p">{</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"v0.10"</span><span class="p">,</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="s2">"createSurface"</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                <span class="s2">"surfaceId"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                <span class="s2">"catalogId"</span><span class="p">:</span> <span class="s2">"https://a2ui.org/specification/v0_10/basic_catalog.json"</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="p">}</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="p">},</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="p">{</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"v0.10"</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="s2">"updateComponents"</span><span class="p">:</span> <span class="p">{</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                <span class="s2">"surfaceId"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>                <span class="s2">"components"</span><span class="p">:</span> <span class="p">[</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                    <span class="p">{</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                        <span class="s2">"component"</span><span class="p">:</span> <span class="s2">"Text"</span><span class="p">,</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                        <span class="s2">"text"</span><span class="p">:</span> <span class="s2">"Hello World!"</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                    <span class="p">}</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                <span class="p">]</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            <span class="p">}</span>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="p">}</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="p">]</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="c1"># A2UI を Embedded Resource として包む</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="n">a2ui_resource</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">EmbeddedResource</span><span class="p">(</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>        <span class="nb">type</span><span class="o">=</span><span class="s2">"resource"</span><span class="p">,</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="n">resource</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">TextResourceContents</span><span class="p">(</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>            <span class="n">uri</span><span class="o">=</span><span class="s2">"a2ui://training-plan-page"</span><span class="p">,</span>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>            <span class="n">mimeType</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>            <span class="n">text</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">a2ui_payload</span><span class="p">),</span>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>        <span class="p">)</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="p">)</span>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="n">text_content</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>        <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span><span class="p">,</span>
-</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>        <span class="n">text</span><span class="o">=</span><span class="s2">"Here is your generated training plan summary..."</span>
-</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>    <span class="p">)</span>
-</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
-</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>    <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="p">[</span><span class="n">text_content</span><span class="p">,</span> <span class="n">a2ui_resource</span><span class="p">])</span>
+<h2 id="_2">クイックスタート: サンプルの実行<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>プロトコルの詳細に入る前に、実際に動作するサンプルを実行してみましょう。A2UI リポジトリには、すぐに使える MCP レシピデモが含まれています。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># リポジトリをクローン (まだ行っていない場合)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/a2ui-project/a2ui.git
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>a2ui/samples/mcp/a2ui-over-mcp-recipe
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># MCP サーバーを起動 (ポート 8000 で SSE トランスポート)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>uv<span class="w"> </span>run<span class="w"> </span>.
 </span></code></pre></div>
-<h2 id="_2">ユーザーアクションの扱い<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><code>Button</code> のような対話的コンポーネントは、<code>actions</code> をサーバーへ送れます。</p>
-<h4 id="1-a2ui-json">1. アクション付きの A2UI JSON<a class="headerlink" href="#1-a2ui-json" title="Permanent link">&para;</a></h4>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm-button"</span><span class="p">,</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">"component"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">"Button"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">"child"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm-button-text"</span><span class="p">,</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm_booking"</span><span class="p">,</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">          </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">            </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/dates/start"</span><span class="p">,</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">            </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/dates/end"</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">          </span><span class="p">}</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">}</span>
+<h3 id="a-mcp-inspector">オプション A: MCP Inspector を使った対話<a class="headerlink" href="#a-mcp-inspector" title="Permanent link">&para;</a></h3>
+<p>別のターミナルで <a href="https://github.com/modelcontextprotocol/inspector">MCP Inspector</a> を起動し、サーバーと対話します。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector
 </span></code></pre></div>
-<h4 id="2-a2ui-mcp">2. A2UI アクションの MCP ペイロード<a class="headerlink" href="#2-a2ui-mcp" title="Permanent link">&para;</a></h4>
-<p>ボタンが押されると、クライアントは <code>/dates/start</code> や <code>/dates/end</code> のような絶対・相対パスをサーフェスのバインディング状態に対して解決し、その内容を MCP tool call の引数へ変換します。</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-456"</span><span class="p">,</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui_action"</span><span class="p">,</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm_booking"</span><span class="p">,</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-20"</span><span class="p">,</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-25"</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="p">}</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
+<p>Inspector 内で以下の操作を行います:</p>
+<ol>
+<li><strong>Transport Type</strong> を <code>SSE</code> に設定します。</li>
+<li><code>http://localhost:8000/sse</code> に接続します。</li>
+<li><strong>List Resources</strong> をクリック → "Recipe Form" リソースが表示されます。</li>
+<li><code>a2ui://recipe-form</code> リソースを読み取ります → リソース内容はシンプルなフォームをレンダリングする A2UI JSON です。</li>
+<li><strong>List Tools</strong> をクリック → <code>get_recipe_a2ui</code> が表示されます。</li>
+<li>ツールを実行します → レスポンスにレシピカードをレンダリングする A2UI JSON が含まれます。</li>
+</ol>
+<blockquote>
+<p>NOTE: 注記</p>
+<p>このサンプルは A2UI Agent SDK へのローカルパス参照を使用しています。ご自身のプロジェクトでは PyPI からインストールしてください:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>a2ui-agent-sdk
 </span></code></pre></div>
-<h4 id="3-mcp">3. MCP サーバー側のアクションハンドラー<a class="headerlink" href="#3-mcp" title="Permanent link">&para;</a></h4>
-<p>MCP サーバーは tool call を受け取り、対応するハンドラーを実行します。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nd">@self</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">a2ui_action</span><span class="p">(</span><span class="n">action_payload</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="k">if</span> <span class="n">action_payload</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"confirm_booking"</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">"response"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Booking confirmed for </span><span class="si">{</span><span class="n">action_payload</span><span class="p">[</span><span class="s1">'context'</span><span class="p">][</span><span class="s1">'start'</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">action_payload</span><span class="p">[</span><span class="s1">'context'</span><span class="p">][</span><span class="s1">'end'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span><span class="p">}</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown action: </span><span class="si">{</span><span class="n">action_payload</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</blockquote>
+<h3 id="b-web">オプション B: レシピクライアント Web アプリの実行<a class="headerlink" href="#b-web" title="Permanent link">&para;</a></h3>
+<p>A2UI over MCP を視覚的に確認できる完全な対話型体験を試すには、付属の Web アプリケーションを実行します。</p>
+<blockquote>
+<p>[!NOTE]
+<strong>パッケージマネージャーの使用:</strong> A2UI リポジトリ内の組み込みサンプルアプリケーションを実行するには、Corepack ワークスペースで設定されている Yarn (<code>yarn install</code> / <code>yarn dev</code>) が必要です。このリポジトリ外での通常の使用やスタンドアロンプロジェクトでは、お好みのパッケージマネージャー (npm, pnpm など) を使用してください。</p>
+</blockquote>
+<ol>
+<li>新しいターミナルウィンドウで、client ディレクトリに移動します:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>client
+</span></code></pre></div></li>
+<li>Node.js の依存関係をインストールします:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>yarn<span class="w"> </span>install
+</span></code></pre></div></li>
+<li>Vite 開発サーバーを起動します:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>yarn<span class="w"> </span>dev
+</span></code></pre></div></li>
+<li>ターミナルに表示された URL (通常は <code>http://localhost:5173</code>) をブラウザで開きます。</li>
+</ol>
+<p>レスポンシブな 2 カラムインターフェースが表示されます。左側のカラムは MCP Resource (<code>a2ui://recipe-form</code>) から選択フォームをレンダリングします。オプションを選択して <strong>「Get Recipe」</strong> をクリックすると、MCP Tool (<code>get_recipe_a2ui</code>) が実行され、返されたカスタム A2UI レシピカードが右側のカラムに動的にレンダリングされます。</p>
+<p><img alt="選択フォームと動的なレシピカード生成を示す Dynamic Recipe Studio デモ" src="../../assets/recipe_sample.gif" /></p>
+<p>すべてのサンプルは <a href="https://github.com/a2ui-project/a2ui/tree/main/samples/community/mcp"><code>samples/community/mcp/</code></a> で確認できます。</p>
+<h2 id="_3">仕組み<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>MCP サーバーがクライアントに A2UI コンテンツを配信するには、主に 2 つの方法があります:</p>
+<ol>
+<li><strong>リソースの読み取り経由 (<code>resources/read</code>)</strong>: クライアントが MCP リソースを直接読み取ります (例: <code>a2ui://recipe-form</code>)。サーバーは A2UI JSON ペイロードを直接返します。</li>
+<li><strong>ツールの呼び出し経由 (<code>tools/call</code>)</strong>: クライアントが MCP ツールを呼び出します (例: <code>get_recipe_a2ui</code>)。サーバーはツールレスポンス内の <strong>Embedded Resource</strong> としてラップされた A2UI JSON ペイロードを返します。</li>
+</ol>
+<p>どちらの場合も、クライアントは <code>application/a2ui+json</code> MIME タイプを検出し、ペイロードを A2UI レンダラーへルーティングします。</p>
+<blockquote>
+<p>[!IMPORTANT]
+<strong>MIME タイプの一貫性</strong>
+配信チャネル (Resource として直接取得するか、Tool の <code>CallToolResult</code> 内で返されるか) に関係なく、A2UI JSON ペイロードは常に <code>application/a2ui+json</code> MIME タイプで識別されます。Tool レスポンスでは、ペイロードはこの MIME タイプを持つ <code>EmbeddedResource</code> 内にラップされている必要があります。この統一された識別により、クライアント側ミドルウェアが静的リソースと動的ツールレスポンスの両方をシームレスにインターセプトして A2UI へルーティングできます。</p>
+</blockquote>
+<h3 id="1-resourcesread">1. リソースベースの配信フロー (<code>resources/read</code>)<a class="headerlink" href="#1-resourcesread" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Client → resources/read → MCP Server
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                             ↓
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                 Retrieve A2UI JSON
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                             ↓
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Client ← ResourceContents ← MCP Server
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>          (application/a2ui+json)
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>   ↓
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>A2UI Renderer displays UI
 </span></code></pre></div>
-<h2 id="_3">エラー処理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>ユーザー操作と同様に、MCP サーバーはクライアントからのエラーも受け取れます。</p>
-<h4 id="1-a2ui-mcp">1. A2UI エラーの MCP ペイロード<a class="headerlink" href="#1-a2ui-mcp" title="Permanent link">&para;</a></h4>
-<p>クライアントが A2UI ペイロードの処理に失敗した場合、エラー MCP ペイロードをサーバーへ送れます。</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-789"</span><span class="p">,</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui_error"</span><span class="p">,</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID_JSON"</span><span class="p">,</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to parse A2UI payload."</span><span class="p">,</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">      </span><span class="nt">"surfaceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+<h3 id="2-toolscall">2. ツールベースの配信フロー (<code>tools/call</code>)<a class="headerlink" href="#2-toolscall" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Client → tools/call → MCP Server
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                         ↓
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>              Generate A2UI JSON
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                         ↓
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>         Wrap as EmbeddedResource
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>              (application/a2ui+json)
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>                         ↓
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Client ← CallToolResult ← MCP Server
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>   ↓
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>A2UI Renderer displays UI
 </span></code></pre></div>
-<h4 id="2-mcp">2. エラーハンドラーの MCP サーバーツール<a class="headerlink" href="#2-mcp" title="Permanent link">&para;</a></h4>
-<p>MCP サーバーは tool call を受け取り、対応するハンドラーを実行します。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nd">@self</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">a2ui_error</span><span class="p">(</span><span class="n">error_payload</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">"response"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Received A2UI error: </span><span class="si">{</span><span class="n">error_payload</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span><span class="p">}</span>
-</span></code></pre></div>
-<h2 id="_4">音声化と可視性の制御<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>MCP の <strong>Resource Annotations</strong> を使うと、その後の assistant がバックエンドのペイロードを「読む」かどうかを制御できます。</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">a2ui_resource</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">EmbeddedResource</span><span class="p">(</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">type</span><span class="o">=</span><span class="s2">"resource"</span><span class="p">,</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">resource</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">TextResourceContents</span><span class="p">(</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="n">uri</span><span class="o">=</span><span class="s2">"a2ui://training-plan-page"</span><span class="p">,</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="n">mimeType</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">text</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">a2ui_payload</span><span class="p">)</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="p">),</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="c1"># 生 JSON は LLM から隠し、UI だけをユーザーへ表示する</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">annotations</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">Annotations</span><span class="p">(</span><span class="n">audience</span><span class="o">=</span><span class="p">[</span><span class="s2">"user"</span><span class="p">])</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">)</span>
-</span></code></pre></div>
+<h2 id="resources-tools">Resources と Tools: 用途の分離<a class="headerlink" href="#resources-tools" title="Permanent link">&para;</a></h2>
+<p>MCP 上で A2UI 統合を設計する場合、UI ペイロードが静的か動的かに応じて <strong>Resources</strong> と <strong>Tools</strong> のどちらかを選択します。</p>
+<h3 id="1-mcp-resources-ui-resourcesread">1. MCP Resources による静的 UI (<code>resources/read</code>)<a class="headerlink" href="#1-mcp-resources-ui-resourcesread" title="Permanent link">&para;</a></h3>
+<p>ユーザーのプロンプト入力や会話履歴に依存しない、シンプルで静的なユーザーインターフェースには、A2UI を MCP Resource として直接配信します。</p>
 <ul>
-<li><strong>空の audience</strong>: 要素はユーザーと LLM の両方に見える</li>
-<li><strong>audience <code>user</code></strong>: ビュー画面へアイテムを表示するために必要</li>
+<li><strong>コンセプト</strong>: クライアントは標準のリソース URI (例: <code>a2ui://recipe-form</code>) を使用して事前定義された A2UI リソースを読み取ります。</li>
+<li><strong>ユースケース</strong>: 静的な設定フォーム、選択画面、設定ダッシュボード、固定レイアウトに最適です。</li>
+<li><strong>利点</strong>: 実装が非常にシンプルでオーバーヘッドが少なく、LLM/エージェントが構造を取得するためにツール呼び出しを行う必要がありません。</li>
+</ul>
+<p><strong>Python サーバーの例:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">list_resources</span><span class="p">()</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">list_resources</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">]:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="k">return</span> <span class="p">[</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="n">types</span><span class="o">.</span><span class="n">Resource</span><span class="p">(</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>            <span class="n">uri</span><span class="o">=</span><span class="s2">"a2ui://recipe-form"</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>            <span class="n">name</span><span class="o">=</span><span class="s2">"Recipe Form"</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            <span class="n">mimeType</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            <span class="n">description</span><span class="o">=</span><span class="s2">"Static form allowing users to pick options."</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="p">)</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="p">]</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nd">@app</span><span class="o">.</span><span class="n">read_resource</span><span class="p">()</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">read_resource</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ReadResourceContents</span><span class="p">]:</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="k">if</span> <span class="n">uri</span> <span class="o">==</span> <span class="s2">"a2ui://recipe-form"</span><span class="p">:</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="k">return</span> <span class="p">[</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>            <span class="n">ReadResourceContents</span><span class="p">(</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>                <span class="n">content</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">recipe_form_json</span><span class="p">),</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>                <span class="n">mime_type</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>            <span class="p">)</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>        <span class="p">]</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown resource: </span><span class="si">{</span><span class="n">uri</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="2-mcp-tools-ui-toolscall">2. MCP Tools による動的 UI (<code>tools/call</code>)<a class="headerlink" href="#2-mcp-tools-ui-toolscall" title="Permanent link">&para;</a></h3>
+<p>会話のコンテキスト、ユーザーパラメータ、またはリアルタイムデータに基づいて動的に生成する必要があるユーザーインターフェースには、MCP Tool のレスポンス内で A2UI を配信します。</p>
+<ul>
+<li><strong>コンセプト</strong>: クライアント/エージェントが特定の引数 (例: 選択した食材、好み) でツールを呼び出し、サーバーは <code>CallToolResult</code> 内の <code>EmbeddedResource</code> にラップされたカスタマイズされた A2UI JSON を返します。</li>
+<li><strong>ユースケース</strong>: リアルタイムデータベースクエリ、過去の入力、対話型ステップバイステップウィザードの状態、パーソナライズされたおすすめ (例: カスタマイズされたレシピカード) に依存するコンテンツに最適です。</li>
+<li><strong>利点</strong>: 柔軟性とコンテキスト認識を最大化し、高度に動的なフローをサポートします。</li>
+<li><strong>ベストプラクティス (フォールバックテキスト)</strong>: <code>CallToolResult</code> 内で <code>EmbeddedResource</code> と一緒に必ず <code>TextContent</code> を含めてください。A2UI をサポートしていないクライアントは、代わりにこのテキストをユーザーに表示します。</li>
+</ul>
+<p><strong>Python サーバーの例:</strong></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">call_tool</span><span class="p">()</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">handle_call_tool</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arguments</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"get_recipe_a2ui"</span><span class="p">:</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="c1"># Resolve dynamic selections from client parameters</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="n">style</span> <span class="o">=</span> <span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cookingStyle"</span><span class="p">,</span> <span class="s2">"Baked"</span><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="n">protein</span> <span class="o">=</span> <span class="n">arguments</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"protein"</span><span class="p">,</span> <span class="s2">"Salmon"</span><span class="p">)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="c1"># Retrieve customized recipe database entry</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">recipe_data</span> <span class="o">=</span> <span class="n">RECIPES</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">style</span><span class="p">,</span> <span class="n">protein</span><span class="p">))</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="c1"># Customize base A2UI schema dynamically</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="n">custom_recipe_json</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">recipe_a2ui_json</span><span class="p">)</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="n">custom_recipe_json</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">"updateComponents"</span><span class="p">][</span><span class="s2">"components"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"text"</span><span class="p">]</span> <span class="o">=</span> <span class="n">recipe_data</span><span class="p">[</span><span class="s2">"title"</span><span class="p">]</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="c1"># Return customized recipe card as EmbeddedResource</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            <span class="n">types</span><span class="o">.</span><span class="n">EmbeddedResource</span><span class="p">(</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>                <span class="nb">type</span><span class="o">=</span><span class="s2">"resource"</span><span class="p">,</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>                <span class="n">resource</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">TextResourceContents</span><span class="p">(</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>                    <span class="n">uri</span><span class="o">=</span><span class="s2">"a2ui://recipe-card"</span><span class="p">,</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>                    <span class="n">mimeType</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>                    <span class="n">text</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">custom_recipe_json</span><span class="p">),</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>                <span class="p">)</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>            <span class="p">)</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        <span class="p">])</span>
+</span></code></pre></div>
+<h2 id="_4">カタログのネゴシエーション<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>サーバーがクライアントに A2UI を送信する前に、双方はどのカタログが利用可能かを確立する必要があります。アーキテクチャに応じて、これは 2 つの方法のいずれかで行われます。</p>
+<h3 id="a-mcp">オプション A: MCP 初期化時 (推奨)<a class="headerlink" href="#a-mcp" title="Permanent link">&para;</a></h3>
+<p>MCP は状態を持つセッションプロトコルであるため、最も効率的な方法は接続セットアップ時に機能を 1 回だけ宣言することです。クライアントは <code>capabilities</code> 配下で A2UI サポートを宣言します:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initialize"</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"init-123"</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="nt">"protocolVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-11-25"</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">"clientInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui-enabled-client"</span><span class="p">,</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nt">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">      </span><span class="nt">"a2ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">        </span><span class="nt">"clientCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">          </span><span class="nt">"v0.9"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">            </span><span class="nt">"supportedCatalogIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">              </span><span class="s2">"https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>サーバーはこの状態をセッションの間保持します。</p>
+<h3 id="b">オプション B: メッセージごとのメタデータ (ステートレスサーバー向け)<a class="headerlink" href="#b" title="Permanent link">&para;</a></h3>
+<p>サーバーがステートレスである必要がある場合、クライアントはすべてのツール呼び出しの <code>_meta</code> フィールドで A2UI 機能を渡すことができます:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-123"</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"generate_report"</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-01"</span><span class="p">},</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">      </span><span class="nt">"a2ui"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="nt">"clientCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">          </span><span class="nt">"v0.9"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">            </span><span class="nt">"supportedCatalogIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">              </span><span class="s2">"https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">            </span><span class="nt">"inlineCatalogs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_5">ユーザーアクションの処理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><code>Button</code> などの対話型コンポーネントは、MCP ツール呼び出しとしてサーバーに送り返されるアクションをトリガーできます。</p>
+<h3 id="1-button">1. アクションを含む Button の定義<a class="headerlink" href="#1-button" title="Permanent link">&para;</a></h3>
+<p>A2UI JSON で、コンポーネントに <code>action</code> を追加します:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm-button"</span><span class="p">,</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">"component"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">"Button"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="nt">"child"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm-button-text"</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">      </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm_booking"</span><span class="p">,</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">          </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">            </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/dates/start"</span><span class="p">,</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">            </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/dates/end"</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">          </span><span class="p">}</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="2">2. クライアントがアクションをツール呼び出しとして送信<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>ユーザーがボタンをクリックすると、クライアントは surface の状態に対して (<code>/dates/start</code> などの) データバインディングを解決し、必須のアクションフィールドを含むツール呼び出しを送信します:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-456"</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui_action"</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm_booking"</span><span class="p">,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">      </span><span class="nt">"surfaceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"booking-surface"</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">      </span><span class="nt">"sourceComponentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirm-button"</span><span class="p">,</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-20T12:00:00Z"</span><span class="p">,</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">      </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="nt">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-20"</span><span class="p">,</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="nt">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-03-25"</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">      </span><span class="p">}</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="3">3. サーバーでアクションを処理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">a2ui_action</span><span class="p">(</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">surfaceId</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">sourceComponentId</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">:</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span><span class="sd">"""Handle A2UI user actions."""</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"confirm_booking"</span><span class="p">:</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        <span class="c1"># Process the booking, then return confirmation UI</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>        <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>            <span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>                <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span><span class="p">,</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>                <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Booking confirmed for </span><span class="si">{</span><span class="n">surfaceId</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">context</span><span class="p">[</span><span class="s1">'start'</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">context</span><span class="p">[</span><span class="s1">'end'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>            <span class="p">)</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>        <span class="p">])</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown action: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<blockquote>
+<p>[!NOTE]
+5つのアクションフィールドすべて (<code>name</code>、<code>surfaceId</code>、<code>sourceComponentId</code>、<code>timestamp</code>、<code>context</code>) は A2UI 仕様で必須とされています。ツールパラメーターにすべてのフィールドを宣言しておくことで、MCP SDK が <code>surfaceId</code> やその他のフィールドを除外してしまい、元の surface コンテキストが失われるのを防ぐことができます。</p>
+</blockquote>
+<h2 id="_6">エラーハンドリング<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>クライアントは、ツール呼び出しを介して A2UI のレンダリングおよびバリデーションエラーをサーバーに報告できます:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id-789"</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a2ui_error"</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VALIDATION_FAILED"</span><span class="p">,</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">      </span><span class="nt">"surfaceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"booking-surface"</span><span class="p">,</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">      </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/components/0/text"</span><span class="p">,</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to parse A2UI payload."</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">  </span><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>サーバーで処理します:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">tool</span><span class="p">()</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">a2ui_error</span><span class="p">(</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">surfaceId</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">:</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="sd">"""Handle A2UI client errors."""</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>    <span class="c1"># Log the error, retry, or send a fallback UI</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="k">return</span> <span class="n">types</span><span class="o">.</span><span class="n">CallToolResult</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>        <span class="n">types</span><span class="o">.</span><span class="n">TextContent</span><span class="p">(</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>            <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span><span class="p">,</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>            <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Acknowledged error </span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2"> on surface </span><span class="si">{</span><span class="n">surfaceId</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>        <span class="p">)</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>    <span class="p">])</span>
+</span></code></pre></div>
+<h2 id="_7">発話と可視性の制御<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>MCP <strong>Resource Annotations</strong> を使用して、後続のターンで LLM が A2UI ペイロードを「読み取る」ことができるかどうかを制御します:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">a2ui_resource</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">EmbeddedResource</span><span class="p">(</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="nb">type</span><span class="o">=</span><span class="s2">"resource"</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">resource</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">TextResourceContents</span><span class="p">(</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="n">uri</span><span class="o">=</span><span class="s2">"a2ui://training-plan-page"</span><span class="p">,</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        <span class="n">mimeType</span><span class="o">=</span><span class="s2">"application/a2ui+json"</span><span class="p">,</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        <span class="n">text</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">a2ui_payload</span><span class="p">)</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="p">),</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="c1"># ユーザーには UI を表示し、LLM からは生 JSON を隠す</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="n">annotations</span><span class="o">=</span><span class="n">types</span><span class="o">.</span><span class="n">Annotations</span><span class="p">(</span><span class="n">audience</span><span class="o">=</span><span class="p">[</span><span class="s2">"user"</span><span class="p">])</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">)</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Audience</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>(空)</em></td>
+<td>ユーザーと LLM の両方に表示されます</td>
+</tr>
+<tr>
+<td><code>["user"]</code></td>
+<td>ユーザー向けにレンダリングされ、LLM コンテキストからは隠されます</td>
+</tr>
+<tr>
+<td><code>["assistant"]</code></td>
+<td>LLM が後続の推論に利用できますが、レンダリングはされません</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2ui-agent-sdk">A2UI Agent SDK の使用<a class="headerlink" href="#a2ui-agent-sdk" title="Permanent link">&para;</a></h2>
+<p>本番環境では、<strong>A2UI Agent SDK</strong> がスキーマ管理、検証、プロンプト生成を自動で処理します:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pip<span class="w"> </span>install<span class="w"> </span>a2ui-agent-sdk
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.strategies.schema</span><span class="w"> </span><span class="kn">import</span> <span class="n">A2uiSchemaManager</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">a2ui.basic_catalog.provider</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasicCatalog</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Initialize the schema manager with the basic catalog</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">schema_manager</span> <span class="o">=</span> <span class="n">A2uiSchemaManager</span><span class="p">(</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="n">catalogs</span><span class="o">=</span><span class="p">[</span><span class="n">BasicCatalog</span><span class="o">.</span><span class="n">get_config</span><span class="p">()],</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">)</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c1"># Validate A2UI output before sending</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">selected_catalog</span> <span class="o">=</span> <span class="n">schema_manager</span><span class="o">.</span><span class="n">get_selected_catalog</span><span class="p">()</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="n">selected_catalog</span><span class="o">.</span><span class="n">validator</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">a2ui_payload</span><span class="p">)</span>
+</span></code></pre></div>
+<p>スキーマ管理、動的カタログ、ストリーミングの詳細については、<a href="../agent-development/">エージェント開発ガイド</a> を参照してください。</p>
+<h2 id="_8">次のステップ<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../specification/v0.9-a2ui/">A2UI 仕様</a> — 完全なプロトコルリファレンス</li>
+<li><a href="../../reference/components/">コンポーネントギャラリー</a> — 利用可能なコンポーネントを探索</li>
+<li><a href="../mcp-apps-in-a2ui/">A2UI Surface 内の MCP Apps</a> — HTML ベースの MCP アプリを A2UI 内に埋め込む</li>
+<li><a href="../client-setup/">クライアントのセットアップ</a> — A2UI を表示するレンダラーを構築する</li>
 </ul>
 
 
