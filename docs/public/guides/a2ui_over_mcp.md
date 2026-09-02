@@ -3,7 +3,7 @@
 このガイドでは、**Tools** と **Embedded Resources** を使って **MCP サーバー** から **リッチで対話的な A2UI インターフェース** を配信する方法を説明します。最後まで進めると、あらゆる MCP 互換クライアントに A2UI コンポーネントを返す、実際に動作する MCP サーバーを構築できます。
 
 <video width="100%" height="auto" controls playsinline style="display: block; aspect-ratio: 16/9; object-fit: cover; border-radius: 8px; margin-bottom: 24px;">
-  <source src="https://raw.githubusercontent.com/a2ui-project/a2ui/main/docs/public/assets/guides-a2ui-over-mcp-tour.mp4" type="video/mp4">
+  <source src="../assets/guides-a2ui-over-mcp-tour.mp4" type="video/mp4">
   お使いのブラウザは video タグをサポートしていません。
 </video>
 
@@ -22,7 +22,7 @@
 ```bash
 # リポジトリをクローン (まだ行っていない場合)
 git clone https://github.com/a2ui-project/a2ui.git
-cd a2ui/samples/mcp/a2ui-over-mcp-recipe
+cd a2ui/samples/community/mcp/a2ui-over-mcp-recipe
 
 # MCP サーバーを起動 (ポート 8000 で SSE トランスポート)
 uv run .
@@ -33,20 +33,18 @@ uv run .
 別のターミナルで [MCP Inspector](https://github.com/modelcontextprotocol/inspector) を起動し、サーバーと対話します。
 
 ```bash
-npx @modelcontextprotocol/inspector
+npx @modelcontextprotocol/inspector@latest --web --transport sse --server-url http://localhost:8000/sse
 ```
 
-Inspector 内で以下の操作を行います:
+`http://localhost:6274` を開きます:
 
-1. **Transport Type** を `SSE` に設定します。
-2. `http://localhost:8000/sse` に接続します。
-3. **List Resources** をクリック → "Recipe Form" リソースが表示されます。
-4. `a2ui://recipe-form` リソースを読み取ります → リソース内容はシンプルなフォームをレンダリングする A2UI JSON です。
-5. **List Tools** をクリック → `get_recipe_a2ui` が表示されます。
-6. ツールを実行します → レスポンスにレシピカードをレンダリングする A2UI JSON が含まれます。
+1. **List Resources** をクリック → `a2ui://recipe-form` および `a2ui://recipe-card` が表示されます。
+2. リソースを読み取る → データバインディングを含む静的な A2UI プレゼンテーションテンプレート (`createSurface` と `updateComponents`) が含まれます。
+3. **List Tools** をクリック → それぞれのプレゼンテーションテンプレートリソースへの `_meta.ui` リンクを持つ `get_recipe_form_a2ui` と `get_recipe_a2ui` が表示されます。
+4. `get_recipe_form_a2ui` を実行 → ツールが `updateDataModel` メッセージでラップされた初期フォーム選択状態を返します。
+5. カスタムパラメータで `get_recipe_a2ui` を実行 → ツールが `updateDataModel` メッセージでラップされた動的なレシピ詳細を返します。
 
-> NOTE: 注記
->
+> [!NOTE]
 > このサンプルは A2UI Agent SDK へのローカルパス参照を使用しています。ご自身のプロジェクトでは PyPI からインストールしてください:
 >
 > ```bash
@@ -55,16 +53,16 @@ Inspector 内で以下の操作を行います:
 
 ### オプション B: レシピクライアント Web アプリの実行
 
-A2UI over MCP を視覚的に確認できる完全な対話型体験を試すには、付属の Web アプリケーションを実行します。
+対話型の Web クライアントを実行するには:
 
 > [!NOTE]
-> **パッケージマネージャーの使用:** A2UI リポジトリ内の組み込みサンプルアプリケーションを実行するには、Corepack ワークスペースで設定されている Yarn (`yarn install` / `yarn dev`) が必要です。このリポジトリ外での通常の使用やスタンドアロンプロジェクトでは、お好みのパッケージマネージャー (npm, pnpm など) を使用してください。
+> A2UI リポジトリ内の組み込みサンプルアプリケーションを実行するには、Yarn ワークスペース (`yarn install` / `yarn dev`) を使用します。このリポジトリ外では、任意のパッケージマネージャー (npm, pnpm, yarn) を使用できます。
 
 1. 新しいターミナルウィンドウで、client ディレクトリに移動します:
     ```bash
     cd client
     ```
-2. Node.js の依存関係をインストールします:
+2. 依存関係をインストールします:
     ```bash
     yarn install
     ```
@@ -72,68 +70,63 @@ A2UI over MCP を視覚的に確認できる完全な対話型体験を試すに
     ```bash
     yarn dev
     ```
-4. ターミナルに表示された URL (通常は `http://localhost:5173`) をブラウザで開きます。
+4. ブラウザで `http://localhost:5173` を開きます。
 
-レスポンシブな 2 カラムインターフェースが表示されます。左側のカラムは MCP Resource (`a2ui://recipe-form`) から選択フォームをレンダリングします。オプションを選択して **「Get Recipe」** をクリックすると、MCP Tool (`get_recipe_a2ui`) が実行され、返されたカスタム A2UI レシピカードが右側のカラムに動的にレンダリングされます。
+アプリケーションがロードされると、クライアントは SSE 経由で MCP サーバーに接続し、`get_recipe_form_a2ui` を実行します。`_meta.ui` を読み取って `a2ui://recipe-form` プレゼンテーションテンプレートを取得・キャッシュし、返された `updateDataModel` を適用してデフォルトの選択肢 (`Grilled`, `Chicken`) を入力します。オプションを選択して **「Get Recipe」** をクリックすると `get_recipe_a2ui` が実行され、`a2ui://recipe-card` を取得して右側のカラムにレシピ詳細を動的にレンダリングします。
 
 ![選択フォームと動的なレシピカード生成を示す Dynamic Recipe Studio デモ](../assets/recipe_sample.gif)
 
-すべてのサンプルは [`samples/community/mcp/`](https://github.com/a2ui-project/a2ui/tree/main/samples/community/mcp) で確認できます。
+すべてのサンプルは [`samples/community/mcp/`](../../../samples/community/mcp) で確認できます。
 
-## 仕組み
+## 分離アーキテクチャ: プレゼンテーションとデータの分離
 
-MCP サーバーがクライアントに A2UI コンテンツを配信するには、主に 2 つの方法があります:
+MCP 上の A2UI は、ユーザーインターフェースを 2 つのレイヤーに分離します:
 
-1. **リソースの読み取り経由 (`resources/read`)**: クライアントが MCP リソースを直接読み取ります (例: `a2ui://recipe-form`)。サーバーは A2UI JSON ペイロードを直接返します。
-2. **ツールの呼び出し経由 (`tools/call`)**: クライアントが MCP ツールを呼び出します (例: `get_recipe_a2ui`)。サーバーはツールレスポンス内の **Embedded Resource** としてラップされた A2UI JSON ペイロードを返します。
-
-どちらの場合も、クライアントは `application/a2ui+json` MIME タイプを検出し、ペイロードを A2UI レンダラーへルーティングします。
+1. **MCP Resources による静的プレゼンテーションテンプレート (`resources/read`)**:
+   データバインディング (`/title`, `/cookTime`, `/image` など) を持つコンポーネントツリー (`createSurface` および `updateComponents`) を含むレイアウトは、カスタム URI (例: `a2ui://recipe-form`, `a2ui://recipe-card`) のもとで MIME タイプ `application/a2ui+json` を持つ MCP リソースとして配信されます。テンプレートにはハードコードされたデータ値が含まれないため、クライアントはローカルに取得してキャッシュできます。
+2. **MCP Tools による動的データ更新 (`tools/call`)**:
+   ツールが実行されると、サーバーはテンプレートに必要な動的値のみを A2UI `updateDataModel` メッセージとしてパッケージ化して返します。
+3. **ツール UI メタデータ (`_meta.ui`)**:
+   ツールは、ツール定義および `CallToolResult` に `_meta.ui` オブジェクトを含めることで、プレゼンテーションテンプレートにリンクします:
+    ```json
+    "_meta": {
+      "ui": {
+        "resourceUri": "a2ui://recipe-card",
+        "mimeType": "application/a2ui+json"
+      }
+    }
+    ```
+4. **クライアント側での解決とハイドレーション (Client-Side Resolution & Hydration)**:
+   クライアントホストは `_meta.ui.resourceUri` を検査し、ローカルテンプレートキャッシュを確認 (初回ロード時はサーバーからリソースを取得) してサーフェスレイアウトを初期化し、ツールレスポンスからの動的 `updateDataModel` を適用します。
 
 > [!IMPORTANT]
 > **MIME タイプの一貫性**
-> 配信チャネル (Resource として直接取得するか、Tool の `CallToolResult` 内で返されるか) に関係なく、A2UI JSON ペイロードは常に `application/a2ui+json` MIME タイプで識別されます。Tool レスポンスでは、ペイロードはこの MIME タイプを持つ `EmbeddedResource` 内にラップされている必要があります。この統一された識別により、クライアント側ミドルウェアが静的リソースと動的ツールレスポンスの両方をシームレスにインターセプトして A2UI へルーティングできます。
+> 静的テンプレートリソースと動的ツールペイロードの双方が `application/a2ui+json` MIME タイプを使用します。ツールレスポンスでは、データモデル更新はフォールバック用 `TextContent` とともに `EmbeddedResource` 内にラップされて返されます。この識別により、クライアントアプリケーションはペイロードを A2UI プロセッサへ直接ルーティングできます。
 
-### 1. リソースベースの配信フロー (`resources/read`)
-
-```
-Client → resources/read → MCP Server
-                             ↓
-                 Retrieve A2UI JSON
-                             ↓
-Client ← ResourceContents ← MCP Server
-          (application/a2ui+json)
-   ↓
-A2UI Renderer displays UI
-```
-
-### 2. ツールベースの配信フロー (`tools/call`)
+### 配信フロー
 
 ```
-Client → tools/call → MCP Server
-                         ↓
-              Generate A2UI JSON
-                         ↓
-         Wrap as EmbeddedResource
-              (application/a2ui+json)
-                         ↓
-Client ← CallToolResult ← MCP Server
-   ↓
-A2UI Renderer displays UI
+1. ツール呼び出し (Tool Invocation)
+クライアント → tools/call (例: get_recipe_a2ui) → MCP サーバー
+                                                      ↓
+                                            動的な値を計算
+                                                      ↓
+クライアント ← CallToolResult (updateDataModel) ← MCP サーバー
+         + _meta.ui: { resourceUri: "a2ui://recipe-card" }
+
+2. テンプレート解決 (初回取得後にキャッシュ)
+クライアントのキャッシュに "a2ui://recipe-card" がない場合:
+  クライアント → resources/read ("a2ui://recipe-card") → MCP サーバー
+  クライアント ← テンプレート (createSurface, updateComponents) ← MCP サーバー
+
+3. サーフェスハイドレーション (Surface Hydration)
+クライアントがツールレスポンスからの updateDataModel をサーフェスに適用
+A2UI レンダラーが表示を更新
 ```
 
-## Resources と Tools: 用途の分離
+### 1. MCP Resources によるプレゼンテーションテンプレートの定義
 
-MCP 上で A2UI 統合を設計する場合、UI ペイロードが静的か動的かに応じて **Resources** と **Tools** のどちらかを選択します。
-
-### 1. MCP Resources による静的 UI (`resources/read`)
-
-ユーザーのプロンプト入力や会話履歴に依存しない、シンプルで静的なユーザーインターフェースには、A2UI を MCP Resource として直接配信します。
-
-- **コンセプト**: クライアントは標準のリソース URI (例: `a2ui://recipe-form`) を使用して事前定義された A2UI リソースを読み取ります。
-- **ユースケース**: 静的な設定フォーム、選択画面、設定ダッシュボード、固定レイアウトに最適です。
-- **利点**: 実装が非常にシンプルでオーバーヘッドが少なく、LLM/エージェントが構造を取得するためにツール呼び出しを行う必要がありません。
-
-**Python サーバーの例:**
+`resources/list` および `resources/read` を通じて静的レイアウトテンプレートを公開します:
 
 ```python
 @app.list_resources()
@@ -143,68 +136,138 @@ async def list_resources() -> list[types.Resource]:
             uri="a2ui://recipe-form",
             name="Recipe Form",
             mimeType="application/a2ui+json",
-            description="Static form allowing users to pick options.",
-        )
+            description="Static form allowing users to pick cuisine and protein.",
+        ),
+        types.Resource(
+            uri="a2ui://recipe-card",
+            name="Recipe Card",
+            mimeType="application/a2ui+json",
+            description="Static recipe card layout template.",
+        ),
     ]
+
 
 @app.read_resource()
 async def read_resource(uri: str) -> list[ReadResourceContents]:
-    if uri == "a2ui://recipe-form":
+    if str(uri) == "a2ui://recipe-form":
         return [
             ReadResourceContents(
                 content=json.dumps(recipe_form_json),
                 mime_type="application/a2ui+json",
             )
         ]
+    if str(uri) == "a2ui://recipe-card":
+        return [
+            ReadResourceContents(
+                content=json.dumps(recipe_a2ui_json),
+                mime_type="application/a2ui+json",
+            )
+        ]
     raise ValueError(f"Unknown resource: {uri}")
 ```
 
-### 2. MCP Tools による動的 UI (`tools/call`)
+### 2. ツール UI メタデータの宣言
 
-会話のコンテキスト、ユーザーパラメータ、またはリアルタイムデータに基づいて動的に生成する必要があるユーザーインターフェースには、MCP Tool のレスポンス内で A2UI を配信します。
+ツール定義でプレゼンテーションリソースの URI を宣言します:
 
-- **コンセプト**: クライアント/エージェントが特定の引数 (例: 選択した食材、好み) でツールを呼び出し、サーバーは `CallToolResult` 内の `EmbeddedResource` にラップされたカスタマイズされた A2UI JSON を返します。
-- **ユースケース**: リアルタイムデータベースクエリ、過去の入力、対話型ステップバイステップウィザードの状態、パーソナライズされたおすすめ (例: カスタマイズされたレシピカード) に依存するコンテンツに最適です。
-- **利点**: 柔軟性とコンテキスト認識を最大化し、高度に動的なフローをサポートします。
-- **ベストプラクティス (フォールバックテキスト)**: `CallToolResult` 内で `EmbeddedResource` と一緒に必ず `TextContent` を含めてください。A2UI をサポートしていないクライアントは、代わりにこのテキストをユーザーに表示します。
+```python
+types.Tool(
+    name="get_recipe_a2ui",
+    title="Get Recipe A2UI",
+    description="Returns recipe data and links to the recipe-card template.",
+    inputSchema={
+        "type": "object",
+        "properties": {
+            "cookingStyle": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Selected cooking styles",
+            },
+            "protein": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Selected proteins",
+            },
+        },
+        "additionalProperties": True,
+    },
+    _meta={
+        "ui": {
+            "resourceUri": "a2ui://recipe-card",
+            "mimeType": "application/a2ui+json",
+        }
+    },
+)
+```
 
-**Python サーバーの例:**
+### 3. ツール実行による動的データの返却
+
+ツール呼び出しハンドラーで、`_meta.ui` とともに動的状態を `updateDataModel` メッセージとして返します:
 
 ```python
 @app.call_tool()
-async def handle_call_tool(name: str, arguments: dict[str, Any]) -> types.CallToolResult:
+async def handle_call_tool(
+    name: str, arguments: dict[str, Any]
+) -> types.CallToolResult:
     if name == "get_recipe_a2ui":
-        # Resolve dynamic selections from client parameters
-        style = arguments.get("cookingStyle", "Baked")
-        protein = arguments.get("protein", "Salmon")
+        # ユーザー引数から選択されたレシピを解決
+        style_list = arguments.get("cookingStyle", ["Baked"])
+        protein_list = arguments.get("protein", ["Salmon"])
+        style = style_list[0] if style_list else "Baked"
+        protein = protein_list[0] if protein_list else "Salmon"
+        recipe = RECIPES.get((style, protein))
 
-        # Retrieve customized recipe database entry
-        recipe_data = RECIPES.get((style, protein))
+        # 軽量な updateDataModel ペイロードを生成
+        data_model_update = [
+            {
+                "version": "v0.9",
+                "updateDataModel": {
+                    "surfaceId": "recipe-card",
+                    "path": "/",
+                    "value": {
+                        "title": recipe["title"],
+                        "rating": recipe["rating"],
+                        "reviews": recipe["reviews"],
+                        "cookTime": recipe["cookTime"],
+                        "prepTime": recipe["prepTime"],
+                        "servings": recipe["servings"],
+                        "image": recipe["image"],
+                    },
+                },
+            }
+        ]
 
-        # Customize base A2UI schema dynamically
-        custom_recipe_json = copy.deepcopy(recipe_a2ui_json)
-        custom_recipe_json[1]["updateComponents"]["components"][0]["text"] = recipe_data["title"]
-
-        # Return customized recipe card as EmbeddedResource
-        return types.CallToolResult(content=[
-            types.EmbeddedResource(
-                type="resource",
-                resource=types.TextResourceContents(
-                    uri="a2ui://recipe-card",
-                    mimeType="application/a2ui+json",
-                    text=json.dumps(custom_recipe_json),
-                )
-            )
-        ])
+        return types.CallToolResult(
+            content=[
+                types.TextContent(
+                    type="text",
+                    text=f"Generated recipe: {recipe['title']}",
+                ),
+                types.EmbeddedResource(
+                    type="resource",
+                    resource=types.TextResourceContents(
+                        uri="a2ui://recipe-card/data",
+                        mimeType="application/a2ui+json",
+                        text=json.dumps(data_model_update),
+                    ),
+                ),
+            ],
+            _meta={
+                "ui": {
+                    "resourceUri": "a2ui://recipe-card",
+                    "mimeType": "application/a2ui+json",
+                }
+            },
+        )
 ```
 
-## カタログのネゴシエーション
+## カタログネゴシエーション
 
-サーバーがクライアントに A2UI を送信する前に、双方はどのカタログが利用可能かを確立する必要があります。アーキテクチャに応じて、これは 2 つの方法のいずれかで行われます。
+サーバーがクライアントに A2UI を送信する前に、双方はどのカタログが利用可能かを合意する必要があります。システムのアーキテクチャに応じて、このネゴシエーションは 2 つの方法のいずれかで行われます。
 
 ### オプション A: MCP 初期化時 (推奨)
 
-MCP は状態を持つセッションプロトコルであるため、最も効率的な方法は接続セットアップ時に機能を 1 回だけ宣言することです。クライアントは `capabilities` 配下で A2UI サポートを宣言します:
+MCP はステートフルなセッションプロトコルであるため、最も効率的な方法は接続確立時に一度だけ機能を宣言することです。クライアントは `capabilities` のもとで A2UI サポートを宣言します:
 
 ```json
 {
@@ -222,7 +285,7 @@ MCP は状態を持つセッションプロトコルであるため、最も効�
         "clientCapabilities": {
           "v0.9": {
             "supportedCatalogIds": [
-              "https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"
+              "https://a2ui.org/specification/v0_9/basic_catalog.json"
             ]
           }
         }
@@ -232,11 +295,11 @@ MCP は状態を持つセッションプロトコルであるため、最も効�
 }
 ```
 
-サーバーはこの状態をセッションの間保持します。
+サーバーはセッションの間、この状態を保持します。
 
-### オプション B: メッセージごとのメタデータ (ステートレスサーバー向け)
+### オプション B: メッセージごとのメタデータ (ステートレスサーバー用)
 
-サーバーがステートレスである必要がある場合、クライアントはすべてのツール呼び出しの `_meta` フィールドで A2UI 機能を渡すことができます:
+サーバーをステートレスに保つ必要がある場合、クライアントはすべてのツール呼び出しの `_meta` フィールドで A2UI 機能を渡すことができます:
 
 ```json
 {
@@ -251,7 +314,7 @@ MCP は状態を持つセッションプロトコルであるため、最も効�
         "clientCapabilities": {
           "v0.9": {
             "supportedCatalogIds": [
-              "https://a2ui.org/specification/v0_9/catalogs/basic/catalog.json"
+              "https://a2ui.org/specification/v0_9/basic_catalog.json"
             ],
             "inlineCatalogs": []
           }
@@ -264,11 +327,11 @@ MCP は状態を持つセッションプロトコルであるため、最も効�
 
 ## ユーザーアクションの処理
 
-`Button` などの対話型コンポーネントは、MCP ツール呼び出しとしてサーバーに送り返されるアクションをトリガーできます。
+`Button` などのインタラクティブなコンポーネントは、MCP ツール呼び出しとしてサーバーに送り返されるアクションをトリガーできます。
 
-### 1. アクションを含む Button の定義
+### 1. アクション付き Button の定義
 
-A2UI JSON で、コンポーネントに `action` を追加します:
+A2UI JSON 内で、コンポーネントに `action` を追加します:
 
 ```json
 {
@@ -292,7 +355,7 @@ A2UI JSON で、コンポーネントに `action` を追加します:
 
 ### 2. クライアントがアクションをツール呼び出しとして送信
 
-ユーザーがボタンをクリックすると、クライアントは surface の状態に対して (`/dates/start` などの) データバインディングを解決し、必須のアクションフィールドを含むツール呼び出しを送信します:
+ユーザーがボタンをクリックすると、クライアントはサーフェス状態に対してデータバインディング (`/dates/start` など) を解決し、必須のアクションフィールドを含むツール呼び出しを送信します:
 
 ```json
 {
@@ -315,7 +378,7 @@ A2UI JSON で、コンポーネントに `action` を追加します:
 }
 ```
 
-### 3. サーバーでアクションを処理
+### 3. サーバー側でのアクション処理
 
 ```python
 @app.tool()
@@ -326,9 +389,9 @@ async def a2ui_action(
     timestamp: str,
     context: dict[str, Any],
 ) -> types.CallToolResult:
-    """Handle A2UI user actions."""
+    """A2UI ユーザーアクションを処理します。"""
     if name == "confirm_booking":
-        # Process the booking, then return confirmation UI
+        # 予約を処理し、確認 UI を返します
         return types.CallToolResult(content=[
             types.TextContent(
                 type="text",
@@ -339,7 +402,7 @@ async def a2ui_action(
 ```
 
 > [!NOTE]
-> 5つのアクションフィールドすべて (`name`、`surfaceId`、`sourceComponentId`、`timestamp`、`context`) は A2UI 仕様で必須とされています。ツールパラメーターにすべてのフィールドを宣言しておくことで、MCP SDK が `surfaceId` やその他のフィールドを除外してしまい、元の surface コンテキストが失われるのを防ぐことができます。
+> 5 つのアクションフィールド (`name`, `surfaceId`, `sourceComponentId`, `timestamp`, `context`) はすべて A2UI 仕様で必須です。ツールのパラメータに全フィールドを宣言することで、MCP SDK が `surfaceId` などを除外してサーフェスコンテキストが失われるのを防ぎます。
 
 ## エラーハンドリング
 
@@ -362,7 +425,7 @@ async def a2ui_action(
 }
 ```
 
-サーバーで処理します:
+サーバー側で処理します:
 
 ```python
 @app.tool()
@@ -372,8 +435,8 @@ async def a2ui_error(
     message: str,
     path: str | None = None,
 ) -> types.CallToolResult:
-    """Handle A2UI client errors."""
-    # Log the error, retry, or send a fallback UI
+    """A2UI クライアントエラーを処理します。"""
+    # エラーをログに記録し、再試行またはフォールバック UI を送信します
     return types.CallToolResult(content=[
         types.TextContent(
             type="text",
@@ -382,9 +445,9 @@ async def a2ui_error(
     ])
 ```
 
-## 発話と可視性の制御
+## バーバライゼーションと可視性制御
 
-MCP **Resource Annotations** を使用して、後続のターンで LLM が A2UI ペイロードを「読み取る」ことができるかどうかを制御します:
+MCP **Resource Annotations** を使用して、後続のターンで LLM が A2UI ペイロードを「読む」ことができるかどうかを制御します:
 
 ```python
 a2ui_resource = types.EmbeddedResource(
@@ -394,20 +457,20 @@ a2ui_resource = types.EmbeddedResource(
         mimeType="application/a2ui+json",
         text=json.dumps(a2ui_payload)
     ),
-    # ユーザーには UI を表示し、LLM からは生 JSON を隠す
+    # ユーザーには UI を表示し、LLM には生の JSON を隠す
     annotations=types.Annotations(audience=["user"])
 )
 ```
 
-| Audience        | 動作                                                   |
-| --------------- | ------------------------------------------------------ |
-| _(空)_          | ユーザーと LLM の両方に表示されます                     |
+| 対象 (Audience) | 動作                                                       |
+| --------------- | ---------------------------------------------------------- |
+| _(空)_          | ユーザーと LLM の両方に表示されます                        |
 | `["user"]`      | ユーザー向けにレンダリングされ、LLM コンテキストからは隠されます |
-| `["assistant"]` | LLM が後続の推論に利用できますが、レンダリングはされません |
+| `["assistant"]` | LLM が後続の推論に利用できますが、レンダリングはされません  |
 
 ## A2UI Agent SDK の使用
 
-本番環境では、**A2UI Agent SDK** がスキーマ管理、検証、プロンプト生成を自動で処理します:
+本番環境では、**A2UI Agent SDK** がスキーマ管理、バリデーション、プロンプト生成を自動化します:
 
 ```bash
 pip install a2ui-agent-sdk
@@ -417,22 +480,21 @@ pip install a2ui-agent-sdk
 from a2ui.strategies.schema import A2uiSchemaManager
 from a2ui.basic_catalog.provider import BasicCatalog
 
-# Initialize the schema manager with the basic catalog
+# Basic Catalog を使ってスキーママネージャーを初期化
 schema_manager = A2uiSchemaManager(
     catalogs=[BasicCatalog.get_config()],
 )
 
-# Validate A2UI output before sending
+# 送信前に A2UI 出力を検証
 selected_catalog = schema_manager.get_selected_catalog()
 selected_catalog.validator.validate(a2ui_payload)
 ```
 
-スキーマ管理、動的カタログ、ストリーミングの詳細については、[エージェント開発ガイド](agent-development.md) を参照してください。
+スキーマ管理、動的カタログ、ストリーミングの詳細については、完全な [エージェント開発ガイド](agent-development.md) を参照してください。
 
 ## 次のステップ
 
 - [A2UI 仕様](../specification/v0.9-a2ui.md) — 完全なプロトコルリファレンス
-- [コンポーネントギャラリー](../reference/components.md) — 利用可能なコンポーネントを探索
+- [コンポーネントギャラリー](../reference/components.md) — 利用可能なコンポーネントの一覧
 - [A2UI Surface 内の MCP Apps](mcp-apps-in-a2ui.md) — HTML ベースの MCP アプリを A2UI 内に埋め込む
-- [クライアントのセットアップ](client-setup.md) — A2UI を表示するレンダラーを構築する
-
+- [クライアントのセットアップ](client-setup.md) — A2UI を表示するレンダーの構築

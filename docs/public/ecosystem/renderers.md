@@ -26,6 +26,7 @@
 | **BoteAI/a2ui** (`@boteai/a2ui-render`) | React（Web） | ✅ | ✅ | ![Stars](https://img.shields.io/github/stars/BoteAI/a2ui?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/BoteAI/a2ui?style=flat-square&label=updated) | [GitHub](https://github.com/BoteAI/a2ui) · [npm](https://www.npmjs.com/package/@boteai/a2ui-render) |
 | **kokoro-ele/a2ui-ink** (`@evanyu/a2ui-ink`) | ターミナル / CLI（Ink） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/kokoro-ele/a2ui-ink?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/kokoro-ele/a2ui-ink?style=flat-square&label=updated) | [GitHub](https://github.com/kokoro-ele/a2ui-ink) · [npm](https://www.npmjs.com/package/@evanyu/a2ui-ink) |
 | **yessGlory17/generative-mui** (`@yessglory/generative-mui-react`) | React + Material UI（Web） | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/yessGlory17/generative-mui?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/yessGlory17/generative-mui?style=flat-square&label=updated) | [GitHub](https://github.com/yessGlory17/generative-mui) · [npm](https://www.npmjs.com/package/@yessglory/generative-mui-react) |
+| **ChaliceForAuri/a2ui-svelte** (`svelte-a2ui`)                     | Svelte 5（Web）            | ❌ | ✅ | ![Stars](https://img.shields.io/github/stars/ChaliceForAuri/a2ui-svelte?style=flat-square&label=⭐) ![Last commit](https://img.shields.io/github/last-commit/ChaliceForAuri/a2ui-svelte?style=flat-square&label=updated)                      | [GitHub](https://github.com/ChaliceForAuri/a2ui-svelte) · [npm](https://www.npmjs.com/package/svelte-a2ui) · [デモ](https://chaliceforauri.github.io/a2ui-svelte/)                              |
 
 ### 注目のプロジェクト
 
@@ -42,6 +43,14 @@
 | プロジェクト | プラットフォーム | 説明 | リンク |
 |----------|----------|------|-------|
 | **vercel-labs/json-render** (`@json-render/*`) | React、Vue、Svelte、Solid、React Native | Vercel による生成 UI フレームワーク。A2UI プロトコルではなく独自の JSON スキーマを使用し、Zod ベースのコンポーネントカタログを備えています。ストリーミング、36 種類の shadcn/ui 組み込みコンポーネント、クロスプラットフォームレンダリングに対応しています。 | [GitHub](https://github.com/vercel-labs/json-render) · [npm](https://www.npmjs.com/package/@json-render/core) · [Docs](https://json-render.dev/) |
+
+### エージェント側ライブラリ
+
+以下のプロジェクトは、A2UI をレンダリングするのではなく生成します。
+
+| プロジェクト                                              | 言語       | 説明                                                                                                                                                                                                    | リンク                                                                                                                                                                |
+| ---------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Max-Health-Inc/prefab** (`@maxhealth.tech/prefab`) | TypeScript | 型付きコンポーネントツリーから A2UI を出力するサーバー側コンポーネントライブラリ。Basic Catalog で表現できない要素に対する診断機能を備えています。また、`a2ui://` リソースまたは埋め込みリソースとして MCP 経由で A2UI を配信します。 | [GitHub](https://github.com/Max-Health-Inc/prefab) · [npm](https://www.npmjs.com/package/@maxhealth.tech/prefab) · [Docs](https://maxhealth.tech/prefab/guide/a2ui) |
 
 ### エコシステムユーティリティ
 
@@ -64,6 +73,8 @@
 **lynx-family/lynx-stack** (`@lynx-js/genui/a2ui`) は、A2UI v0.9 向けの ReactLynx レンダラーを提供します。検証済みのサーバーからクライアントへの A2UI メッセージを `MessageStore` 経由で受け取り、呼び出し側が提供するカタログから承認済みの ReactLynx コンポーネントをレンダリングし、生成された UI アクションを `onAction` 経由で転送します。公開されている `@lynx-js/genui` パッケージは `a2ui` サブパス経由で A2UI レンダラーを公開しており、GenUI CLI はビルド時のカタログアーティファクト生成と A2UI システムプロンプト生成をサポートしています。
 
 **yessGlory17/generative-mui** (`@yessglory/generative-mui-react`) は、A2UI（v0.9.1）向けの **Material UI** レンダラーです。Basic Catalog の 18 コンポーネントすべてを MUI へ 1 対 1 でマッピングし、**ホストアプリの既存の `<ThemeProvider>` の内側で**レンダリングします — サーフェス自体は独自のテーマを持たず、ホスト側のパレットやタイポグラフィを継承するため、テーマが変わると全体のスキンも先頭から末尾まで切り替わります。フレームワークに依存しないコア (`@yessglory/generative-mui-core` — Zod スキーマ、JSONL パーサー、JSON Pointer、決定的で購読可能な `SurfaceStore`、プロバイダー非依存のエージェントツールスキーマを含む) と React/MUI アダプターに分割されており、`react → core` の一方向依存は lint 時に強制されます。Basic Catalog に加えて、オプトインの Extended Catalog（`@mui/x-charts` によるチャート、Table など）、双方向データバインディング、`checks` によるバリデーション、ストリーミング耐性（段階的なスケルトン表示、末尾追記のみの文字列差分、循環・深さ制限およびノードごとのエラーバウンダリ）、そしてセキュリティガード（未登録の型は実行されない、エージェント由来の `sx` / `style` / `className` は除去される、ローカル `regex` には ReDoS 対策の長さ上限を設定）を備えています。
+
+**ChaliceForAuri/a2ui-svelte** (`svelte-a2ui`) は、Runes 上にネイティブに構築された Svelte 5 レンダラーであり、v1.0 候補仕様（コンポーネントプロパティ名は v0.9 と共通）を対象としています。18 種類の全コンポーネント、完全な 59 種類の `Icon` 列挙型および `{svgPath}` バリアント、14 種類の組み込み関数すべて、`checks` バリデーション、コレクションテンプレートを含む Basic Catalog 全体を網羅し、テストスイート内で仕様自体の問い合わせフォームフィクスチャを再生します。プロトコルのコアは構造共有を伴う純粋なリデューサーとして `$state.raw` に保持されるため、変更のないコンポーネントは再レンダリングを完全にスキップします。脅威モデルは敵対的なエージェントを想定しています（カタログホワイトリスト、`on*`/関数の除去、プロトタイプ汚染の拒絶、テキストのエスケープ後マークアップ処理、有界再帰、`callableFrom` の強制）。トランスポートには HTTP JSONL/SSE、A2A 拡張バインディング（`application/a2ui+json` DataParts、レンダラーメタデータの引き上げ）、AG-UI アクティビティ（ミドルウェアの `a2ui-surface` タイプを含む）が含まれ、すべての送信メッセージで `a2uiRendererCapabilities` が通知されます。スタイリングは完全にホスト所有の CSS カスタムプロパティです。プロジェクトは Apache-2.0 ライセンスで公開されており、[ホストされたデモ](https://chaliceforauri.github.io/a2ui-svelte/) で予約フォームのシナリオがライブ配信されています。
 
 ## レンダラーの投稿
 
