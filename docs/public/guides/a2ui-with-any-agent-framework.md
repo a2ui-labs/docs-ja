@@ -29,7 +29,7 @@ A2UI は宣言的な UI 形式です。[AG-UI](https://ag-ui.com/) は、エー�
 
 コーディングエージェントを使ってこれを組み込む場合は、アプリを変更する前に [AG-UI の `ag-ui-a2ui-integration` スキル](https://github.com/ag-ui-protocol/ag-ui/tree/main/skills/ag-ui-a2ui-integration)を読み込ませてください。このスキルは、AG-UI のフレームワークアダプター、対応している `create-ag-ui-app` のフラグ、トランスポートのセットアップ、A2UI ランタイムとレンダラーの配線、そして AG-UI + A2UI アプリのエンドツーエンド検証をカバーしています。
 
-アプリが A2UI のレンダリングに CopilotKit を使用している場合は、CopilotKit v2 のランタイム、プロバイダー、テーマ、カタログの規約について、[CopilotKit の `a2ui-renderer` スキル](https://github.com/CopilotKit/CopilotKit/blob/main/skills/a2ui-renderer/SKILL.md)もあわせて読み込ませてください。
+アプリが A2UI のレンダリングに CopilotKit を使用している場合は、CopilotKit v2 のランタイム、プロバイダー、テーマ、カタログの規約について、[CopilotKit の `copilotkit` スキル](https://github.com/CopilotKit/CopilotKit/blob/main/skills/copilotkit/SKILL.md)もあわせて読み込ませてください。
 
 ## 1. AG-UI をセットアップする
 

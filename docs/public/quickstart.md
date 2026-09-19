@@ -253,7 +253,7 @@ sequenceDiagram
 === "Flutter"
 
     - **クライアントコード**: `samples/client/flutter/` — A2UI レンダラーを含む Flutter Web クライアント
-    - **A2UI レンダラー**: `renderers/flutter/`（Flutter）
+    - **A2UI レンダラー**: `dart/a2ui_flutter/`（Flutter）
 
 各ディレクトリには詳細なドキュメントを含む独自の README があります。
 
