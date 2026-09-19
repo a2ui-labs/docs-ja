@@ -2792,7 +2792,7 @@
 <p>以下の例では、AG-UI 互換のランタイムツールを使うことで、レンダラーの有効化、エージェントへのカタログの提供、UI 更新のユーザーへのストリーミングといった A2UI 部分に集中できるようにしています。プロトコルレベルのセットアップや概念については、<a href="https://docs.ag-ui.com/">AG-UI のドキュメント</a>を参照してください。</p>
 <h2 id="_1">エージェントスキル<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>コーディングエージェントを使ってこれを組み込む場合は、アプリを変更する前に <a href="https://github.com/ag-ui-protocol/ag-ui/tree/main/skills/ag-ui-a2ui-integration">AG-UI の <code>ag-ui-a2ui-integration</code> スキル</a>を読み込ませてください。このスキルは、AG-UI のフレームワークアダプター、対応している <code>create-ag-ui-app</code> のフラグ、トランスポートのセットアップ、A2UI ランタイムとレンダラーの配線、そして AG-UI + A2UI アプリのエンドツーエンド検証をカバーしています。</p>
-<p>アプリが A2UI のレンダリングに CopilotKit を使用している場合は、CopilotKit v2 のランタイム、プロバイダー、テーマ、カタログの規約について、<a href="https://github.com/CopilotKit/CopilotKit/blob/main/skills/a2ui-renderer/SKILL.md">CopilotKit の <code>a2ui-renderer</code> スキル</a>もあわせて読み込ませてください。</p>
+<p>アプリが A2UI のレンダリングに CopilotKit を使用している場合は、CopilotKit v2 のランタイム、プロバイダー、テーマ、カタログの規約について、<a href="https://github.com/CopilotKit/CopilotKit/blob/main/skills/copilotkit/SKILL.md">CopilotKit の <code>copilotkit</code> スキル</a>もあわせて読み込ませてください。</p>
 <h2 id="1-ag-ui">1. AG-UI をセットアップする<a class="headerlink" href="#1-ag-ui" title="Permanent link">&para;</a></h2>
 <p>すでに使っているエージェントフレームワークから始め、エージェントとアプリの間に AG-UI ランタイムの接続を追加します。このランタイムは、A2UI メッセージを含むエージェントイベントをクライアント側のサーフェスにストリーミングします。</p>
 <p>AG-UI の CLI を使って、好みのクライアントとエージェントフレームワークで AG-UI アプリの雛形を生成します。</p>
