@@ -8,14 +8,22 @@
 
 ## 保守されているレンダラー
 
+### Web
+
 | レンダラー | プラットフォーム | v0.8 | v0.9.1 | v1.0 | リンク |
 |----------|----------|------|------|------|-------|
 | **React** | Web | ✅ 安定版 | ✅ 安定版 | 🚧 予定 | [コード](https://github.com/a2ui-project/a2ui/tree/main/renderers/react) |
 | **Lit (Web Components)** | Web | ✅ 安定版 | ✅ 安定版 | 🚧 予定 | [コード](https://github.com/a2ui-project/a2ui/tree/main/renderers/lit) |
 | **Angular** | Web | ✅ 安定版 | ✅ 安定版 | 🚧 予定 | [コード](https://github.com/a2ui-project/a2ui/tree/main/renderers/angular) |
 | **Flutter (GenUI SDK)** | モバイル/デスクトップ/Web | ✅ 安定版 | ✅ 安定版 | 🚧 予定 | [ドキュメント](https://docs.flutter.dev/ai/genui) · [コード](https://github.com/flutter/genui) |
+
+### モバイル
+
+| レンダラー | プラットフォーム | v0.8 | v0.9.1 | v1.0 | リンク |
+|----------|----------|------|------|------|-------|
+| **Flutter (GenUI SDK)** | モバイル/デスクトップ/Web | ✅ 安定版 | ✅ 安定版 | 🚧 予定 | [ドキュメント](https://docs.flutter.dev/ai/genui) · [コード](https://github.com/flutter/genui) |
 | **SwiftUI** | iOS/macOS | — | — | 🚧 予定 | — |
-| **Jetpack Compose** | Android | — | — | 🚧 予定 | — |
+| **Jetpack Compose** | Android | — | ✅ アルファ版 | 🚧 予定 | [ドキュメント](https://developer.android.com/develop/ui/compose/agentic) · [コード](https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:a2ui/) |
 
 詳細は [ロードマップ](../roadmap.md) を確認してください。
 

@@ -89,21 +89,13 @@ A2UI が解決する問題は、**AI エージェントが信頼境界をまた�
 
     [:octicons-arrow-right-24: 任意のエージェントで使う](guides/a2ui-with-any-agent-framework.md)
 
-- :material-palette-outline:{ .lg .middle } **[A2UI Composer](https://a2ui-composer.ag-ui.com/)**
+- :material-palette-outline:{ .lg .middle } **[A2UI Composer](https://a2ui-project.github.io/composer/)**
 
     ---
 
     ビジュアルエディターで A2UI の JSON を生成できます。インストール不要です。出力を任意のエージェントプロンプトに貼り付けるだけです。
 
-    [:octicons-arrow-right-24: Composer を開く](https://a2ui-composer.ag-ui.com/)
-
-- :material-play-circle-outline:{ .lg .middle } **[A2UI Theater](https://a2ui-composer.ag-ui.com/theater)**
-
-    ---
-
-    Lit、React、Angular の各レンダラーで、あらかじめ用意された A2UI ストリーミングシナリオをステップ実行できます。コードを書く前にプロトコルの動きを確認できます。
-
-    [:octicons-arrow-right-24: プレイグラウンドを開く](https://a2ui-composer.ag-ui.com/theater)
+    [:octicons-arrow-right-24: Composer を開く](https://a2ui-project.github.io/composer/)
 
 - :material-book-open-variant:{ .lg .middle } **[コアコンセプト](concepts/overview.md)**
 

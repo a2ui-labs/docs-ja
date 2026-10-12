@@ -34,16 +34,15 @@ sys.path.insert(
             "..",
             "..",
             "..",
-            "agent_sdks",
             "python",
             "a2ui_agent",
             "src",
         )
     ),
 )
-import json
-from a2ui.core.catalog import Catalog
-from a2ui.inference_formats.experimental.express.compiler import ExpressCompiler
+from a2ui.core import Catalog
+from a2ui.inference_formats import to_message_dicts
+from a2ui.inference_formats.experimental.express import ExpressCompiler
 
 
 def compile_dsl_file(
@@ -73,9 +72,14 @@ def compile_dsl_file(
 
     with open(catalog_path, "r", encoding="utf-8") as f:
         catalog_dict = json.load(f)
-    catalog = Catalog.from_json(catalog_dict, spec_version="0.9.1")
-    compiler = ExpressCompiler(catalog)
-    return compiler.compile(dsl_text, surface_id=surface_id, catalog_id=catalog_id)
+    catalog = Catalog.from_json(catalog_dict)
+    compiler = ExpressCompiler([catalog])
+    if catalog_id and catalog_id != catalog.catalog_id:
+        raise ValueError(
+            f"Unknown catalog '{catalog_id}'. Available catalogs:"
+            f" {[catalog.catalog_id]}"
+        )
+    return to_message_dicts(compiler.compile(dsl_text, surface_id=surface_id))
 
 
 def main():
@@ -105,9 +109,10 @@ def main():
             "..",
             "..",
             "..",
-            "v1_0",
+            "..",
             "catalogs",
             "basic",
+            "v1",
             "catalog.json",
         ),
         help="Path to the catalog JSON schema (default: basic catalog).",

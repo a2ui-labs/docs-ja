@@ -248,7 +248,7 @@ sequenceDiagram
 === "Lit"
 
     - **クライアントコード**: `samples/client/lit/` — A2UI レンダラーを含む Lit Web クライアント
-    - **A2UI レンダラー**: `renderers/lit/`（Lit）および `renderers/web_core/`（フレームワーク非依存コア）
+    - **A2UI レンダラー**: `renderers/lit/`（Lit）および `typescript/web_core/`（フレームワーク非依存コア）
 
 === "Flutter"
 

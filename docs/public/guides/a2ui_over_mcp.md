@@ -477,17 +477,18 @@ pip install a2ui-agent-sdk
 ```
 
 ```python
-from a2ui.strategies.schema import A2uiSchemaManager
-from a2ui.basic_catalog.provider import BasicCatalog
+from a2ui.core.basic_catalog import BasicCatalog
+from a2ui.inference_formats.direct_json import DirectJsonFormat
+from a2ui.schema import VERSION_0_9
+from a2ui.utils import validate_payload
 
-# Basic Catalog を使ってスキーママネージャーを初期化
-schema_manager = A2uiSchemaManager(
-    catalogs=[BasicCatalog.get_config()],
-)
+# Basic Catalog を使って推論フォーマットを初期化
+inference_format = DirectJsonFormat([BasicCatalog(VERSION_0_9)])
 
-# 送信前に A2UI 出力を検証
-selected_catalog = schema_manager.get_selected_catalog()
-selected_catalog.validator.validate(a2ui_payload)
+# 送信前に A2UI 出力を検証。カタログを保持するレンダラーがペイロードを拒否する場合、
+# A2uiValidationError を送出します。
+selected_catalog = inference_format.catalogs[0]
+validate_payload([selected_catalog], a2ui_payload)
 ```
 
 スキーマ管理、動的カタログ、ストリーミングの詳細については、完全な [エージェント開発ガイド](agent-development.md) を参照してください。

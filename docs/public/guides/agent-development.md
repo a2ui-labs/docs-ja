@@ -98,19 +98,19 @@ adk web
 
 ## A2UI メッセージの生成
 
-LLM に A2UI メッセージを生成させるには、多少のプロンプトエンジニアリングが必要です。SDK が提供する `A2uiSchemaManager` を使うと、A2UI スキーマとコンポーネントカタログの例を含むシステムプロンプトを生成できます。
+LLM に A2UI メッセージを生成させるには、多少のプロンプトエンジニアリングが必要です。SDK が提供する `DirectJsonFormat` を使うと、A2UI スキーマとコンポーネントカタログの例を含むシステムプロンプトを生成できます。
 
 まず、`a2ui-agent-sdk` がインストールされていることを確認してください(サンプルには同梱されています)。
 
 エージェントファイル(例: `agent.py`)内で、必要なクラスをインポートします。
 
 ```python
-from a2ui.schema.constants import VERSION_0_8, VERSION_0_9
-from a2ui.strategies.schema import A2uiSchemaManager
-from a2ui.basic_catalog.provider import BasicCatalog
+from a2ui.core.basic_catalog import BasicCatalog
+from a2ui.inference_formats.direct_json import DirectJsonFormat
+from a2ui.schema import VERSION_0_8, VERSION_0_9
 ```
 
-続いて、`A2uiSchemaManager` を使ってシステムプロンプトを生成します。これにより、スキーマと例が正しくフォーマットされ、常に最新の状態に保たれます。
+続いて、`DirectJsonFormat` を使ってシステムプロンプトを生成します。これにより、スキーマと例が正しくフォーマットされ、常に最新の状態に保たれます。
 
 ```python
 # Define your agent's role
@@ -128,18 +128,14 @@ UI_DESCRIPTION = """
 -   If the query is a booking submission (e.g., "User submitted a booking..."), you MUST use the `CONFIRMATION_EXAMPLE` template.
 """
 
-# Initialize the schema manager with the Basic Catalog
-schema_manager = A2uiSchemaManager(
-    version=VERSION_0_8, # Use VERSION_0_9 for newer protocol
-    catalogs=[
-        BasicCatalog.get_config(
-            version=VERSION_0_8, examples_path="examples/0.8"
-        )
-    ],
+# Initialize the inference format with the Basic Catalog
+inference_format = DirectJsonFormat(
+    [BasicCatalog(VERSION_0_8)],  # Use VERSION_0_9 for newer protocol
+    examples_path="examples/0.8",
 )
 
 # Generate the full system prompt
-A2UI_AND_AGENT_INSTRUCTION = schema_manager.generate_system_prompt(
+A2UI_AND_AGENT_INSTRUCTION = inference_format.prompt_generator.generate(
     role_description=ROLE_DESCRIPTION,
     ui_description=UI_DESCRIPTION,
     include_schema=True,

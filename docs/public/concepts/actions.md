@@ -300,7 +300,7 @@ multi-agent システムでは、中央の **Orchestrator** がユーザーと�
 
 ### Surface Ownership パターン
 
-multi-agent アーキテクチャでルーティングを処理するには、orchestrator が各 `surfaceId` と所有 sub-agent のマッピングを維持する必要があります。公式 Python SDK は、このマッピングを安全に管理するための [`A2uiSubagentMap`](../../../agent_sdks/python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py) ユーティリティを提供しています。
+multi-agent アーキテクチャでルーティングを処理するには、orchestrator が各 `surfaceId` と所有 sub-agent のマッピングを維持する必要があります。公式 Python SDK は、このマッピングを安全に管理するための [`A2uiSubagentMap`](../../../python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py) ユーティリティを提供しています。
 
 完全な動作例については、[orchestrator agent executor](../../../samples/community/agent/adk/orchestrator/orchestrator_agent_executor.py) のサンプルを参照してください。
 

@@ -8,7 +8,7 @@
 
 ## Web レンダラー: `@a2ui/web_core`(`web_core`)を使う
 
-Web 向けのレンダラー(React、Vue、Svelte など)を構築する場合、メッセージ処理・状態管理・スキーマ検証をゼロから実装する必要はありません。**[`@a2ui/web_core`](https://github.com/a2ui-project/a2ui/tree/main/renderers/web_core)** パッケージ(`web_core`)は、メンテナンスされている Lit、Angular、React の各レンダラーが共有する、フレームワークに依存しないロジックをすべて提供します。
+Web 向けのレンダラー(React、Vue、Svelte など)を構築する場合、メッセージ処理・状態管理・スキーマ検証をゼロから実装する必要はありません。**[`@a2ui/web_core`](https://github.com/a2ui-project/a2ui/tree/main/typescript/web_core)** パッケージ(`web_core`)は、メンテナンスされている Lit、Angular、React の各レンダラーが共有する、フレームワークに依存しないロジックをすべて提供します。
 
 ### `web_core` が提供するもの
 

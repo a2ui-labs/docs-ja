@@ -82,7 +82,7 @@ ADK は A2UI v0.8 の標準カタログを統合し、仕様に準拠したエ�
 
 - **組み込み描画**: ADK Web が開発 UI で A2UI コンポーネントをネイティブ描画
 - **A2A 統合**: A2UI メッセージを A2A DataPart メタデータと ADK イベントの間で変換
-- **Agent SDK**: [A2UI Python agent SDK](https://github.com/a2ui-project/a2ui/tree/main/agent_sdks/python) が、エージェントから A2UI を生成するための ADK 拡張を提供
+- **Agent SDK**: [A2UI Python agent SDK](https://github.com/a2ui-project/a2ui/tree/main/python/a2ui_agent) が、エージェントから A2UI を生成するための ADK 拡張を提供
 
 **試すには:**
 
@@ -113,6 +113,34 @@ AG-UI は、カスタムフロントエンドと専用エージェントの間�
 
 - [AG-UI](https://ag-ui.com/)
 - [CopilotKit](https://www.copilotkit.ai/)
+
+---
+
+### AG2: ネイティブ A2UI 対応のマルチエージェントフレームワーク
+
+[AG2](https://ag2.ai/) は、高度なエージェントオーケストレーションを提供する人気のマルチエージェントフレームワークです。その [A2UIAgent](https://docs.ag2.ai/latest/docs/user-guide/reference-agents/a2uiagent) はネイティブ A2UI サポートを備えたリファレンスエージェントであり、AG2 エージェントが A2A と AG-UI の両方で配信可能なリッチで対話的な UI を生成できるようにします。
+
+**AG2 での A2UI の使い方**
+
+A2UIAgent は、組み込みの A2UI 機能（プロンプトエンジニアリング、リトライ付きスキーマ検証、アクション処理）で AG2 の ConversableAgent を拡張するため、開発者はカスタム描画コードを書かずにエージェントへ生成 UI を追加できます。
+
+- **検証済み出力**: 組み込みのスキーマ検証とリトライにより、信頼性の高い A2UI 生成を保証
+- **デュアルトランスポート**: 同じ UI を A2A（JSON-RPC）と AG-UI（SSE）の両方で配信
+- **クロスプラットフォーム**: 1 つのエージェントで Web、デスクトップ、モバイルクライアントに対応
+- **カスタムカタログ**: ドメイン固有のコンポーネントでコンポーネントカタログを拡張可能
+
+> 「A2UIAgent は A2UI プロトコルを AG2 にもたらし、動的でリッチかつ対話的な UI によるエージェント表現を可能にします。信頼性が高くクライアントに依存しない描画により、開発者は統合にかける時間を減らし、優れた体験の構築により多くの時間を割くことができます。」
+>
+> **— Mark Sze**, Founding Engineer, AG2
+
+**詳細:**
+
+- [A2UIAgent Documentation](https://docs.ag2.ai/latest/docs/user-guide/reference-agents/a2uiagent)
+- [Technical Deep Dive](https://docs.ag2.ai/latest/docs/blog/2026/03/20/AG2-A2UI/) — AG2 で A2UI エージェントを構築する
+- [A2UIAgent + Flutter Example](https://github.com/ag2ai/build-with-ag2/tree/main/a2ui/flutter) — A2A 経由で Flutter GenUI クライアントに配信される A2UIAgent
+- [AG2](https://ag2.ai/)
+
+---
 
 ### Google の AI 搭載プロダクト
 
