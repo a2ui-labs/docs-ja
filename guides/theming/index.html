@@ -1450,8 +1450,8 @@
 <h3 id="theme"><code>theme</code> プロパティ<a class="headerlink" href="#theme" title="Permanent link">¶</a></h3>
 <p>A2UI プロトコルでは、<code>createSurface</code> メッセージに任意の <code>theme</code> プロパティを含めることができます。現時点では、このプロパティは Zod スキーマで <code>z.any().optional()</code> として定義されており、エージェントはクライアントのレンダラーとカタログが理解できる任意の JSON 構造を渡せることを意味します。</p>
 <ul>
-<li>スキーマ定義は <a href="https://github.com/a2ui-project/a2ui/blob/main/renderers/web_core/src/v0_9/schema/server-to-client.ts">server-to-client.ts</a> を参照してください。</li>
-<li><code>Catalog</code> クラスと <code>themeSchema</code> は <a href="https://github.com/a2ui-project/a2ui/blob/main/renderers/web_core/src/v0_9/catalog/types.ts">catalog/types.ts</a> を参照してください。</li>
+<li>スキーマ定義は <a href="https://github.com/a2ui-project/a2ui/blob/main/typescript/web_core/src/v0_9/schema/server-to-client.ts">server-to-client.ts</a> を参照してください。</li>
+<li><code>Catalog</code> クラスと <code>themeSchema</code> は <a href="https://github.com/a2ui-project/a2ui/blob/main/typescript/web_core/src/catalog/types.ts">catalog/types.ts</a> を参照してください。</li>
 </ul>
 <p><strong>注:</strong> <em>basic catalog</em> のコンポーネントは、エージェントから渡される <code>theme</code> を使用するようには配線されていません。</p>
 <p><em>このデザインに意見を出したいですか? こちらからどうぞ: <a href="https://github.com/a2ui-project/a2ui/issues/1118">#1118</a>。</em></p>
@@ -1465,7 +1465,7 @@
 </span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nv">--a2ui-color-primary</span><span class="p">:</span><span class="w"> </span><span class="mh">#ff5722</span><span class="p">;</span>
 </span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>デフォルトのスタイルは <a href="https://github.com/a2ui-project/a2ui/blob/main/renderers/web_core/src/v0_9/basic_catalog/styles/default.ts">default.ts</a> を参照してください。</p>
+<p>デフォルトのスタイルは <a href="https://github.com/a2ui-project/a2ui/blob/main/typescript/web_core/src/universal/basic_catalog/styles/default.ts">default.ts</a> を参照してください。</p>
 <p><strong>プラットフォームごとの例:</strong></p>
 <ul>
 <li><a href="https://github.com/a2ui-project/a2ui/blob/main/samples/client/lit">Lit サンプル</a></li>

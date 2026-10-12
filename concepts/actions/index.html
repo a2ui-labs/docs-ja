@@ -3544,7 +3544,7 @@
 <h2 id="orchestration-routing">Orchestration と Routing<a class="headerlink" href="#orchestration-routing" title="Permanent link">&para;</a></h2>
 <p>multi-agent システムでは、中央の <strong>Orchestrator</strong> がユーザーと複数の専門 sub-agent の間の相互作用を管理することがよくあります。重要な課題は、レンダラーからの <code>action</code> メッセージが、その UI surface を生成した特定の sub-agent に戻るようルーティングすることです。</p>
 <h3 id="surface-ownership">Surface Ownership パターン<a class="headerlink" href="#surface-ownership" title="Permanent link">&para;</a></h3>
-<p>multi-agent アーキテクチャでルーティングを処理するには、orchestrator が各 <code>surfaceId</code> と所有 sub-agent のマッピングを維持する必要があります。公式 Python SDK は、このマッピングを安全に管理するための <a href="https://github.com/a2ui-project/a2ui/blob/main/agent_sdks/python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py"><code>A2uiSubagentMap</code></a> ユーティリティを提供しています。</p>
+<p>multi-agent アーキテクチャでルーティングを処理するには、orchestrator が各 <code>surfaceId</code> と所有 sub-agent のマッピングを維持する必要があります。公式 Python SDK は、このマッピングを安全に管理するための <a href="https://github.com/a2ui-project/a2ui/blob/main/python/a2ui_agent/src/a2ui/adk/orchestration/a2ui_subagent_map.py"><code>A2uiSubagentMap</code></a> ユーティリティを提供しています。</p>
 <p>完全な動作例については、<a href="https://github.com/a2ui-project/a2ui/blob/main/samples/community/agent/adk/orchestrator/orchestrator_agent_executor.py">orchestrator agent executor</a> のサンプルを参照してください。</p>
 <h4 id="1-server-ownership">1. Server イベントからの Ownership マッピング<a class="headerlink" href="#1-server-ownership" title="Permanent link">&para;</a></h4>
 <p>sub-agent が A2UI の <code>createSurface</code> または <code>deleteSurface</code> を発行すると、orchestrator はそのメッセージをインターセプトし、<code>update_from_server_event</code> を使って ownership を session state に記録します。</p>
